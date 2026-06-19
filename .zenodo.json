@@ -1,0 +1,24 @@
+{
+  "title": "Applicability boundaries of NMF detrital-zircon unmixing — reproducibility package",
+  "upload_type": "software",
+  "description": "Code and data accompanying Pan, L., \"Where does detrital-zircon source unmixing break? An analytic identifiability criterion and its large-scale Monte-Carlo verification for NMF provenance unmixing\" (submitted to Computers & Geosciences). Reproduces every figure: the synthetic data generator, the HPC scan harness (supervised and unsupervised KL-NMF), the merge and figure-generation scripts, the identifiability-theory verification scripts (direct sigma_err measurement on the (rho, n) plane), the per-axis results, and the per-cell 3D phase-atlas summary. The full per-seed atlas raw (559 MB; 187 MB gzipped) is archived as a separate data record.",
+  "creators": [
+    {
+      "name": "Pan, Lujia",
+      "affiliation": "School of Mathematical Sciences, Hebei Normal University, Shijiazhuang, China"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "detrital zircon",
+    "provenance unmixing",
+    "non-negative matrix factorization",
+    "identifiability",
+    "condition number",
+    "method applicability",
+    "high-performance computing",
+    "Monte-Carlo"
+  ],
+  "language": "eng",
+  "access_right": "open"
+}

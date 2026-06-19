@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying article and this archive."
+title: "Applicability boundaries of NMF detrital-zircon unmixing — reproducibility package"
+type: software
+authors:
+  - family-names: Pan
+    given-names: Lujia
+    affiliation: "School of Mathematical Sciences, Hebei Normal University, Shijiazhuang, China"
+    email: peter205834@hebtu.edu.cn
+license: MIT
+keywords:
+  - detrital zircon
+  - provenance unmixing
+  - non-negative matrix factorization
+  - identifiability
+  - condition number
+  - method applicability
+  - high-performance computing
+preferred-citation:
+  type: article
+  title: "Where does detrital-zircon source unmixing break? An analytic identifiability criterion and its large-scale Monte-Carlo verification for NMF provenance unmixing"
+  authors:
+    - family-names: Pan
+      given-names: Lujia
+  journal: "Computers & Geosciences"
+  year: 2026
+  notes: "submitted"

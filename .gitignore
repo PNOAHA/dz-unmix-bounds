@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.tmp
+# large per-seed raw atlas is archived separately on Zenodo (see README "Large data")
+phase3d.csv
+phase3d.csv.gz
