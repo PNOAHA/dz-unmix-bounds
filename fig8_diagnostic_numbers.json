@@ -1,0 +1,117 @@
+{
+  "n_samples": 15,
+  "basins": [
+    "NCC_north_margin",
+    "Songliao"
+  ],
+  "n_grains": {
+    "min": 31,
+    "max": 111,
+    "median": 78.0,
+    "total": 1091
+  },
+  "pair_rho": {
+    "S1-S2": 0.999192,
+    "S1-S3": 1.0,
+    "S2-S3": 1.0
+  },
+  "rho_split_130v145": 0.3829,
+  "rho_split_130v160": 0.6827,
+  "sigma_err_pred_range": [
+    0.0664,
+    0.1527
+  ],
+  "rho_crit_range": [
+    0.1281,
+    0.2425
+  ],
+  "dmu_crit_Ma_sigma15": [
+    4.84,
+    9.26
+  ],
+  "dmu_crit_Ma_sigma30": [
+    9.68,
+    18.52
+  ],
+  "split145_rho_sqrtN": [
+    2.13,
+    4.03
+  ],
+  "per_sample": [
+    {
+      "sample": "05FW007",
+      "basin": "NCC_north_margin",
+      "n": 57
+    },
+    {
+      "sample": "05FW008",
+      "basin": "NCC_north_margin",
+      "n": 36
+    },
+    {
+      "sample": "100821-1",
+      "basin": "NCC_north_margin",
+      "n": 82
+    },
+    {
+      "sample": "100821-3",
+      "basin": "NCC_north_margin",
+      "n": 111
+    },
+    {
+      "sample": "SL0929",
+      "basin": "Songliao",
+      "n": 76
+    },
+    {
+      "sample": "SL0930",
+      "basin": "Songliao",
+      "n": 74
+    },
+    {
+      "sample": "SL0931",
+      "basin": "Songliao",
+      "n": 81
+    },
+    {
+      "sample": "SL0932",
+      "basin": "Songliao",
+      "n": 75
+    },
+    {
+      "sample": "R31354-S12518",
+      "basin": "Songliao",
+      "n": 79
+    },
+    {
+      "sample": "R31354-S12519",
+      "basin": "Songliao",
+      "n": 78
+    },
+    {
+      "sample": "R31370-S12650",
+      "basin": "Songliao",
+      "n": 78
+    },
+    {
+      "sample": "R31370-S12651",
+      "basin": "Songliao",
+      "n": 64
+    },
+    {
+      "sample": "R31370-S12652",
+      "basin": "Songliao",
+      "n": 91
+    },
+    {
+      "sample": "R31370-S12653",
+      "basin": "Songliao",
+      "n": 31
+    },
+    {
+      "sample": "R31370-S12654",
+      "basin": "Songliao",
+      "n": 78
+    }
+  ]
+}

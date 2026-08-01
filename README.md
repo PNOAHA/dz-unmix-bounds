@@ -4,7 +4,7 @@ Code and data accompanying:
 
 > Pan, L. *Where does detrital-zircon source unmixing break? An analytic
 > identifiability criterion and its large-scale Monte-Carlo verification for NMF
-> provenance unmixing.* (submitted to *Computers & Geosciences*).
+> provenance unmixing.* (submitted to *Sedimentary Geology*).
 
 This package reproduces every figure in the paper. The study (i) derives an
 analytic identifiability criterion linking the Kolmogorov–Smirnov separability of
@@ -17,6 +17,10 @@ single-axis cross-validated configurations, 50 seeds each), plus a joint 3D phas
 atlas over $K\times\Delta/\sigma\times$ noise (~1.5M configurations). The
 theory-verification figure (Fig. 7) is the directly measured weight-error
 $\sigma_{\mathrm{err}}$ on the $(\rho,n)$ plane that calibrates the two-mode law.
+Fig. 8 demonstrates the criterion as an a-priori diagnostic on fifteen real Lower
+Cretaceous samples (Songliao Basin and northern North China Craton margin,
+compiled from published open datasets; per-sample source DOIs in the CSV
+headers), included here under `data/realdata_k1_samples/`.
 
 ## Contents
 
@@ -32,6 +36,10 @@ make_fig1_framework.py       Fig 1 (conceptual framework schematic)
 sigma_err_scan.py            theory verification: direct sigma_err measurement
                              (supervised KL-NMF) on the (rho, n) plane
 fig_sigma_err_phase.py       Fig 7 (two-mode law / pairwise-degeneracy stitch)
+make_fig8_real_diagnostic.py Fig 8 (a-priori diagnostic on 15 real Lower
+                             Cretaceous samples; emits fig8_diagnostic_numbers.json)
+data/realdata_k1_samples/    the 15 real per-grain age samples (CSV; provenance
+                             and licences in the folder README)
 dz_unmixing_experiment.py    core unmixing implementation (KDE, supervised/
                              unsupervised NMF, metrics); shared with the
                              companion methods paper, included for completeness
@@ -42,7 +50,7 @@ scan/phase3d_cellsummary.csv 3D atlas per-cell aggregate (1618 cells, K x d/s x
                              (see "Large data" below), not in the code repository
 results/                     per-axis results (CSV + JSON) underlying Figs 2-5
 out_phase/                   sigma_err_slope_numpy.json underlying Fig 7
-figures/                     Fig1-Fig7 (pdf/png)
+figures/                     Fig1-Fig8 (pdf/png)
 references.bib               bibliography
 LICENSE                      MIT
 ```
@@ -101,6 +109,7 @@ python make_paper2_figures.py     # Fig 2 (K), Fig 3 (noise), Fig 4 (d/s cliff),
 python make_fig6_phase_atlas.py   # Fig 6 (3D phase atlas; reads scan/phase3d_cellsummary.csv)
 python make_fig1_framework.py     # Fig 1 (framework schematic)
 python fig_sigma_err_phase.py --json out_phase/sigma_err_slope_numpy.json --out figures/Fig7_sigma_err_phase
+python make_fig8_real_diagnostic.py   # Fig 8 (real-sample diagnostic; reads data/realdata_k1_samples/)
 ```
 
 The theory-verification scan that produces `out_phase/sigma_err_slope_numpy.json`
