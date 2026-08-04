@@ -4,7 +4,7 @@ Code and data accompanying:
 
 > Pan, L. *Where does detrital-zircon source unmixing break? An analytic
 > identifiability criterion and its large-scale Monte-Carlo verification for NMF
-> provenance unmixing.* (submitted to *Sedimentary Geology*).
+> provenance unmixing.* (submitted to *Minerals*).
 
 This package reproduces every figure in the paper. The study (i) derives an
 analytic identifiability criterion linking the Kolmogorov–Smirnov separability of
