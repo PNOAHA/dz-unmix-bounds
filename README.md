@@ -51,6 +51,25 @@ scan/phase3d_cellsummary.csv 3D atlas per-cell aggregate (1618 cells, K x d/s x
 results/                     per-axis results (CSV + JSON) underlying Figs 2-5
 out_phase/                   sigma_err_slope_numpy.json underlying Fig 7
 figures/                     Fig1-Fig8 (pdf/png)
+```
+
+## Figure numbering (paper vs repository files)
+
+The manuscript numbers figures by order of first citation; repository file and
+script names retain their original (development) numbering. Mapping:
+
+| Paper figure | Repository file |
+|---|---|
+| Figure 1 | figures/Fig1_framework.* |
+| Figure 2 | figures/Fig6_phase_atlas.* |
+| Figure 3 | figures/Fig7_sigma_err_phase.* |
+| Figure 4 | figures/Fig2_source_number_K.* |
+| Figure 5 | figures/Fig3_noise_robustness.* |
+| Figure 6 | figures/Fig4_separability_cliff.* |
+| Figure 7 | figures/Fig5_supervised_advantage.* |
+| Figure 8 | figures/Fig8_real_diagnostic.* |
+
+```
 references.bib               bibliography
 LICENSE                      MIT
 ```
