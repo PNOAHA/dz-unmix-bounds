@@ -1,0 +1,36 @@
+cad_probe_k2.wl run output -- D107 .200, Wolfram 15.0 single kernel, 2026-07-26
+(gates: CAD readable <=1800 s per call = PASS, all calls sub-second;
+ qualitative consistency = PASS, see monotone certificate + small-rho constants)
+
+mu1=a*d   mu2=1 + d^2   mu3=3*a*d + a*d^3
+Var1=1 - (-1 + a^2)*d^2
+ProbeA CAD time = 0.674815 s
+ProbeA failure region (CAD): Inequality[-1, Less, a, Less, 1] && s > 0 && d > 0 && Inequality[0, Less, tau, Less, Sqrt[(s + d^2*s - a^2*d^2*s)/d^2]/2]
+exact boundary tau* = Sqrt[(1 + (1 - a^2)*d^2)*s]/(2*d)
+monotone-in-d certificate (should be True): True
+tau*(rho) = Sqrt[s - 2*(-1 + a^2)*s*InverseErf[rho]^2]/(2*Sqrt[2]*InverseErf[rho])
+small-rho: rho * tau* * Sqrt[N]/z  (a=0) = 1/Sqrt[2*Pi] + (Sqrt[Pi/2]/6) rho^2 + O(rho^3)
+reference constants: 1/Sqrt[2 Pi] = 0.3989422804014327 ; sigma_err convention x Sqrt[2] -> 1/Sqrt[Pi] = 0.5641895835477563 (= C_naive)
+I_mean(rho) series (a=0): 2*Pi rho^2 - (2*Pi^2/3) rho^4 + O(rho^6)   [I_red = 2 Pi rho^2]
+gate spot: rho=0.1, a=0: rho*tau**Sqrt[N]/z = 0.40102405687507314
+k=3: Mk^2 Var1 - M1^2 Vark = -2*d^2*(3 + 15*d^2 + 4*d^4)
+k=3: CAD time = 0.00093 s ; region where moment-3 beats mean: False
+k=5: Mk^2 Var1 - M1^2 Vark = -8*d^2*(90 + 525*d^2 + 340*d^4 + 60*d^6 + 3*d^8)
+k=5: CAD time = 0.001278 s ; region where moment-5 beats mean: False
+k=7: Mk^2 Var1 - M1^2 Vark = -6*d^2*(20685 + 152145*d^2 + 151410*d^4 + 49210*d^6 + 6629*d^8 + 385*d^10 + 8*d^12)
+k=7: CAD time = 0.001549 s ; region where moment-7 beats mean: False
+exact gain (I13/I1 - 1) = (-2*d^4)/(-3 + 3*(-4 + a^2)*d^2 + 9*(-1 + a^2)*d^4 + 2*(-1 + a^2)*d^6)
+gain>0 region (Reduce): d > 0 && Inequality[-1, Less, a, Less, 1]
+gain series (a=0, small d): (2/3) d^4 - (8/3) d^6 + (26/3) d^8 + O(d^9)
+gain numeric (d=1, a=0): 0.07692307692307693  (= 1/13 exact)
+gain numeric (d=2, a=1/2): 0.12698412698412698
+gain numeric (d=1/4, a=0): 0.0020637172707339093
+ALL DONE
+
+--- cross-verification (two-route rule) ---
+sympy (crosscheck_sympy.py): Probe B certificates k=3,5,7 exact match + a-independence True;
+  gain formula exact match, gain(1,0)=1/13; I_mean series match; leading constant 1/sqrt(2*pi) match.
+DISCREPANCY: sympy series gave rho^2 coefficient sqrt(2*pi)/8 (0.3133) vs Mathematica sqrt(pi/2)/6 (0.2089).
+mpmath 40-digit numeric arbitration: coefficient -> 0.2088850 (rho=0.003), converging to
+sqrt(pi/2)/6 = 0.2088857 => MATHEMATICA CORRECT, sympy composite-series bug.
+Lesson: series-level cross-checks need a third numeric arbitration route.

@@ -1,0 +1,261 @@
+% M1_references.bib
+% dz-unmix-bounds paper 2, Section 3 (identifiability / conditioning theorem)
+% Created 2026-06-11 by LN. Companion to M1_references.md.
+%
+% STATUS LEGEND (see comment on each entry):
+%   [OK]      verified-exists in literature search
+%   [CHECK]   could-not-verify or likely-exists -- VERIFY FIRST-HAND BEFORE CITING
+%
+% Framework: known-H, simplex-constrained, KL-divergence (multinomial/Poisson ML)
+% mixing-weight inversion. CITE groups A-E below. DROP separable/blind NMF
+% uniqueness (Donoho-Stodden, Arora-Ge SPA, Gillis-Vavasis) -- wrong regime.
+
+% ===== (A) Identifiability foundation =====
+
+@article{yakowitz1968identifiability,        % [OK] core mother-theorem, most directly citable
+  author  = {Yakowitz, Sidney J. and Spragins, John D.},
+  title   = {On the Identifiability of Finite Mixtures},
+  journal = {The Annals of Mathematical Statistics},
+  year    = {1968}, volume = {39}, number = {1}, pages = {209--214},
+  doi     = {10.1214/aoms/1177698520}
+}
+
+@article{teicher1963identifiability,          % [OK]
+  author  = {Teicher, Henry},
+  title   = {Identifiability of Finite Mixtures},
+  journal = {The Annals of Mathematical Statistics},
+  year    = {1963}, volume = {34}, number = {4}, pages = {1265--1269},
+  doi     = {10.1214/aoms/1177703862}
+}
+
+@book{titterington1985statistical,            % [OK] textbook, ch.3 identifiability
+  author    = {Titterington, D. M. and Smith, A. F. M. and Makov, U. E.},
+  title     = {Statistical Analysis of Finite Mixture Distributions},
+  publisher = {Wiley}, year = {1985}, isbn = {9780471907633}
+}
+
+@inproceedings{ramaswamy2016mixture,          % [OK] modern MPE; note 1-component vs mixture setting
+  author    = {Ramaswamy, Harish G. and Scott, Clayton and Tewari, Ambuj},
+  title     = {Mixture Proportion Estimation via Kernel Embeddings of Distributions},
+  booktitle = {Proc. ICML}, year = {2016}, note = {arXiv:1603.02501}
+}
+
+% ===== (B) Conditioning / Fisher information (links rho and N) =====
+
+@book{mccullagh1989generalized,               % [OK] Fisher = X^T W X cornerstone
+  author    = {McCullagh, P. and Nelder, J. A.},
+  title     = {Generalized Linear Models},
+  edition   = {2nd}, publisher = {Chapman and Hall/CRC}, year = {1989},
+  isbn      = {9780412317606}
+}
+
+@book{higham2002accuracy,                      % [OK] constrained-LS perturbation bound ~ kappa
+  author    = {Higham, Nicholas J.},
+  title     = {Accuracy and Stability of Numerical Algorithms},
+  edition   = {2nd}, publisher = {SIAM}, year = {2002},
+  doi       = {10.1137/1.9780898718027}
+}
+
+@book{golub2013matrix,                         % [OK] kappa(A^T A) = kappa(A)^2
+  author    = {Golub, Gene H. and Van Loan, Charles F.},
+  title     = {Matrix Computations},
+  edition   = {4th}, publisher = {Johns Hopkins University Press}, year = {2013},
+  isbn      = {9781421407944}
+}
+
+@article{shepp1982maximum,                     % [OK] fixed-dictionary Poisson-ML mult. EM convergence
+  author  = {Shepp, L. A. and Vardi, Y.},
+  title   = {Maximum Likelihood Reconstruction for Emission Tomography},
+  journal = {IEEE Transactions on Medical Imaging},
+  year    = {1982}, volume = {1}, number = {2}, pages = {113--122},
+  doi     = {10.1109/TMI.1982.4307558}
+}
+
+@article{carreira2000practical,                % [OK] "theoretically vs practically identifiable"
+  author  = {Carreira-Perpi{\~n}{\'a}n, Miguel {\'A}. and Renals, Steve},
+  title   = {Practical Identifiability of Finite Mixtures of Multivariate Bernoulli Distributions},
+  journal = {Neural Computation},
+  year    = {2000}, volume = {12}, number = {1}, pages = {141--152},
+  doi     = {10.1162/089976600300015925}
+}
+
+@article{ho2016singularity,                    % [OK] degeneracy => rate degradation; near-blind, borrow spirit only
+  author  = {Ho, Nhat and Nguyen, XuanLong},
+  title   = {Singularity Structures and Impacts on Parameter Estimation in Finite Mixture Models},
+  journal = {arXiv preprint}, year = {2016}, note = {arXiv:1609.02655; SIAM J. Math. Data Sci. 2019}
+}
+
+@article{cemgil2009bayesian,                   % [OK] KL-NMF <-> Poisson generative model
+  author  = {Cemgil, Ali Taylan},
+  title   = {Bayesian Inference for Nonnegative Matrix Factorisation Models},
+  journal = {Computational Intelligence and Neuroscience},
+  year    = {2009}, volume = {2009}, pages = {785152},
+  doi     = {10.1155/2009/785152}
+}
+
+% [CHECK] Hall & Titterington 1985 (and Hall 1981) -- nonparametric mixing-proportion
+% estimation; the ancestor of "component overlap up => asymptotic variance blows up",
+% i.e. exactly M1's rho-small => variance-explosion target formula. EXACT volume/pages
+% and the variance expression seen only in secondary sources -- MUST pull JRSS-B (and
+% Statist. Probab. Lett.) first-hand before citing. Placeholder below, DO NOT cite as-is.
+@article{hall1985nonparametric_CHECK,          % [CHECK] verify volume/pages/variance expr first-hand
+  author  = {Hall, Peter and Titterington, D. M.},
+  title   = {(VERIFY) Nonparametric estimation of mixing proportions},
+  journal = {(VERIFY -- likely JRSS-B)}, year = {1985}, note = {UNVERIFIED -- check before citing}
+}
+
+@inproceedings{hsieh2011fast,                  % [CHECK] likely-exists; KL-NMF Hessian curvature V/(WH)^2
+  author    = {Hsieh, Cho-Jui and Dhillon, Inderjit S.},
+  title     = {Fast Coordinate Descent Methods with Variable Selection for Non-negative Matrix Factorization},
+  booktitle = {Proc. KDD}, year = {2011}, pages = {1064--1072},
+  doi       = {10.1145/2020408.2020577}, note = {likely-exists}
+}
+
+% ===== (C) KL-NMF algorithm layer =====
+
+@inproceedings{lee2001algorithms,              % [OK] KL multiplicative-update + monotone convergence -- CORE
+  author    = {Lee, Daniel D. and Seung, H. Sebastian},
+  title     = {Algorithms for Non-negative Matrix Factorization},
+  booktitle = {Advances in Neural Information Processing Systems (NIPS)},
+  year      = {2001}, volume = {13}, pages = {556--562}
+}
+
+@article{lee1999learning,                      % [OK] NMF foundational
+  author  = {Lee, Daniel D. and Seung, H. Sebastian},
+  title   = {Learning the Parts of Objects by Non-negative Matrix Factorization},
+  journal = {Nature}, year = {1999}, volume = {401}, pages = {788--791},
+  doi     = {10.1038/44565}
+}
+
+@article{fevotte2011algorithms,                % [OK] beta=1 is KL = Poisson noise model
+  author  = {F{\'e}votte, C{\'e}dric and Idier, J{\'e}r{\^o}me},
+  title   = {Algorithms for Nonnegative Matrix Factorization with the Beta-Divergence},
+  journal = {Neural Computation}, year = {2011}, volume = {23}, number = {9}, pages = {2421--2456},
+  doi     = {10.1162/NECO_a_00168}
+}
+
+@book{cichocki2009nonnegative,                 % [OK] "KL = multinomial/Poisson ML" canonical source
+  author    = {Cichocki, Andrzej and Zdunek, Rafal and Phan, Anh Huy and Amari, Shun-ichi},
+  title     = {Nonnegative Matrix and Tensor Factorizations},
+  publisher = {Wiley}, year = {2009}, doi = {10.1002/9780470747278}
+}
+
+% ===== (D) Geoscience EMMA precedents & differentiation =====
+
+@article{sharman2017sediment,                  % [OK] top-down = known-H direct geo precedent; MAIN to distinguish
+  author  = {Sharman, Glenn R. and Johnstone, Samuel A.},
+  title   = {Sediment Unmixing Using Detrital Geochronology},
+  journal = {Earth and Planetary Science Letters}, year = {2017},
+  doi     = {10.1016/j.epsl.2017.07.044}
+}
+
+@article{sundell2017unmixing,                  % [OK] known-H weighted inversion (Monte Carlo route)
+  author  = {Sundell, Kurt E. and Saylor, Joel E.},
+  title   = {Unmixing Detrital Geochronology Age Distributions (DZmix)},
+  journal = {Geochemistry, Geophysics, Geosystems}, year = {2017},
+  volume  = {18}, number = {8}, pages = {2872--2886}, doi = {10.1002/2016GC006774}
+}
+
+@article{tipton2022bayesian,                   % [OK] same journal; target-venue fit evidence
+  author  = {Tipton, John R. and Sharman, Glenn R. and Johnstone, Samuel A.},
+  title   = {A Bayesian Nonparametric Approach to Unmixing Detrital Geochronologic Data},
+  journal = {Mathematical Geosciences}, year = {2022},
+  doi     = {10.1007/s11004-021-09961-x}
+}
+
+@article{weltje1997endmember,                  % [OK] EMMA foundational (heuristic uniqueness only)
+  author  = {Weltje, Gert Jan},
+  title   = {End-member Modeling of Compositional Data},
+  journal = {Mathematical Geology}, year = {1997}, volume = {29}, number = {4}, pages = {503--549},
+  doi     = {10.1007/BF02775085}
+}
+
+@article{paterson2015new,                      % [OK] AnalySize; mainstream EMMA tool
+  author  = {Paterson, Greig A. and Heslop, David},
+  title   = {New Methods for Unmixing Sediment Grain Size Data},
+  journal = {Geochemistry, Geophysics, Geosystems}, year = {2015},
+  volume  = {16}, number = {12}, pages = {4494--4506}, doi = {10.1002/2015GC006070}
+}
+
+@article{dietze2019grain,                      % [OK] EMMAgeo
+  author  = {Dietze, Michael and Dietze, Elisabeth},
+  title   = {Grain-size Distribution Unmixing Using the R Package EMMAgeo},
+  journal = {E&G Quaternary Science Journal}, year = {2019}, volume = {68}, pages = {29--46},
+  doi     = {10.5194/egqsj-68-29-2019}
+}
+
+@article{dietze2022application_CHECK,          % [CHECK] exists but paywalled -- READ FULL TEXT (no hidden KS/cond threshold?)
+  author  = {Dietze, Elisabeth and Dietze, Michael},
+  title   = {Application of End-member Modelling to Grain-size Data: Constraints and Limitations},
+  journal = {Sedimentology}, year = {2022}, volume = {69}, number = {5},
+  doi     = {10.1111/sed.12929}, note = {full text not retrieved -- verify before citing}
+}
+
+@article{graham2025tracing_CHECK,              % [CHECK] STRONGEST COMPETITOR; verify author full names + pages
+  author  = {Graham, N. and Richardson, N. and Friedlander, M. P. and Saylor, J.},
+  title   = {Tracing Sedimentary Origins in Multivariate Geochronology via Constrained Tensor Factorization},
+  journal = {Mathematical Geosciences}, year = {2025}, volume = {57}, pages = {601--628},
+  doi     = {10.1007/s11004-024-10175-0}, note = {author names/pages not first-hand confirmed; blind tensor -- distinguish}
+}
+
+@article{saylor2019characterizing_CHECK,       % [CHECK] PDF corrupt; blind NMF foil. verify identifiability discussion
+  author  = {Saylor, Joel E. and Jordan, Jarrett C. and Sundell, Kurt E.},
+  title   = {Characterizing Sediment Sources by Non-negative Matrix Factorization of Detrital Geochronological Data},
+  journal = {Earth and Planetary Science Letters}, year = {2019}, volume = {512}, pages = {46--58},
+  doi     = {10.1016/j.epsl.2019.01.044}, note = {identifiability section unread}
+}
+
+@article{qi2025review,                         % [OK] blind-only identifiability review; does NOT occupy known-H+KS niche
+  author  = {Qi, Qian and van der Heijden, Peter G. M.},
+  title   = {A Review of NMF, PLSA, LBA, EMA, and LCA with a Focus on the Identifiability Issue},
+  journal = {arXiv preprint}, year = {2025}, note = {arXiv:2512.22282; NOTE: no "Chen" co-author}
+}
+
+% ===== (E) Bridge lemma: KS -> geometry =====
+
+@book{horn2013matrix,                          % [OK] Gram eigenvalues 1+-cos(theta), kappa, Gershgorin -- algebraic skeleton
+  author    = {Horn, Roger A. and Johnson, Charles R.},
+  title     = {Matrix Analysis},
+  edition   = {2nd}, publisher = {Cambridge University Press}, year = {2013},
+  isbn      = {9780521548236}
+}
+
+@misc{petersen2012matrix,                      % [OK] Gaussian overlap integral closed form (sec 8.1.8)
+  author = {Petersen, Kaare Brandt and Pedersen, Michael Syskind},
+  title  = {The Matrix Cookbook},
+  year   = {2012}, howpublished = {Technical University of Denmark}, note = {sec. 8.1.8, Gaussian density products}
+}
+
+@article{gibbs2002choosing,                    % [OK] KS only upper-bounded by other metrics; no general reverse arrow
+  author  = {Gibbs, Alison L. and Su, Francis Edward},
+  title   = {On Choosing and Bounding Probability Metrics},
+  journal = {International Statistical Review}, year = {2002}, volume = {70}, number = {3}, pages = {419--435},
+  doi     = {10.1111/j.1751-5823.2002.tb00178.x}, note = {arXiv:math/0209021}
+}
+
+@article{gaunt2022bounding,                    % [OK] d_KS <= C(M d_p)^{p/(p+1)}; direction opposite to bridge -- caveat
+  author  = {Gaunt, Robert E. and Li, Siqi},
+  title   = {Bounding Kolmogorov Distances Through Wasserstein and Related Integral Probability Metrics},
+  journal = {arXiv preprint / J. Math. Anal. Appl.}, year = {2022}, note = {arXiv:2201.12087}
+}
+
+@article{sason2016fdivergence,                 % [OK] reverse direction needs density lower bound / bounded LR
+  author  = {Sason, Igal and Verd{\'u}, Sergio},
+  title   = {f-Divergence Inequalities},
+  journal = {IEEE Transactions on Information Theory}, year = {2016}, volume = {62}, number = {11}, pages = {5973--6006},
+  doi     = {10.1109/TIT.2016.2603151}
+}
+
+@article{vandermeer2012collinearity,           % [OK] remote-sensing analogue: endmember collinearity -> variance inflation (VIF)
+  author  = {van der Meer, Freek D. and Jia, Xiuping},
+  title   = {Collinearity and Orthogonality of Endmembers in Linear Spectral Unmixing},
+  journal = {International Journal of Applied Earth Observation and Geoinformation}, year = {2012},
+  volume  = {18}, pages = {491--503}, doi = {10.1016/j.jag.2011.10.004}
+}
+
+@article{chang2001fully,                       % [OK] FCLS: simplex-constrained abundance estimation analogue
+  author  = {Chang, Chein-I and Heinz, Daniel C.},
+  title   = {Fully Constrained Least Squares Linear Spectral Mixture Analysis},
+  journal = {IEEE Transactions on Geoscience and Remote Sensing}, year = {2001}, volume = {39}, number = {3}, pages = {529--545},
+  doi     = {10.1109/36.911111}
+}

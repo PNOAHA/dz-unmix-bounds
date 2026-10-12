@@ -1,0 +1,100 @@
+# DZ-Unmix Bounds — Full Grid (v1, paper data)
+#
+# 5040 configs = 6 K × 7 ρ × 5 N × 3 ε × 2 α × 1 bw × 1 method × 4 seeds.
+#
+# 设计思路（v1.1 pilot 实证驱动）：
+#   - K × ρ 是已知的 *interaction failure axis* → 主轴密采样（6×7=42 cells）
+#   - N, ε 是 cofactor → 各 3-5 值
+#   - α 仅 2 值（v1.1 显示影响小）
+#   - bandwidth 维度归 1（v1.1 实证：对 top1 几乎无影响，扫无意义）
+#   - 4 seeds — 用于 cell-level mean ± std 估计
+#
+# 计算预算估算（实测后更新）：
+#   - 稳态: 0.10 s/config（K=2 到 K=8 cost 差不多——sklearn NMF 在小矩阵上 K 影响小）
+#   - 本地单核串行: 5040 × 0.10 ≈ 8.4 分钟  ← 本地完全够跑，不必非上 D107
+#   - D107 SLURM (60 cores): wall clock < 1 分钟纯算 + 几分钟调度开销
+#
+# 结论：D107 主要是"标准化、可重现"价值（写论文 reproducibility 章节用），
+# 不是"否则跑不完"。本地跑等价于 dry-run validation 的延伸。
+#
+# 跑法：
+#   # 1. 在本地或 D107 上生成 configs.parquet
+#   python -m src.grid config/grid_full.yaml --out outputs/full_v1/configs.parquet
+#
+#   # 2. 本地单核 (~34 min) 验证用
+#   python scripts/run_local.py outputs/full_v1/configs.parquet
+#
+#   # 3. D107 SLURM 投递（先填 slurm/submit.sh 的 partition/QoS TODO）
+#   MAX_CONCURRENT=60 ./slurm/submit.sh outputs/full_v1/configs.parquet
+#
+# SLURM array size 注意：D107 默认 MaxArraySize 通常是 10000，5040 安全。
+# 若 sbatch 投递报 "MaxArraySize" error，需调高 MAX_CONCURRENT 或 split 投递。
+
+grid:
+  name: full_v1
+  description: "第二篇方法论文的主 grid——K×ρ phase diagram 主轴 + N/ε cofactor。"
+  version: "1.0.0"
+  created: "2026-05-26"
+  source_paper: "DZ-Unmix Bounds Paper §3 (phase diagram)"
+
+# ============================================================
+# 数据生成参数（合成 ground truth）
+# 主轴 K, ρ — 失败相图的两个轴
+# ============================================================
+data:
+  n_endmembers:
+    values: [2, 3, 4, 5, 6, 8]
+    description: "K — 端元数。论文 phase diagram y-axis。8 是 high-dim stress"
+    role: "primary_axis"
+
+  endmember_similarity:
+    values: [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
+    description: "ρ — log-spaced。0.005-0.05 是 failure regime，0.1 临界，0.2-0.5 easy"
+    role: "primary_axis"
+
+  n_zircons_per_sample:
+    values: [30, 100, 300, 1000, 3000]
+    description: "N — 每样本锆石颗数。30 是 stress（地质少见），3000 是充足上限"
+    role: "cofactor"
+
+  noise_level:
+    values: [0.0, 0.05, 0.15]
+    description: "ε — 测量噪声。0=ideal, 0.05=典型 U-Pb 实验, 0.15=stress"
+    role: "cofactor"
+
+  dirichlet_alpha:
+    values: [0.3, 1.0]
+    description: "α — 0.3 偏态混合（有主导源区），1.0 均匀混合（dominant 识别更难）"
+    role: "cofactor_minor"
+
+# ============================================================
+# 方法超参（bandwidth 维度归 1 — v1.1 pilot 实证基础）
+# ============================================================
+method_params:
+  bandwidth:
+    values: [10.0]
+    description: "KDE bandwidth 固定 10 Ma。v1.0 pilot 实证：对 top1 几乎无影响，归 1 节约 budget"
+
+# ============================================================
+# 方法（v1: supervised NMF only；v2 会加 DZmix / Sambridge 做对比）
+# ============================================================
+methods:
+  - name: supervised_nmf
+    description: "From dz-unmix-cg.dz_unmixing_experiment.supervised_unmix (frozen upstream)"
+
+# ============================================================
+# 实验控制
+# ============================================================
+control:
+  seeds: [7, 13, 21, 42]
+  description_seeds: "4 seeds — 用于每 cell 的 mean±std；3 太少（CI 宽），5 在边界区饱和"
+  n_folds: 5
+  n_mixed_samples: 100
+  description_n_mixed: "每 config 生成 100 mixed samples → 5-fold CV → 80 train / 20 test"
+
+# ============================================================
+# 输出
+# ============================================================
+output:
+  base_dir: outputs/full_v1
+  format: parquet

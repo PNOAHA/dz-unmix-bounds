@@ -5,3 +5,17 @@ __pycache__/
 # large per-seed raw atlas is archived separately on Zenodo (see README "Large data")
 phase3d.csv
 phase3d.csv.gz
+
+# --- added 2026-10-12 cloud backup: keep repo small; big data lives on Zenodo/cluster ---
+.pytest_cache/
+*.whl
+*.parquet
+d107_paper2_addon/zenodo_paper3/
+d107_paper2_addon/realdata.csv
+*.eml
+*_bak
+*_bak.md
+*.postpolish_bak
+*.preassembly_polish_bak
+*.superseded
+*.log

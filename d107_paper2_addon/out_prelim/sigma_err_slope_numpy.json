@@ -1,0 +1,1164 @@
+{
+  "meta": {
+    "task": "slope",
+    "backend": "numpy",
+    "sigma": 25.0,
+    "bw": 12.0,
+    "noise": 0.0,
+    "R": 200,
+    "w_kind": "endpoint",
+    "rhos": [
+      0.05,
+      0.07,
+      0.09,
+      0.12,
+      0.16,
+      0.21,
+      0.28,
+      0.36
+    ],
+    "Ns": [
+      2000,
+      20000,
+      80000
+    ]
+  },
+  "cells": [
+    {
+      "sigma_err": 0.18838695345722925,
+      "sigma_err_tangent_eigs": [
+        0.03548964423289626,
+        -3.469446951953614e-18
+      ],
+      "top1": 0.735,
+      "n_fail": 53,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.4320011258626644,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.6003970678954658,
+        0.39960293210453446
+      ],
+      "K": 2,
+      "rho": 0.05,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 399.99999999999994
+    },
+    {
+      "sigma_err": 0.14376013321138287,
+      "sigma_err_tangent_eigs": [
+        0.02066697590095455,
+        8.673617379884035e-19
+      ],
+      "top1": 0.86,
+      "n_fail": 28,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.45007115074662546,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.6121105142901184,
+        0.3878894857098817
+      ],
+      "K": 2,
+      "rho": 0.07,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 204.08163265306118
+    },
+    {
+      "sigma_err": 0.11204743548242964,
+      "sigma_err_tangent_eigs": [
+        0.012554627798189232,
+        2.168404344971009e-18
+      ],
+      "top1": 0.905,
+      "n_fail": 19,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.467433555341465,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.6016653129960061,
+        0.39833468700399394
+      ],
+      "K": 2,
+      "rho": 0.09,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 123.4567901234568
+    },
+    {
+      "sigma_err": 0.08999213344714124,
+      "sigma_err_tangent_eigs": [
+        0.008098584082368077,
+        0.0
+      ],
+      "top1": 0.97,
+      "n_fail": 6,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.45766673595096147,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.6054438409731387,
+        0.39455615902686103
+      ],
+      "K": 2,
+      "rho": 0.12,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 69.44444444444444
+    },
+    {
+      "sigma_err": 0.06889958956922901,
+      "sigma_err_tangent_eigs": [
+        0.004747153442808211,
+        4.336808689942018e-19
+      ],
+      "top1": 0.985,
+      "n_fail": 3,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.4757124209490247,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.5972609918140538,
+        0.40273900818594605
+      ],
+      "K": 2,
+      "rho": 0.16,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 39.0625
+    },
+    {
+      "sigma_err": 0.04738038199370209,
+      "sigma_err_tangent_eigs": [
+        0.0022449005978691294,
+        1.0842021724855044e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6036773291105788,
+        0.3963226708894213
+      ],
+      "K": 2,
+      "rho": 0.21,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 22.67573696145125
+    },
+    {
+      "sigma_err": 0.03852783520898757,
+      "sigma_err_tangent_eigs": [
+        0.0014843940858909018,
+        2.168404344971009e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6061937928302752,
+        0.39380620716972464
+      ],
+      "K": 2,
+      "rho": 0.28,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 12.755102040816324
+    },
+    {
+      "sigma_err": 0.03304594620078399,
+      "sigma_err_tangent_eigs": [
+        0.0010920345603051102,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6089923999520136,
+        0.39100760004798624
+      ],
+      "K": 2,
+      "rho": 0.36,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 7.71604938271605
+    },
+    {
+      "sigma_err": 0.06230332528012939,
+      "sigma_err_tangent_eigs": [
+        0.0038817043409616102,
+        -1.0842021724855044e-19
+      ],
+      "top1": 0.99,
+      "n_fail": 2,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.47330897531733046,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.5952625955590809,
+        0.4047374044409192
+      ],
+      "K": 2,
+      "rho": 0.05,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 399.99999999999994
+    },
+    {
+      "sigma_err": 0.0441452917347538,
+      "sigma_err_tangent_eigs": [
+        0.0019488067823465226,
+        0.0
+      ],
+      "top1": 0.99,
+      "n_fail": 2,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.49382144118285587,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.5988075549470632,
+        0.40119244505293716
+      ],
+      "K": 2,
+      "rho": 0.07,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 204.08163265306118
+    },
+    {
+      "sigma_err": 0.037319000957021176,
+      "sigma_err_tangent_eigs": [
+        0.0013927078324301476,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6002013741953847,
+        0.399798625804615
+      ],
+      "K": 2,
+      "rho": 0.09,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 123.4567901234568
+    },
+    {
+      "sigma_err": 0.025233379080891703,
+      "sigma_err_tangent_eigs": [
+        0.000636723419839983,
+        -1.3552527156068805e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6016683962950171,
+        0.39833160370498305
+      ],
+      "K": 2,
+      "rho": 0.12,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 69.44444444444444
+    },
+    {
+      "sigma_err": 0.019371658931261065,
+      "sigma_err_tangent_eigs": [
+        0.00037526116974910664,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6035309736338356,
+        0.3964690263661641
+      ],
+      "K": 2,
+      "rho": 0.16,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 39.0625
+    },
+    {
+      "sigma_err": 0.016390760412520224,
+      "sigma_err_tangent_eigs": [
+        0.0002686570269006401,
+        -5.421010862427522e-20
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6064966028799111,
+        0.39350339712008875
+      ],
+      "K": 2,
+      "rho": 0.21,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 22.67573696145125
+    },
+    {
+      "sigma_err": 0.012633398122630854,
+      "sigma_err_tangent_eigs": [
+        0.0001596027481248928,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6060843764148813,
+        0.39391562358511867
+      ],
+      "K": 2,
+      "rho": 0.28,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 12.755102040816324
+    },
+    {
+      "sigma_err": 0.011019194802461883,
+      "sigma_err_tangent_eigs": [
+        0.00012142265409460296,
+        -6.776263578034403e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6073866218074845,
+        0.3926133781925156
+      ],
+      "K": 2,
+      "rho": 0.36,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 7.71604938271605
+    },
+    {
+      "sigma_err": 0.043329166104995334,
+      "sigma_err_tangent_eigs": [
+        0.0018774166353542766,
+        -2.710505431213761e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5945689676449747,
+        0.4054310323550255
+      ],
+      "K": 2,
+      "rho": 0.05,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 399.99999999999994
+    },
+    {
+      "sigma_err": 0.02346947407161177,
+      "sigma_err_tangent_eigs": [
+        0.0005508162131980571,
+        -2.710505431213761e-20
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.601848240991216,
+        0.398151759008784
+      ],
+      "K": 2,
+      "rho": 0.07,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 204.08163265306118
+    },
+    {
+      "sigma_err": 0.017462467753663245,
+      "sigma_err_tangent_eigs": [
+        0.0003049377800477287,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6021619107708013,
+        0.3978380892291982
+      ],
+      "K": 2,
+      "rho": 0.09,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 123.4567901234568
+    },
+    {
+      "sigma_err": 0.013879422919109203,
+      "sigma_err_tangent_eigs": [
+        0.00019263838056749383,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6023225102409743,
+        0.39767748975902556
+      ],
+      "K": 2,
+      "rho": 0.12,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 69.44444444444444
+    },
+    {
+      "sigma_err": 0.010165833569885915,
+      "sigma_err_tangent_eigs": [
+        0.0001033441721706194,
+        0.0
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6030939798910505,
+        0.3969060201089492
+      ],
+      "K": 2,
+      "rho": 0.16,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 39.0625
+    },
+    {
+      "sigma_err": 0.008048784475501192,
+      "sigma_err_tangent_eigs": [
+        6.478293153306899e-05,
+        3.3881317890172014e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6039856816608289,
+        0.39601431833917156
+      ],
+      "K": 2,
+      "rho": 0.21,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 22.67573696145125
+    },
+    {
+      "sigma_err": 0.006491718280096572,
+      "sigma_err_tangent_eigs": [
+        4.214240622814e-05,
+        1.6940658945086007e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6058417357569577,
+        0.3941582642430424
+      ],
+      "K": 2,
+      "rho": 0.28,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 12.755102040816324
+    },
+    {
+      "sigma_err": 0.004949385046626542,
+      "sigma_err_tangent_eigs": [
+        2.4496412339770412e-05,
+        -2.541098841762901e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.6075936427281808,
+        0.39240635727181916
+      ],
+      "K": 2,
+      "rho": 0.36,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 7.71604938271605
+    },
+    {
+      "sigma_err": 0.12491529344653786,
+      "sigma_err_tangent_eigs": [
+        0.015603830536834663,
+        0.011554019169613586,
+        -2.5309344463958494e-18
+      ],
+      "top1": 0.785,
+      "n_fail": 43,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": 0.35439105097958373,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.4684798382414605,
+        0.19972856049377288,
+        0.33179160126476664
+      ],
+      "K": 3,
+      "rho": 0.05,
+      "N": 2000,
+      "regime": "ill",
+      "lan_threshold": 159999.99999999997
+    },
+    {
+      "sigma_err": 0.08405422972051386,
+      "sigma_err_tangent_eigs": [
+        0.007065113533908917,
+        0.005393175239097742,
+        4.336808689942018e-19
+      ],
+      "top1": 0.885,
+      "n_fail": 23,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": 0.4160634243591765,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.5202548268111031,
+        0.10639769134536352,
+        0.3733474818435334
+      ],
+      "K": 3,
+      "rho": 0.07,
+      "N": 2000,
+      "regime": "ill",
+      "lan_threshold": 41649.31278633901
+    },
+    {
+      "sigma_err": 0.0554106223008791,
+      "sigma_err_tangent_eigs": [
+        0.00307033706377068,
+        0.0015771683353177437,
+        -5.421010862427522e-20
+      ],
+      "top1": 0.95,
+      "n_fail": 10,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": 0.46563000397690624,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.5462616268148844,
+        0.0479880902273928,
+        0.4057502829577227
+      ],
+      "K": 3,
+      "rho": 0.09,
+      "N": 2000,
+      "regime": "ill",
+      "lan_threshold": 15241.57902758726
+    },
+    {
+      "sigma_err": 0.04365027315945084,
+      "sigma_err_tangent_eigs": [
+        0.0019053463468946743,
+        0.0002254727069292832,
+        -2.2451265100080386e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5644743932277937,
+        0.01238359585937818,
+        0.42314201091282805
+      ],
+      "K": 3,
+      "rho": 0.12,
+      "N": 2000,
+      "regime": "ill",
+      "lan_threshold": 4822.530864197532
+    },
+    {
+      "sigma_err": 0.034997985868852236,
+      "sigma_err_tangent_eigs": [
+        0.0012248590148763805,
+        3.545042040768114e-05,
+        2.5649864804935955e-20
+      ],
+      "top1": 0.99,
+      "n_fail": 2,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": 0.4985068971087645,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.5713427913016289,
+        0.0033092189336797694,
+        0.4253479897646914
+      ],
+      "K": 3,
+      "rho": 0.16,
+      "N": 2000,
+      "regime": "ill",
+      "lan_threshold": 1525.8789062499998
+    },
+    {
+      "sigma_err": 0.030084346585171385,
+      "sigma_err_tangent_eigs": [
+        0.0009050679094567131,
+        2.4263957441907984e-05,
+        1.2180863529975723e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5757373601515118,
+        0.002286880610565629,
+        0.4219757592379223
+      ],
+      "K": 3,
+      "rho": 0.21,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 514.1890467449264
+    },
+    {
+      "sigma_err": 0.0336075772744144,
+      "sigma_err_tangent_eigs": [
+        0.001129469250255735,
+        0.0005068150915030283,
+        9.61802758669702e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.568334584496874,
+        0.02307553477401964,
+        0.4085898807291068
+      ],
+      "K": 3,
+      "rho": 0.28,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 162.69262807163676
+    },
+    {
+      "sigma_err": 0.04977638365559536,
+      "sigma_err_tangent_eigs": [
+        0.002477688369829021,
+        0.00036658425892527265,
+        4.411888100611712e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5076014108437793,
+        0.14326719701391102,
+        0.3491313921423094
+      ],
+      "K": 3,
+      "rho": 0.36,
+      "N": 2000,
+      "regime": "LAN",
+      "lan_threshold": 59.537418076512736
+    },
+    {
+      "sigma_err": 0.12037256616914839,
+      "sigma_err_tangent_eigs": [
+        0.014489554686146006,
+        0.0010798017999503933,
+        -1.2279310494152237e-18
+      ],
+      "top1": 0.97,
+      "n_fail": 6,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": 0.32988440230145805,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.4692901332595148,
+        0.19902503597161023,
+        0.3316848307688754
+      ],
+      "K": 3,
+      "rho": 0.05,
+      "N": 20000,
+      "regime": "ill",
+      "lan_threshold": 159999.99999999997
+    },
+    {
+      "sigma_err": 0.07122527101149306,
+      "sigma_err_tangent_eigs": [
+        0.005073039230660634,
+        0.0006151361740560654,
+        3.306634123130867e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5158545204449118,
+        0.10616638867650968,
+        0.37797909087857884
+      ],
+      "K": 3,
+      "rho": 0.07,
+      "N": 20000,
+      "regime": "ill",
+      "lan_threshold": 41649.31278633901
+    },
+    {
+      "sigma_err": 0.031137306959735322,
+      "sigma_err_tangent_eigs": [
+        0.0009695318847047817,
+        0.00042132295008122513,
+        4.6840221136522036e-20
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5492608817331964,
+        0.04526778963336677,
+        0.4054713286334365
+      ],
+      "K": 3,
+      "rho": 0.09,
+      "N": 20000,
+      "regime": "ill",
+      "lan_threshold": 15241.57902758726
+    },
+    {
+      "sigma_err": 0.014726919670837488,
+      "sigma_err_tangent_eigs": [
+        0.00021688216299130012,
+        5.9033960132079685e-05,
+        3.742165091189897e-20
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5672070111118557,
+        0.010899312785426536,
+        0.4218936761027177
+      ],
+      "K": 3,
+      "rho": 0.12,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 4822.530864197532
+    },
+    {
+      "sigma_err": 0.011558561137898115,
+      "sigma_err_tangent_eigs": [
+        0.00013360033557852856,
+        1.8527565601569699e-06,
+        2.942005411455889e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5733525686895369,
+        0.0021045728294938975,
+        0.4245428584809689
+      ],
+      "K": 3,
+      "rho": 0.16,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 1525.8789062499998
+    },
+    {
+      "sigma_err": 0.009538847454463694,
+      "sigma_err_tangent_eigs": [
+        9.098961075952849e-05,
+        5.315178887094604e-07,
+        1.2561688984183779e-20
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5751695538109063,
+        0.0010719924056765277,
+        0.4237584537834172
+      ],
+      "K": 3,
+      "rho": 0.21,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 514.1890467449264
+    },
+    {
+      "sigma_err": 0.007691031736142404,
+      "sigma_err_tangent_eigs": [
+        5.915196916634964e-05,
+        4.560659440663424e-05,
+        7.887994321305672e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5727179694353431,
+        0.012444219832206782,
+        0.41483781073244985
+      ],
+      "K": 3,
+      "rho": 0.28,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 162.69262807163676
+    },
+    {
+      "sigma_err": 0.017302915262598813,
+      "sigma_err_tangent_eigs": [
+        0.00029939087658467493,
+        4.358772472910509e-05,
+        -7.501167445301968e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5081275065019778,
+        0.14450876710364777,
+        0.34736372639437463
+      ],
+      "K": 3,
+      "rho": 0.36,
+      "N": 20000,
+      "regime": "LAN",
+      "lan_threshold": 59.537418076512736
+    },
+    {
+      "sigma_err": 0.12071068704143678,
+      "sigma_err_tangent_eigs": [
+        0.014571069966015694,
+        0.0003167142168175996,
+        2.7054902350598982e-18
+      ],
+      "top1": 0.955,
+      "n_fail": 9,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": 0.3465744773370932,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.47108815110426605,
+        0.1993487739717016,
+        0.32956307492403225
+      ],
+      "K": 3,
+      "rho": 0.05,
+      "N": 80000,
+      "regime": "ill",
+      "lan_threshold": 159999.99999999997
+    },
+    {
+      "sigma_err": 0.07120010985909618,
+      "sigma_err_tangent_eigs": [
+        0.0050694556439473655,
+        0.00014028798708838654,
+        -6.121426057277121e-19
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.517564880244043,
+        0.10557772059296205,
+        0.37685739916299527
+      ],
+      "K": 3,
+      "rho": 0.07,
+      "N": 80000,
+      "regime": "ill",
+      "lan_threshold": 41649.31278633901
+    },
+    {
+      "sigma_err": 0.032248185287731386,
+      "sigma_err_tangent_eigs": [
+        0.0010399454543518552,
+        9.220863545580032e-05,
+        5.1804656877780843e-20
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5480847786001248,
+        0.04539623779464352,
+        0.4065189836052317
+      ],
+      "K": 3,
+      "rho": 0.09,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 15241.57902758726
+    },
+    {
+      "sigma_err": 0.007111520913033733,
+      "sigma_err_tangent_eigs": [
+        5.057372969651614e-05,
+        4.5345048020995255e-05,
+        -9.052664623780335e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5662876884926774,
+        0.010628768911264942,
+        0.4230835425960578
+      ],
+      "K": 3,
+      "rho": 0.12,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 4822.530864197532
+    },
+    {
+      "sigma_err": 0.005543255873297334,
+      "sigma_err_tangent_eigs": [
+        3.0727685676845386e-05,
+        1.4260757879061446e-06,
+        -8.095048633937437e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5723922051156797,
+        0.002023307113529113,
+        0.42558448777079133
+      ],
+      "K": 3,
+      "rho": 0.16,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 1525.8789062499998
+    },
+    {
+      "sigma_err": 0.004287523804223226,
+      "sigma_err_tangent_eigs": [
+        1.83828603717808e-05,
+        1.8984672947000282e-07,
+        2.389400029985859e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5752448096373156,
+        0.0009163574074577837,
+        0.4238388329552268
+      ],
+      "K": 3,
+      "rho": 0.21,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 514.1890467449264
+    },
+    {
+      "sigma_err": 0.004056780975471826,
+      "sigma_err_tangent_eigs": [
+        1.6457471882950143e-05,
+        1.557328854887395e-05,
+        1.8801235731446035e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5732900951976141,
+        0.0117828068364851,
+        0.414927097965901
+      ],
+      "K": 3,
+      "rho": 0.28,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 162.69262807163676
+    },
+    {
+      "sigma_err": 0.008902347848762017,
+      "sigma_err_tangent_eigs": [
+        7.925179722035771e-05,
+        1.0607490785292982e-05,
+        3.5578444280920336e-21
+      ],
+      "top1": 1.0,
+      "n_fail": 0,
+      "wstar_true": 0.4166666666666667,
+      "wstar_mean_in_fail": NaN,
+      "wstar_collapsed_frac_in_fail": NaN,
+      "what_mean": [
+        0.5073942335361252,
+        0.14565908295971622,
+        0.3469466835041588
+      ],
+      "K": 3,
+      "rho": 0.36,
+      "N": 80000,
+      "regime": "LAN",
+      "lan_threshold": 59.537418076512736
+    }
+  ],
+  "fits": [
+    {
+      "slope": -0.9167003989403941,
+      "intercept": -4.393201335028375,
+      "n_points": 8,
+      "window": [
+        0.05000000000000001,
+        0.36
+      ],
+      "K": 2,
+      "N": 2000,
+      "theory_slope": -1,
+      "c_K_proxy": 0.5528049206446983
+    },
+    {
+      "slope": -0.8967939678638918,
+      "intercept": -5.50392737686558,
+      "n_points": 8,
+      "window": [
+        0.05000000000000001,
+        0.36
+      ],
+      "K": 2,
+      "N": 20000,
+      "theory_slope": -1,
+      "c_K_proxy": 0.5756913569097158
+    },
+    {
+      "slope": -1.030946073190958,
+      "intercept": -6.4168630569062595,
+      "n_points": 8,
+      "window": [
+        0.05000000000000001,
+        0.36
+      ],
+      "K": 2,
+      "N": 80000,
+      "theory_slope": -1,
+      "c_K_proxy": 0.4621008599816848
+    },
+    {
+      "slope": 0.9210428825661254,
+      "intercept": -2.1153681859469113,
+      "n_points": 3,
+      "window": [
+        0.21,
+        0.36
+      ],
+      "K": 3,
+      "N": 2000,
+      "theory_slope": -2,
+      "c_K_proxy": 5.3928987606907945
+    },
+    {
+      "slope": -0.7610538645716525,
+      "intercept": -5.840837610981246,
+      "n_points": 4,
+      "window": [
+        0.12000000000000001,
+        0.28
+      ],
+      "K": 3,
+      "N": 20000,
+      "theory_slope": -2,
+      "c_K_proxy": 0.4110280433932746
+    },
+    {
+      "slope": -2.2367542930972335,
+      "intercept": -9.186465767127345,
+      "n_points": 4,
+      "window": [
+        0.08999999999999998,
+        0.21
+      ],
+      "K": 3,
+      "N": 80000,
+      "theory_slope": -2,
+      "c_K_proxy": 0.028967672553936057
+    }
+  ]
+}

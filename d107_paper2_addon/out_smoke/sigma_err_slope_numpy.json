@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "task": "slope",
+    "backend": "numpy",
+    "sigma": 25.0,
+    "bw": 12.0,
+    "noise": 0.0,
+    "R": 200,
+    "w_kind": "middle",
+    "rhos": [
+      0.1,
+      0.3
+    ],
+    "Ns": [
+      50,
+      300
+    ]
+  },
+  "cells": [
+    {
+      "sigma_err": 0.47373884850803955,
+      "sigma_err_tangent_eigs": [
+        0.22442849658572325,
+        -3.469446951953614e-17
+      ],
+      "top1": 0.555,
+      "n_fail": 89,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.2387539855830749,
+      "wstar_collapsed_frac_in_fail": 0.3146067415730337,
+      "what_mean": [
+        0.5631897782095292,
+        0.436810221790471
+      ],
+      "K": 2,
+      "rho": 0.1,
+      "N": 50,
+      "regime": "ill",
+      "lan_threshold": 99.99999999999999
+    },
+    {
+      "sigma_err": 0.23071676737503405,
+      "sigma_err_tangent_eigs": [
+        0.05323022674798558,
+        5.204170427930421e-18
+      ],
+      "top1": 0.77,
+      "n_fail": 46,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.40263563166710925,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.6176863161805715,
+        0.38231368381942865
+      ],
+      "K": 2,
+      "rho": 0.3,
+      "N": 50,
+      "regime": "LAN",
+      "lan_threshold": 11.111111111111112
+    },
+    {
+      "sigma_err": 0.25194180780260045,
+      "sigma_err_tangent_eigs": [
+        0.06347467451884246,
+        0.0
+      ],
+      "top1": 0.73,
+      "n_fail": 54,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.3884967938507209,
+      "wstar_collapsed_frac_in_fail": 0.037037037037037035,
+      "what_mean": [
+        0.6054791828848296,
+        0.39452081711516984
+      ],
+      "K": 2,
+      "rho": 0.1,
+      "N": 300,
+      "regime": "LAN",
+      "lan_threshold": 99.99999999999999
+    },
+    {
+      "sigma_err": 0.10095522505393945,
+      "sigma_err_tangent_eigs": [
+        0.010191957465691563,
+        4.336808689942018e-19
+      ],
+      "top1": 0.88,
+      "n_fail": 24,
+      "wstar_true": 0.625,
+      "wstar_mean_in_fail": 0.47538227252716997,
+      "wstar_collapsed_frac_in_fail": 0.0,
+      "what_mean": [
+        0.6021997914943691,
+        0.3978002085056309
+      ],
+      "K": 2,
+      "rho": 0.3,
+      "N": 300,
+      "regime": "LAN",
+      "lan_threshold": 11.111111111111112
+    }
+  ],
+  "fits": [
+    {
+      "slope": NaN,
+      "n_points": 1,
+      "window": [],
+      "note": "too few LAN points",
+      "K": 2,
+      "N": 50,
+      "theory_slope": -1,
+      "c_K_proxy": NaN
+    },
+    {
+      "slope": -0.8324329216137896,
+      "intercept": -3.2953047757808145,
+      "n_points": 2,
+      "window": [
+        0.10000000000000002,
+        0.3
+      ],
+      "K": 2,
+      "N": 300,
+      "theory_slope": -1,
+      "c_K_proxy": 0.6418417259640097
+    }
+  ]
+}

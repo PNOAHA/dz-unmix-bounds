@@ -1,0 +1,74 @@
+# DZ-Unmix Bounds — Pilot Grid (v1.1 stress edition)
+#
+# 216 configs × 1 method × 3 seeds = 648 tasks, ~ 3 min single core.
+#
+# 设计目的：在小规模 grid 上覆盖从 *easy regime* 到 *failure regime* 的整段相图。
+# v1.0 的 pilot grid 全部 top1 > 0.84，找不到 failure boundary；v1.1 改进 ρ 启发式
+# 后 + 实证探索发现：
+#   - supervised NMF 对 ρ 重叠*单独*很 robust（K=2, ρ=0.1 仍 top1=0.98）
+#   - 真正的失败区在 K↑ × ρ↓ 的 interaction（K=5, ρ=0.01 → top1=0.34）
+#   - N↓ 和 ε↑ 单独不够触发失败，需要与 ρ↓ 联动
+#
+# 跑法：
+#   python -m src.grid config/grid_pilot.yaml --out outputs/pilot_v0/configs.parquet
+#   python scripts/run_local.py outputs/pilot_v0/configs.parquet
+
+grid:
+  name: pilot_v0
+  description: "v1.1 stress pilot — 探测 supervised NMF 的 K×ρ failure interaction"
+  version: "1.1.0"
+  created: "2026-05-26"
+
+# ============================================================
+# 数据生成参数（合成 ground truth）
+# ============================================================
+data:
+  n_endmembers:
+    values: [2, 3, 5]
+    description: "K — 含 K=5 是为了启动 K×ρ failure interaction"
+
+  n_zircons_per_sample:
+    values: [50, 500]
+    description: "N — 极少 vs 充足；单独不致失败但作为 cofactor"
+
+  endmember_similarity:
+    values: [0.01, 0.1, 0.5]
+    description: "ρ — 0.01 触发 failure（KS~0.04），0.5 是 easy regime（KS~0.99）"
+
+  noise_level:
+    values: [0.0, 0.05]
+    description: "ε — 测量噪声；与 ρ↓ 配合时才能进一步压 top1"
+
+  dirichlet_alpha:
+    values: [0.3, 1.0]
+    description: "α — 偏态 vs 均匀混合"
+
+# ============================================================
+# 方法超参
+# ============================================================
+method_params:
+  bandwidth:
+    values: [10.0]
+    description: "KDE bandwidth — 在 v1.0 pilot 中证实对 top1 几乎无影响，固定单值省 budget"
+
+# ============================================================
+# 方法选择
+# ============================================================
+methods:
+  - name: supervised_nmf
+    description: "From dz-unmix-cg.dz_unmixing_experiment.supervised_unmix"
+
+# ============================================================
+# 实验控制
+# ============================================================
+control:
+  seeds: [7, 13, 21]
+  n_folds: 5
+  n_mixed_samples: 100
+
+# ============================================================
+# 输出
+# ============================================================
+output:
+  base_dir: outputs/pilot_v0
+  format: parquet
