@@ -4,11 +4,9 @@ All notable changes to this reproducibility package. Version DOIs are minted by
 Zenodo from the GitHub releases (concept DOI: https://doi.org/10.5281/zenodo.20768131,
 which always resolves to the latest version).
 
-## [1.2.1] - 2026-10-19 (prepared, not released)
+## [1.2.1] - 2026-10-19
 
-- Prepared on local branch `release-v1.2.1` from `release-v1.2.0`; no push, tag,
-  GitHub release or Zenodo action. Published v1.2.0 remains the citation target
-  until Louise authorizes a release.
+- Released from branch `release-v1.2.1` (based on `release-v1.2.0`).
 - Added selected SI B.6/C.6-C.7/D.1-D.6/E.1-E.9 probes, eight small historical
   summaries, source hashes, exact per-script commands and isolated execution checks.
   The B.6 Dirichlet probe is a labelled reconstruction, not a recovered original.
@@ -25,7 +23,12 @@ which always resolves to the latest version).
   rebuilt within the original supplementary-table boundaries (81 / 110). Fig. 8 and
   fig8_diagnostic_numbers.json re-rendered: total 1091 analyses, 31-110 per sample,
   predicted spread 0.0667-0.1527, rho_crit 0.1287-0.2425; library KS distances unchanged.
-- Updated version metadata; removed `date-released` from this unreleased candidate.
+- Figure wording: Fig. 3 (repo Fig7_sigma_err_phase) and Fig. 8 in-figure labels now
+  state the external reference and illustrative substitutions conditionally; numbers unchanged.
+- data/realdata_k1_samples/README.md: per-sample range corrected to 31-110; dataset
+  licences (CC BY 4.0) and compilers recorded from the OneDZ and Figshare records;
+  open lower/upper Tuchengzi label linkage and the SL0932 103 Ma analysis disclosed.
+- Updated version metadata (version 1.2.1, date-released 2026-10-19).
 - Recorded numerical matches, mismatches and reduced-test limits; this preparation
   does not certify that every quoted supplementary number has been reproduced.
 

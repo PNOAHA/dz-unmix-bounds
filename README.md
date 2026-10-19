@@ -7,10 +7,9 @@ Code and data accompanying:
 > provenance unmixing.* Submitted to *Sedimentary Geology*.
 
 Archive: Zenodo concept DOI [10.5281/zenodo.20768131](https://doi.org/10.5281/zenodo.20768131)
-(always resolves to the latest published version). This checkout is **v1.2.1,
-prepared locally, not released**. The published release remains **v1.2.0**,
-version DOI [10.5281/zenodo.23470807](https://doi.org/10.5281/zenodo.23470807).
-No v1.2.1 version DOI exists yet; keep citing v1.2.0 until Louise authorizes release.
+(always resolves to the latest published version). This checkout is release **v1.2.1**
+(2026-10-19); the earlier release v1.2.0 has version DOI
+[10.5281/zenodo.23470807](https://doi.org/10.5281/zenodo.23470807).
 See `CHANGELOG.md`.
 
 This package reproduces every figure in the paper. The study (i) derives an
@@ -232,6 +231,7 @@ itself resolve the 82-cell endpoint-only wording discrepancy or upgrade numerica
 The code and the synthetic results in this repository are released under the MIT
 licence (see `LICENSE`). The fifteen real per-grain age samples in
 `data/realdata_k1_samples/` are **not** re-licensed: they are redistributed from
-published open datasets under their original terms (CC-BY or equivalent), and reuse
+published open datasets under their original terms (CC BY 4.0: OneDZ, Zenodo
+10.5281/zenodo.15522949; Puetz et al., Figshare 10.6084/m9.figshare.24852987.v1), and reuse
 requires attribution to the original studies listed per sample in that folder's
 README and in each CSV header (`source_doi`).

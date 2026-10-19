@@ -1,6 +1,6 @@
-# Supplementary numerical checks (local v1.2.1 candidate)
+# Supplementary numerical checks (v1.2.1)
 
-v1.2.1 is prepared, not released. Cite published v1.2.0 (10.5281/zenodo.23470807) until Louise authorizes release.
+Added in release v1.2.1 (2026-10-19).
 
 Only selected verification code and small result snapshots were extracted. No theory manuscript, working notes, other-paper drafts or full development directory is included. `SOURCES.json` records source-relative paths, SHA-256 hashes and portability fixes.
 

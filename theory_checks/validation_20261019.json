@@ -1,6 +1,6 @@
 {
   "date": "2026-10-19",
-  "status": "local candidate v1.2.1; prepared, not released",
+  "status": "validation run on the v1.2.1 release candidate (2026-10-19), before release",
   "environment": {
     "python": "3.12.13",
     "numpy": "2.4.3",
