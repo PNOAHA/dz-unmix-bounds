@@ -4,8 +4,9 @@
 # source_db: onedz
 # source_doi: https://doi.org/10.1080/00206814.2016.1168323
 # data_type: real
-# n_grains: 111
+# n_grains: 110
 age_Ma
+1847.600
 1814.700
 225.900
 1838.900
@@ -115,5 +116,3 @@ age_Ma
 307.100
 1845.500
 227.600
-229.900
-319.400

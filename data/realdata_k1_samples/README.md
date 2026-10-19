@@ -31,12 +31,12 @@ of the code. Please cite the original studies (per-sample `source_doi`) when reu
 
 | Sample | Formation | Depositional age (source) |
 |---|---|---|
-| 05FW007 | Longmen Fm (compiled metadata; link not verified in Yang et al., 2006) | Middle Jurassic in the Jingxi Basin (Hao et al., 2019, https://doi.org/10.1007/s00531-019-01743-5); youngest grain in file 143 Ma |
-| 05FW008 | Jiulongshan Fm (compiled metadata; link not verified) | early Late Jurassic in the Jingxi Basin (Hao et al., 2019); youngest grain 142 Ma |
-| 100821-1 | lower Tuchengzi Fm (Xu et al., 2016) | Late Jurassic–Early Cretaceous, ≈154–137 Ma (Xu et al., 2012, https://doi.org/10.1016/j.palwor.2012.10.003) |
-| 100821-3 | upper Tuchengzi Fm (Xu et al., 2016) | as above |
+| 05FW007 | Longmen Fm (Yang et al., 2006, Supplementary Table 1) | late Middle Jurassic in the Jingxi Basin (Hao et al., 2019, https://doi.org/10.1007/s00531-019-01743-5); youngest tabulated 206Pb/238U age 143 ± 3 Ma (1σ), unresolved conflict with the regional assignment |
+| 05FW008 | Jiulongshan Fm (Yang et al., 2006, Supplementary Table 1) | early Late Jurassic in the Jingxi Basin (Hao et al., 2019); youngest tabulated 206Pb/238U age 142 ± 2 Ma (1σ), unresolved conflict with the regional assignment |
+| 100821-1 | lower Tuchengzi Fm (Xu et al., 2016, Section 4.3; see note on labels) | Late Jurassic–Early Cretaceous, ≈154–137 Ma (Xu et al., 2012, https://doi.org/10.1016/j.palwor.2012.10.003) |
+| 100821-3 | upper Tuchengzi Fm (Xu et al., 2016, Section 4.3; see note on labels) | as above |
 | SL0929, SL0930, SL0931 | Denglouku Fm (Li et al., 2012) | Cretaceous; youngest zircon of the group 117 ± 3 Ma (Li et al., 2012) |
-| SL0932 | Quantou Fm (Li et al., 2012) | Cretaceous; reported youngest zircon 103 ± 5 Ma (not present in this file) |
+| SL0932 | Quantou Fm (Li et al., 2012) | Cretaceous; youngest zircon 103 ± 5 Ma reported in the text of Li et al. (2012, Section 4.1.2) but not identifiable in their Supplementary Table S1 (75 SL0932 analyses, youngest tabulated 206Pb/238U age 125 ± 3 Ma) |
 | R31354-S12518 | lower Denglouku Fm, ZC3.3 (Wang et al., 2022) | Lower Cretaceous (Wang et al., 2022) |
 | R31354-S12519 | lower Yingcheng Fm, ZC3.4 (Wang et al., 2022) | Lower Cretaceous |
 | R31370-S12650 | Yingcheng Fm, SY8 (Song et al., 2022) | Lower Cretaceous |
@@ -46,7 +46,23 @@ of the code. Please cite the original studies (per-sample `source_doi`) when reu
 | R31370-S12654 | Denglouku Fm, W902-1 / W-1 (Song et al., 2022) | Lower Cretaceous |
 
 Ages are as stated in the cited literature; youngest-zircon ages are maximum
-depositional ages. Known unresolved points (files not altered): grain counts of
-100821-1 / 100821-3 (82 / 111) differ from those reported by Xu et al. (2016)
-(110 / 81); the 103 ± 5 Ma grain reported for SL0932 is absent here. The same fifteen
+depositional ages.
+
+Record corrections in v1.2.1 (checked against the original supplementary tables and
+the OneDZ input files, Zenodo version https://doi.org/10.5281/zenodo.15522949):
+(i) 05FW007: two analyses (spot 12, 206 Ma; spot 17, 296 Ma) that had been dropped
+by a cross-sample de-duplication error during extraction were restored (57 -> 59);
+both are present in Yang et al. (2006), Supplementary Table 1, and in OneDZ.
+(ii) 100821-1 / 100821-3: OneDZ attaches the first analysis of the 100821-3 table to
+100821-1 and the first two analyses of the following sample (110909-1) to 100821-3.
+The arrays were rebuilt within the table boundaries of the original supplementary
+U-Pb table of Xu et al. (2016) under its printed sample labels (82 -> 81 and
+111 -> 110). Xu et al. (2016, Section 6.3.1) report the 81 / 110 analysis counts with
+the opposite labels, so the association of each array with the lower/upper
+Tuchengzi Formation remains unresolved.
+(iii) SL0932: unchanged (75 analyses = OneDZ Best Age values); the 103 ± 5 Ma
+analysis quoted in the text of Li et al. (2012) is not in their public table or in
+OneDZ, and is not added here.
+The ages are compiled analyses (OneDZ Best Age), not a uniformly
+concordance-filtered set. Total: 1091 analyses, 31-110 per sample. The same fifteen
 samples are analysed by the companion Bayesian study (dz-bayes-uq).

@@ -20,6 +20,11 @@ which always resolves to the latest version).
   archive; raw is omitted and may be requested from the author. No DOI invented.
 - Fixed Fig.1 companion label to `Pan, submitted-a` and re-rendered PDF/PNG/SVG.
   Added Barthelme & Usevich (2021), using the paper's existing reference data.
+- Real-sample record corrections (data/realdata_k1_samples): 05FW007 restored to 59
+  analyses (two analyses lost by a cross-sample de-duplication error); 100821-1 / -3
+  rebuilt within the original supplementary-table boundaries (81 / 110). Fig. 8 and
+  fig8_diagnostic_numbers.json re-rendered: total 1091 analyses, 31-110 per sample,
+  predicted spread 0.0667-0.1527, rho_crit 0.1287-0.2425; library KS distances unchanged.
 - Updated version metadata; removed `date-released` from this unreleased candidate.
 - Recorded numerical matches, mismatches and reduced-test limits; this preparation
   does not certify that every quoted supplementary number has been reproduced.

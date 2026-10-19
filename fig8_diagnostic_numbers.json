@@ -6,7 +6,7 @@
   ],
   "n_grains": {
     "min": 31,
-    "max": 111,
+    "max": 110,
     "median": 78.0,
     "total": 1091
   },
@@ -18,30 +18,30 @@
   "rho_split_130v145": 0.3829,
   "rho_split_130v160": 0.6827,
   "sigma_err_pred_range": [
-    0.0664,
+    0.0667,
     0.1527
   ],
   "rho_crit_range": [
-    0.1281,
+    0.1287,
     0.2425
   ],
   "dmu_crit_Ma_sigma15": [
-    4.84,
+    4.86,
     9.26
   ],
   "dmu_crit_Ma_sigma30": [
-    9.68,
+    9.72,
     18.52
   ],
   "split145_rho_sqrtN": [
     2.13,
-    4.03
+    4.02
   ],
   "per_sample": [
     {
       "sample": "05FW007",
       "basin": "NCC_north_margin",
-      "n": 57
+      "n": 59
     },
     {
       "sample": "05FW008",
@@ -51,12 +51,12 @@
     {
       "sample": "100821-1",
       "basin": "NCC_north_margin",
-      "n": 82
+      "n": 81
     },
     {
       "sample": "100821-3",
       "basin": "NCC_north_margin",
-      "n": 111
+      "n": 110
     },
     {
       "sample": "SL0929",
