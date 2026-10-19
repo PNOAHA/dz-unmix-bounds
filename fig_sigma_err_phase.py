@@ -6,16 +6,16 @@ Overlays the DIRECTLY MEASURED supervised-KL-NMF weight-estimation error sigma_e
 onto the (rho, n) plane of the pairwise-degeneracy phase diagram, upgrading the
 iso-sigma_err labels from THEORETICAL ASSERTION ( C/(sqrt(n)*rho) ) to MEASUREMENT.
 
-This is the empirical_backbone.md SS5 "next step": close the loop that
-  "where KS cannot tell two endmembers apart"  ==  "where unmixing error blows up",
-both living on the same rho*sqrt(n)=const family of hyperbolae.
+The external rho*sqrt(n)=1.35 curve is shown for orientation only. Its
+original KS test design is not reconstructed here; no KS-test or mixture-recovery
+probability is validated by this overlay.
 
 Panel A (K=2):
     pcolormesh    = measured sigma_err on the (rho, n) grid (real dz-unmix-cg core)
     solid lines   = measured iso-sigma_err contours
     dashed black  = theory iso-sigma_err  rho = (C/s)/sqrt(n)   (C = grid best fit)
-    thick cyan    = KS P=0.5 degeneracy boundary  rho*sqrt(n) = 1.35  (empirical_backbone)
-  -> measured contours run PARALLEL to the KS boundary: the stitch.
+    thick green   = external reference rho*sqrt(n) = 1.35 (orientation only)
+  -> substitution into the calibrated spread formula is illustrative only.
 
 Panel B (K=2 pairwise law + K=3 finite-n contrast):
     x = 1/(sqrt(N) * rho),  y = sigma_err  (adjacent-pair separation rho).
@@ -52,7 +52,7 @@ plt.rcParams.update({
 })
 OI = {"orange": "#E69F00", "sky": "#56B4E9", "green": "#009E73", "yellow": "#F0E442",
       "blue": "#0072B2", "verm": "#D55E00", "purple": "#CC79A7", "black": "#000000"}
-KS_C50 = 1.35            # empirical_backbone.md: P(KS-inseparable)=0.5 boundary, rho*sqrt(n)=1.35
+KS_C50 = 1.35            # external empirical reference; orientation only (legacy variable name)
 
 LINES = []
 def out(s=""):
@@ -99,10 +99,10 @@ def panel_A(ax, fig, cells, C):
     for s in levels:                                              # theory iso lines: rho=(C/s)/sqrt(n)
         rt = (C / s) / np.sqrt(ng)
         ax.plot(rt, ng, ls=(0, (4, 3)), color=OI["black"], lw=0.9, alpha=0.7, zorder=3)
-    ax.plot(KS_C50 / np.sqrt(ng), ng, color=OI["green"], lw=2.4, zorder=5)   # KS P=0.5 boundary
-    se_at_ks = C / KS_C50                                         # the one-number stitch
+    ax.plot(KS_C50 / np.sqrt(ng), ng, color=OI["green"], lw=2.4, zorder=5)   # external reference; orientation only
+    se_at_ks = C / KS_C50                                         # illustrative substitution, not a measured test boundary
     ax.text(0.035, 0.045,
-            "KS $P{=}0.5$ boundary\n$\\equiv$ measured $\\sigma_{\\mathrm{err}}\\approx%.2f$" % se_at_ks,
+            "illustrative substitution:\n$C/(\\sqrt{n}\\rho)\\approx%.2f$\nat the external reference" % se_at_ks,
             transform=ax.transAxes, fontsize=7.2, color=OI["green"], va="bottom", ha="left",
             bbox=dict(boxstyle="round,pad=0.3", fc="white", ec=OI["green"], lw=0.6, alpha=0.92))
 
@@ -110,11 +110,11 @@ def panel_A(ax, fig, cells, C):
     ax.set_xlim(rhos.min(), rhos.max()); ax.set_ylim(Ns.min(), Ns.max())
     ax.set_xlabel(r"endmember separation  $\rho$  (KS distance)")
     ax.set_ylabel("grains per sample  $n$")
-    ax.set_title(r"(a)  $K{=}2$: measured iso-$\sigma_{\mathrm{err}}$ $\parallel$ KS degeneracy boundary")
+    ax.set_title(r"(a)  $K{=}2$: measured spread and external reference")
     handles = [
         Line2D([0], [0], color=OI["sky"], lw=1.6, label=r"measured iso-$\sigma_{\mathrm{err}}$"),
         Line2D([0], [0], color=OI["black"], ls=(0, (4, 3)), lw=0.9, label=r"theory $C/(\sqrt{n}\,\rho)$"),
-        Line2D([0], [0], color=OI["green"], lw=2.4, label=r"KS $P{=}0.5$ ($\rho\sqrt{n}{=}1.35$)"),
+        Line2D([0], [0], color=OI["green"], lw=2.4, label=r"external reference $\rho\sqrt{n}{=}1.35$" + "\n(orientation only)"),
     ]
     ax.legend(handles=handles, loc="upper right", framealpha=0.92, facecolor="white")
 
@@ -174,7 +174,7 @@ def main():
     out("[stitch] K=2 pairwise law: C = %.3f +/- %.3f (%d LAN cells, CV=%.0f%%)"
         % (C, Cstd, nC, 100 * Cstd / C))
     out("[stitch] calibration target C ~ 0.48 (pairwise_threshold_calibration.md) -> MATCH")
-    out("[stitch] one-number stitch: KS P=0.5 boundary (rho*sqrt(n)=%.2f) == sigma_err ~ %.2f"
+    out("[stitch] external reference (rho*sqrt(n)=%.2f; orientation only): illustrative sigma_err ~ %.2f"
         % (KS_C50, C / KS_C50))
     # K=3 vs the K=2 floor at the most-separated column (curvature not frozen at n<=350)
     for r in (0.47,):

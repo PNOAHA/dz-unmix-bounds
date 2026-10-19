@@ -8,8 +8,9 @@ OneDZ/Puetz CC-BY 编译，逐样品 n_grains 见各 csv 注释头），对 DZ-U
 dz-unmix-cg DEFAULT_SOURCES，不改原码）做可识别性判据诊断：
 
   (a) 年龄轴：三端元签名 pdf + 15 个真实样品 KDE（灰细线）
-  (b) 诊断平面 (N, ρ)：KS 不可分辨边界 ρ√N=1.35 双曲线 + 悬崖 ρ≈0.42
-      横线；真实端元对（ρ≈1.0）与假想弧内细分对（130 vs 145 Ma）的落位
+  (b) 诊断平面 (N, ρ)：外部参考 ρ√N=1.35（仅供定向）与指定设计的
+      ρ≈0.42 参考横线；预设字典端元对（ρ≈1.0）及假想弧内细分对的位置。
+      本图不验证 KS 检验表现或真实样品的权重恢复。
 
 同时输出 fig8_diagnostic_numbers.json —— §5.3 正文引用的全部数字以脚本
 输出为准（教训：勿凭印象写图注，见 verify_phase3d_claims.py）。
@@ -64,7 +65,7 @@ SOURCES = [
 ]
 
 # --- 判据常数（与正文 §3/§5.2 严格一致） -----------------------------------
-KS_BOUNDARY = 1.35        # KS 不可分辨边界 ρ√N ≈ 1.35（50% 可分性常数）
+KS_BOUNDARY = 1.35        # 外部经验参考；仅供定向，不在此验证其检验设计
 CLIFF_RHO = 0.42          # 悬崖 Δ/σ≈1.10 ⇔ ρ≈0.42（等 σ 对）
 C_CURV_LO, C_CURV_HI = 0.70, 0.85   # 非钉扎支前因子（K=3 数值认证窗口）
 
@@ -101,7 +102,7 @@ def main():
     samples = load_samples()
     ns = np.array([s["n"] for s in samples])
 
-    # 真实端元对的 KS ρ
+    # 预设字典端元对的 KS ρ
     pair_rho = {}
     for i in range(3):
         for j in range(i + 1, 3):
@@ -117,7 +118,7 @@ def main():
     sig_lo = C_CURV_LO / np.sqrt(ns.max())
     sig_hi = C_CURV_HI / np.sqrt(ns.min())
 
-    # 各样品的 KS 可分辨临界 ρ 与等效峰间距（等 σ 对: ρ = erf(Δ/(2√2σ)))
+    # 外部参考线在各样品 N 处的 ρ 与等宽高斯等效峰间距；不是可分辨性认证
     rho_crit = KS_BOUNDARY / np.sqrt(ns)
     dmu_crit_s15 = 2 * np.sqrt(2) * 15.0 * erfinv(np.clip(rho_crit, 0, 0.999999))
     dmu_crit_s30 = 2 * np.sqrt(2) * 30.0 * erfinv(np.clip(rho_crit, 0, 0.999999))
@@ -183,23 +184,23 @@ def main():
                  marker="v", color=OI["vermillion"], zorder=4)
 
     # \u884c\u5185\u76f4\u6807\uff08\u66ff\u4ee3\u56fe\u4f8b\uff0c\u907f\u514d\u906e\u6321\uff09
-    ax_b.text(130, 1.005, "real pairs S1\u2013S2, S2\u2013S3, S1\u2013S3\n"
+    ax_b.text(130, 1.005, "preset library pairs\n"
               r"($\rho\approx1.0$)", fontsize=6.5, color=OI["blue"], va="center")
     ax_b.text(130, rho_split_160, "hypothetical arc split\n130 vs 160 Ma",
               fontsize=6.5, color=OI["green"], va="center")
-    ax_b.text(170, rho_split_145 - 0.055, "hypothetical arc split\n130 vs 145 Ma",
+    ax_b.text(170, rho_split_145 - 0.005, "hypothetical arc split\n130 vs 145 Ma",
               fontsize=6.5, color=OI["vermillion"], va="top")
     ax_b.text(300, KS_BOUNDARY / np.sqrt(300) + 0.025,
-              r"$\rho\sqrt{N}=1.35$", fontsize=6.5, color=OI["black"],
+              "external reference\n" + r"$\rho\sqrt{N}=1.35$" + "\n(orientation only)", fontsize=6.5, color=OI["black"],
               ha="center")
     ax_b.text(580, CLIFF_RHO + 0.025,
-              r"accuracy cliff $\rho\approx0.42$ ($\Delta/\sigma\approx1.1$)",
+              "specified-design reference\n" + r"$\rho\approx0.42$ ($\Delta/\sigma\approx1.1$)",
               fontsize=6.5, color=OI["orange"], ha="right")
 
-    ax_b.text(23, 0.06, "indistinguishable", fontsize=6.5, color="0.35")
-    ax_b.text(26, 0.30, "distinguishable,\nweights unreliable",
+    ax_b.text(23, 0.06, "below external\nreference", fontsize=6.5, color="0.35")
+    ax_b.text(26, 0.32, "between references",
               fontsize=6.5, color="0.35", va="center")
-    ax_b.text(23, 0.62, "far from overlap regime", fontsize=6.5, color="0.35")
+    ax_b.text(23, 0.78, "above both\nreferences", fontsize=6.5, color="0.35")
 
     ax_b.set_xscale("log")
     ax_b.set_xlim(20, 600)
