@@ -3,6 +3,10 @@
 > 建于 2026-07-04（应"给 E 线也起个 RESUME"）。E 线 = `00_论文总览_MASTER.md` 的 **E 线**（内部旧称"第三篇"，⚠ 与目录名 `d107_paper2_addon` 的 "paper2" 冲突——见文末命名雷区）。
 > **详细真相源 = 同目录 `PAPER3_bayes_materials.md`**（Table 1 + 全部图注 + Intro/Methods/Results/Discussion 草稿 + M3 三步留痕 §0.1–0.3 + gap 清单 §6）。本 RESUME 只做冷启动索引，不重复搬运。
 
+> ## ✅ 2026-10-13 状态回填：Approve 已完成
+> **正式稿号 = CAGEO-D-26-01540**（✔ Downloads `2026-09-08 2333 Submission to Computers and Geosciences - manuscript n.eml`：Manuscript Number CAGEO-D-26-01540；导航 Submissions Being Processed）。此前 Incomplete / 待 Approve 叙述作废。现被动等编辑部处理 / 外审。MASTER §1-E/§2-E 同日已同步。
+>
+
 ## 这是什么
 
 把三端元碎屑锆石物源解混做成**贝叶斯反演 + 全后验不确定性量化**，应用到 NE 亚 15 个下白垩（K1）真实样本。核心方法学卖点 = **GPU 批处理采样器**（181,500 fits，74 min vs CPU emcee 数天；逐拟合与 emcee 等价，|diff| 0.020 ≪ emcee 换种子自身抖动 0.19）+ **逐权重可信度分级**（不是所有权重同等可信）。
@@ -99,7 +103,7 @@
 
 ### ⏩ 续工入口（2026-09-02 写给下一个 session · 先读这段）
 
-**状态一句话**：E 稿在 EM **Incomplete Submissions**；三轮 polish 完成（60+16+17 findings 全处置）；投稿包 v3 终态；**只差用户在 EM 替换文件 → Build PDF → Approve**。退回信原件 `EM_SentBack_2026-07-15_CAGEO_E_line_numbers.eml`，原因仅 Line numbers。
+**状态一句话（2026-10-13 更正）**：E 稿 **09-08 已 Approve**，正式稿号 **CAGEO-D-26-01540**（曾 Being Processed）。此前 Incomplete / 待 Approve 已过时。退回信原件 `EM_SentBack_2026-07-15_CAGEO_E_line_numbers.eml`，原因仅 Line numbers；三轮 polish + v3 为 Approve 前终态。
 
 **📌 09-02 12:15 补记（续工 session 预检）**：只读交叉核全过（docx 行号/图序/Highlights 字符数/六图文本层，详 `POLISH_LOG_E.md` 末段）。**已改 1 处**：cover letter 日期 → 2 September 2026，`cover_letter_bayes_v3.docx` 已重建（12:14），稿件/Highlights v3 未动；非当日上传须再改日期。**✅ 12:20 用户拍板 (c) 已执行**：B 线 08-07 已遭 Minerals 桌面拒且未再投（.eml 在 Downloads），E 稿 §5.4 / References / cover letter 三处 "submitted-b / submitted elsewhere" 已改 "in preparation"，三件 v3 docx 重建（12:20）并双路复核（逐段 diff 仅预期 3 段变化 + Word COM 行号 Active），数字 multiset IDENTICAL。**投稿包终态，可直接按下表上传。** 随后用户拍板去掉 `submitted-a` 后缀：6 处 → `(Pan, submitted)`，三件 v3 再重建并同法复核（稿件恰 6 段变化、行号 Active）。companion 引用终态 A = (Pan, submitted) / B = (Pan, in preparation)。
 
