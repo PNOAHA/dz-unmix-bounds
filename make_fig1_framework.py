@@ -101,7 +101,7 @@ def main():
 
     # R1 灰显注记
     ax.text(5, 0.12,
-            "R1 (mixing unevenness $\\alpha$, KDE bandwidth): characterized in companion study (Pan, submitted)",
+            "R1 (mixing unevenness $\\alpha$, KDE bandwidth): characterized in companion study (Pan, submitted-a)",
             ha="center", fontsize=6.8, color=OI["grey"], style="italic")
 
     for ext in ("pdf", "png", "svg"):

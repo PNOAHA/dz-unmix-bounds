@@ -1,0 +1,539 @@
+[
+  {
+    "path": "theory_checks/n1_k3_pinning.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n1_k3_pinning.py",
+    "source_sha256": "429431f5154767e0bb35f5bb3d3a52cd1df18c56eb6f6fbea38fdddc81524b4b",
+    "sha256": "26aa822bb87dffe7a1af2ec327680ea398c3e7346068e8557e83ba6887b3e5f2",
+    "SI": "C.6-C.7: K=3 pinning",
+    "adaptations": [
+      "absolute output path -> script-local output",
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/n2_population_kkt.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n2_population_kkt.py",
+    "source_sha256": "a6062e38a08b96306696a4b139bff2e0977bfba752b6cadff2c0507ee93f0d85",
+    "sha256": "ba6bbc1be8b30908045359da62a84f01aad45653bb3eab800cd244ed179ac979",
+    "SI": "C.6-C.7: population KKT grid and 82 selected face cells",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/n3_k4_modes.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n3_k4_modes.py",
+    "source_sha256": "e151b6db68c79debd8aeac164f8c4c73fb5b8de41bf42ac2d7e8d331b7950f02",
+    "sha256": "b54ba436ebf6981b00e50dc3a5ea8020d69f32053722ef5e9cd206fa8f69c7c7",
+    "SI": "C.6-C.7: K=4 mode fingerprint",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/n4_stability_decay.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n4_stability_decay.py",
+    "source_sha256": "f33331652af5e4397058fdd6a520cbbc4336ccc55c842f2ba4e28b432d4a90f4",
+    "sha256": "e4c781e437bd749c47569751b89209228b44318320c79041d3d3b36125326b61",
+    "SI": "C.6: finite-N stability and iterative decay",
+    "adaptations": [
+      "absolute output path -> script-local output",
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/ref_d1_check.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/ref_d1_check.py",
+    "source_sha256": "0ec30de595eb605e7a3d2c4d629beb6ce76b9bedfcf74a120d59484fa7907d59",
+    "sha256": "7b26d67490b9c7267d02a77c25c540b6be123132561cf77c00ef84d84913a226",
+    "SI": "C.6: symmetric small-spacing slack coefficient",
+    "adaptations": [
+      "read immutable reference_results/n2_population_kkt.json"
+    ]
+  },
+  {
+    "path": "theory_checks/d3_mode_algebra_check.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/d3_mode_algebra_check.py",
+    "source_sha256": "56851ace9e21f46597ce4169a78240e7c471a2d2023a69a0e45bd309b466894b",
+    "sha256": "1a289e1fda07d843aaebe03e501cefe44543f755cabe5a73bb118cf104864453",
+    "SI": "C.6: endpoint-face mode algebra",
+    "adaptations": [
+      "absolute output path -> script-local output",
+      "add missing os import",
+      "read immutable reference_results/n3_k4_modes.json"
+    ]
+  },
+  {
+    "path": "theory_checks/d2_moment_envelope.py",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/d2_moment_envelope.py",
+    "source_sha256": "18fe084e801cdcbb55c4b918306a66cfcda253ae10fb76909788783e8fad6d76",
+    "sha256": "708a2cb0ae9d3cf6fb8b0cb73778da6c642446006cec459e302c49bf3b2fc373",
+    "SI": "C.6: variance envelope and release proxy",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/c1_prefactor.py",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/c1_prefactor.py",
+    "source_sha256": "8e0c9c07527fe5b9d3b23819d7a223b5e237718c9d65aa49afb5a6e9fc08ec88",
+    "sha256": "d6f1f4000731eff12030e72b9f8a27d72242ce779c5ff881e1063035443d6044",
+    "SI": "D.1-D.3: K=3-6 constants and N slopes",
+    "adaptations": [
+      "absolute output path -> script-local output",
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/c_calib_analytic.py",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/c_calib_analytic.py",
+    "source_sha256": "3be9ca6b9f728619c04c91af0e667a3485740f06385e8949d7c9f50f04685561",
+    "sha256": "1700031d80ceeb4d7e37d16a4dcce2300abf17ed52d593b3c3c3152d931253a8",
+    "SI": "D.4-D.5: reduced Fisher and calibrated KDE correction",
+    "adaptations": [
+      "remove trailing whitespace only"
+    ]
+  },
+  {
+    "path": "theory_checks/c3_top1_split.py",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/c3_top1_split.py",
+    "source_sha256": "6157b2ad37c7a24e16044f50034d4234a613e27941174d0ee12f4b19acf34bd8",
+    "sha256": "1f1b3aecafecb653737acc4712a66ea19e74db9e482280ae9a2e03687033e3bd",
+    "SI": "D.6: endpoint/interior top-1 mechanism",
+    "adaptations": [
+      "absolute output path -> script-local output",
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/top1_confirm.py",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/top1_confirm.py",
+    "source_sha256": "91ea93e805cab05f2eea150429854405f8caefcc101486060fc88baf0aacb1ae",
+    "sha256": "51868fbabc37602bdf9dfd3255a58cd2da9ed98f5d733d004d3b5b9fa33e06db",
+    "SI": "D.6: 36-cell endpoint flip grid",
+    "adaptations": [
+      "remove trailing whitespace only"
+    ]
+  },
+  {
+    "path": "theory_checks/analytic_worst_mode.py",
+    "source": "deposit_bundle/d107_paper2_addon/analytic_worst_mode.py",
+    "source_sha256": "c6b0e563740f63a35b4988c95f6aa289c1807c30c50a24f9e2e04b1d6c9dd135",
+    "sha256": "441c2a64ca4df4f94ac4f168bd39d8cee05095b5baab3df7b48cd2ea25789535",
+    "SI": "E.4: finite-rho Fisher/contrast alignment",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/compute_factors.py",
+    "source": "deposit_bundle/d107_paper2_addon/compute_factors.py",
+    "source_sha256": "5e4773e63b596e48302052904dd6dd3a378b947f32077491212d51112c552b79",
+    "sha256": "1bc4451434b8d15910ae7a4921a4efec97b0fbfde21c901b0924841d7e59ce7b",
+    "SI": "E.2: CR and smoothing decomposition",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/compute_sandwich.py",
+    "source": "deposit_bundle/d107_paper2_addon/compute_sandwich.py",
+    "source_sha256": "7fdfecdd1d3485e4599d4c167201ddcabff7edc760255340102857be4398c3d0",
+    "sha256": "b033a5d609011e1fb3cdbbc9b86a44732a9cbcb0c2494299e2683facdfef67c0",
+    "SI": "E.1: at-model sandwich approximation",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_toeplitz.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_toeplitz.py",
+    "source_sha256": "48f5ce722da419a42135547411890b4028e9d0124877249cebd1da7b434b13a3",
+    "sha256": "e672e7b2da6a15e9ec5ff1e45516c41c922f28e62c606eaa1e90df6096aa0333",
+    "SI": "E.3/E.5: Gaussian Toeplitz overlap and symbol",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_final_p.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_final_p.py",
+    "source_sha256": "0a5f1910668e1a6d517233f6c72a91b0d47258c527f7787f7d28ba0ac056957c",
+    "sha256": "3a6c3e7b6d84aa1c70a51e7d236c6504a42bce0ea5d2d6f5ad9ca202e835f9f2",
+    "SI": "E.5: finite-window Fisher-decay fit",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_S_exact.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_S_exact.py",
+    "source_sha256": "33fd75f0458235d1b77b076ef60648457fba669750196cd51ad0291ed1f172da",
+    "sha256": "5817281eed66f4c0cf64adfe00c6b6b1b222bf15874e6649d29d48fafbc57f31",
+    "SI": "E.6: directional quadratic-form smoothing identity",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_S_final.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_S_final.py",
+    "source_sha256": "d30fce1a03e2ad6e9b30d0ebdc5110321934f2d0386cd58cd2dccb1dac6d85cb",
+    "sha256": "ca1836715723e88af7bba1aea99ad2c8b6fd50c1edd94cb5ec8b61e661984fd2",
+    "SI": "E.6: frequency and smoothing fits",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_omega_mobius.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_omega_mobius.py",
+    "source_sha256": "2112f4b411919137afabe107a85556733ad88884273d7041b9ebeb8ba3a3fb83",
+    "sha256": "fb4f731cfe539475549d79dd8c88ea494688f7928fc6d1de54a103a2a9f7525b",
+    "SI": "E.6: Mobius frequency fit",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_lncoincidence_a.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_lncoincidence_a.py",
+    "source_sha256": "f38b500dd635322b219a9174ede13f9b4ba5cc5467c6d8c29781e4768ce314c7",
+    "sha256": "b4a1d8fd91d7009654259ec2bae3c106e9aa2d387da4a02fe0b8de8507adbed2",
+    "SI": "E.7: log-fit window drift",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_lncoincidence_b.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_lncoincidence_b.py",
+    "source_sha256": "b9902acd6714970aef8f662184f0012340a645d8fd705bb5061f6e4cf349f247",
+    "sha256": "b8d3050459ac09ccf14fa4e7efb5307e15ab19ef40cab52573dfa5d3acbd6c1e",
+    "SI": "E.8: empirical prefactors",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_lncoincidence_b2.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_lncoincidence_b2.py",
+    "source_sha256": "d433b2cae696e468684c28af6698532c02643d562a2cd3a7c475902b6d933bc5",
+    "sha256": "cfd4f1ebea5d542785bf38bf25ebeaa6a8fa5d40ed6293918f5cc269c76f3d3e",
+    "SI": "E.8: leverage coefficient and rho fits",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_pR_cap_final.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_pR_cap_final.py",
+    "source_sha256": "56872a1f9add2104df0a4b7b4619f16caff7728df8018a1cb3ef1d30c19b390f",
+    "sha256": "0f00f49221287315c7dd4d5c22b4899b992ff67b4657b387338cc12ac4f3385d",
+    "SI": "E.8: p_R cap and drift",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_synth.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_synth.py",
+    "source_sha256": "ddb68dc9f33fb2acc8540f9bf4f46de6f1f756c0863ea32793c8af7459394073",
+    "sha256": "4ef41234c2f1e0323532f8b993f9a53998b95815a0913b3572ccc0d367711c61",
+    "SI": "E.3/E.8: independent structural spot checks",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_turnover.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_turnover.py",
+    "source_sha256": "0e313e5c5ae8e02bdaaeaa95e94c53738d5c8b9617723badc2af4da19c890d68",
+    "sha256": "764e47f21e770d11b6a6759bddbc5c07e855f8ce30daa3abcdecd2bd0fd35d67",
+    "SI": "E.9: measured clipping/turnover",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_eigcross.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_eigcross.py",
+    "source_sha256": "07c58a6741e85f419d87532bcb568eb58a58dd4cea99f755772f7118fb3d6990",
+    "sha256": "90afe5c72dcabc6a79003137daefb4fcd8b4c3974cb81519fd6bfda68e0ddc5b",
+    "SI": "E.9: high-R turnover bootstrap and eigenvalue crossover",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_truncgauss.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_truncgauss.py",
+    "source_sha256": "57fc705f2cb99bdf0a49595f536cf50ec8cfd524dfc25a6ed102a95635c43144",
+    "sha256": "c08cf4481ff6c56e8eab2b8a6c960a2f4dbace46cc7fe16a7fb8cb2d79d60e25",
+    "SI": "E.9: unconstrained covariance and clipping helper",
+    "adaptations": [
+      "fix printf placeholder count in diagnostic table; numerical computation unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_model.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_model.py",
+    "source_sha256": "5bc5a688894c11743005b5074fe686bb5a3ee7b77aadc3752ba62fefccb0eeda",
+    "sha256": "c7c205cef526e01d9254e81d52d9d21d696f5522eaa16c34fa1b57734713c82b",
+    "SI": "E.9: one-wall model and calibration helper",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_final.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_final.py",
+    "source_sha256": "b0bf91259125a042e5b948d8a2ff2e9dcf07cd00cb5c960fd3f9016a0bc78158",
+    "sha256": "20c5d66a8bd1459dafd429b92c48f99d953e07009d44aa6ae77b61577140d2e3",
+    "SI": "E.9: kappa=1.805 calibrated clipping curve",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_mechanism.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_mechanism.py",
+    "source_sha256": "d731d9ac1d7014106aa3003e79dfd1c570fad85b5f8e23ae0352e7b4c49ce4e8",
+    "sha256": "4f646f3ff3ddf89c1c8bbceb0b3ab09e79ac32a8fe96064843096a12a74d6c06",
+    "SI": "E.9: boundary-hit and coordinate-spread checks",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe3_metric_projection.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe3_metric_projection.py",
+    "source_sha256": "46a4dd0a09a99e657e41bfdabe73a5a3a789795c3e9b1e26f71215f07115e63c",
+    "sha256": "7ec065a682f7ee23671739f3bfa024bd6934a630a5b7d65397c28b095e40e566",
+    "SI": "E.9: Euclidean/G/widened-Hessian projection comparison",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_effectiveK.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_effectiveK.py",
+    "source_sha256": "da91862320e766b50e13e06baffd03d4fc026d3be55bb1779d34ff750e6a8c63",
+    "sha256": "3e944afffa6dffed3ed5dd5fe6b701a0eb1e93e87efdfb3616dc1e388e893ff0",
+    "SI": "E.9: alternative effective-K mixture",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_clip_effK_reconcile.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_clip_effK_reconcile.py",
+    "source_sha256": "534566c4dc330fdb6a55d8b5643802332554f0a8597ede41417a9c8fd5565bc4",
+    "sha256": "bf695dfcfc9db7d5e6d710bf2d444ac5a5474cc6357832e035080b3b4f63cc4f",
+    "SI": "E.9: effective-K versus clipping comparison",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/n1_k3_pinning.json",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n1_k3_pinning.json",
+    "source_sha256": "742421329bc68a0c4913d8ee0eb0379bd2ede46b06433fc7da0bdd73a2e411a6",
+    "sha256": "ec74bca7aba2953e88df42d3255c1983fea8e2d3ae2dad27166cdc97d33e3d5c",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/n2_population_kkt.json",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n2_population_kkt.json",
+    "source_sha256": "11b4de0c700eddbd11a01bedbf209104e93290ec1c3f5dec538acdb3884ed165",
+    "sha256": "2dc345ecca2c52289dec72702d9bd24059c2be65f42dd5ce18284af0f230254e",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/n3_k4_modes.json",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n3_k4_modes.json",
+    "source_sha256": "197685160ffc97aa8b515066eacfde68ed2bab04952190776d9fdfb1607fde97",
+    "sha256": "df33a05d7d1c3ca653e6f07773c80064582d2b6378dd77e907d86fe87b24530e",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/n4_stability_decay.json",
+    "source": "deposit_bundle/theory_M1/scratch_curvfreeze/n4_stability_decay.json",
+    "source_sha256": "4cac4ba66045af21c241d89845032ba71cc42ff31dbe130bda450d9019d374c3",
+    "sha256": "90969c52ed3ef5c06371c372ab813f0456f84e785bc71158ea8d6c36556abde7",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/c1_prefactor_vs_K.json",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/c1_prefactor_vs_K.json",
+    "source_sha256": "556d610c329c0062da10c0f5584f9dfc5c3a78d3452af2a6df74cb0f16d38c8f",
+    "sha256": "d97bec67cda846ef6dd50539dfe083bfddeb5111b8249c55777e3fb892f98661",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/c3_top1_split.json",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/c3_top1_split.json",
+    "source_sha256": "3e74e913e1ff28f2df770d22c90966a4477cdcebdeb1c3cccfd541a02893365c",
+    "sha256": "b84492351459710658ec7e280d326586c65f8c154de77c2602960cbadeecad5a",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/top1_confirm.json",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/top1_confirm.json",
+    "source_sha256": "1efdfd09169100de89fedd31a7e0add4adf33f18d16f491e4adb84f18d729253",
+    "sha256": "39170e07c63b35b6f03602d8245f7b9dfe24c57925ddfb3517c05c4380dbe691",
+    "SI": "Historical summary; not a fresh rerun",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  },
+  {
+    "path": "scan/phase3d_scan.py",
+    "source": "deposit_bundle/d107_paper2_addon/phase3d_scan.py",
+    "source_sha256": "fbc5655a248aa53e08af84a77fd6b7a78f8b34c9ff9386e2f150b750a10ceddf",
+    "sha256": "9ebcf11d4d3b5f128163a14415f580b990dc22f1db109dcc20ed5a425f5ce73c",
+    "SI": "Main Fig.2: atlas generation/sharding/merge",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "scan/phase3d_scan_hpc.py",
+    "source": "deposit_bundle/d107_paper2_addon/phase3d_scan_hpc.py",
+    "source_sha256": "f1cd61cce4604bcc501c084157e4596d8184f88f7003d060f266e619aa43734c",
+    "sha256": "72b2df55d5cf668ec3e1a8aabc34f53cbf27921701aa238ce3e1ed0ae3012a7a",
+    "SI": "Main Fig.2: atlas generation/sharding/merge",
+    "adaptations": [
+      "docstring task-count default corrected to executable value 1000"
+    ]
+  },
+  {
+    "path": "scan/merge_phase3d.py",
+    "source": "deposit_bundle/d107_paper2_addon/merge_phase3d.py",
+    "source_sha256": "008bce3e51b17667ba424bafb6058c3ae201c1ad89a181c4dd7d3bc14348f4c7",
+    "sha256": "e32ef3e82439758f06515ba2f5369f332f66ea9e8a3d2d0aae461d9b8c8cdcb0",
+    "SI": "Main Fig.2: atlas generation/sharding/merge",
+    "adaptations": [
+      "LF line endings only"
+    ]
+  },
+  {
+    "path": "scan/phase3d.slurm",
+    "source": "deposit_bundle/d107_paper2_addon/phase3d.slurm",
+    "source_sha256": "054a641569c84dfdc9f7c1346a70af2e29fe7cd1f9223feda7aa3faf70005d95",
+    "sha256": "3903f32ee87ca77152d4f66af71d16ed93ac76b0b3094af1b34ff302f9007345",
+    "SI": "Main Fig.2: atlas generation/sharding/merge",
+    "adaptations": [
+      "portable repo-root Slurm launch paths; site partition via sbatch",
+      "submission-root scan/logs paths; distinguish partial array from reduced smoke"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_reconcile3.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_reconcile3.py",
+    "source_sha256": "7f6ca1b3682b2c48450fcb5dc30f6ca1059b9d4ec2ac13d325e688b90a48d8a8",
+    "sha256": "ab69fb5ade63c5fb185ab228321bb29b178019e213b261e949aaf94cf5bfa857",
+    "SI": "E.8: exact source for reported empirical prefactors",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_deflation3.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_deflation3.py",
+    "source_sha256": "9cb192d59535726ec43cce5d1d5f3572e0a924fa0117fa78101096216292e9b2",
+    "sha256": "3672677e5ce6d73599b4d6dd4e12c5673d86159e744fac344689c89e356f70e2",
+    "SI": "E.8: exact source for reported empirical prefactors",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/probe2_omega_edge.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe2_omega_edge.py",
+    "source_sha256": "5aa82db7ae725a3d1af900eb6abe06ed75b5badda7b9b1426d2ba06892e99947",
+    "sha256": "fcd0eb96bca6a1645f35d1067ff0d91c5b347d51c2fc92b61b99849652aa8542",
+    "SI": "E.8: exact source for reported empirical prefactors",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/final_analysis.py",
+    "source": "deposit_bundle/theory_M1/scratch_pairwise/final_analysis.py",
+    "source_sha256": "04959991936db888fab3451a5ccabcebc37d51fa5f777b3192799f8d0c2611ed",
+    "sha256": "09bce3da5bf1b675e1222d0877da472a3882deb880a95494021f07f9f3e22171",
+    "SI": "D.1-D.3: original N-scan normalization of reported constants",
+    "adaptations": [
+      "read immutable repo-local c1 summary; add os import"
+    ]
+  },
+  {
+    "path": "theory_checks/diag_k3_mode.py",
+    "source": "deposit_bundle/d107_paper2_addon/diag_k3_mode.py",
+    "source_sha256": "c0631645cadd2e1b600ec6bf3abfe70fb053b973f660f879e0d8c9d3b6c2c3fd",
+    "sha256": "be7ace1d24b2ffd1437286e953dcaa7e694b4950909a1c8b10fc8050a4506784",
+    "SI": "C.6/E.1/E.4: measured K=3 pair/curvature modes",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/diag_kge4_mode.py",
+    "source": "deposit_bundle/d107_paper2_addon/diag_kge4_mode.py",
+    "source_sha256": "d0778d7b6b049d7b5d07e2bd2b7c821811a56a200fa2a288e5cd43c307a5a223",
+    "sha256": "5e4dd7b96ba51151e0d84c227c520ad758eb23ded3bec97feac7f3b88bb7a651",
+    "SI": "E.4/E.9: measured K=2-5 unpinned covariance modes",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/diag_kge4_poly.py",
+    "source": "deposit_bundle/d107_paper2_addon/diag_kge4_poly.py",
+    "source_sha256": "15cf2aa7d9964033d8169f49e364d3cdc34a162e284f27acfad545554d76d549",
+    "sha256": "5d046c7d78417f246c9960116e0558530a4d3787eaca41eaf52f3959e887e7c6",
+    "SI": "E.4: measured K=3-7 contrast degrees and convergence",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/probe_excess_growth.py",
+    "source": "deposit_bundle/d107_paper2_addon/probe_excess_growth.py",
+    "source_sha256": "8e5661603ac038b6e32595368300dec2874fd756cf03f4b29d1a0276d17ad206",
+    "sha256": "1d3ed628d8cae745e8e55db7cee1bc86dc64a21a0c41b126ca08f1551aeb52e4",
+    "SI": "E.9: K=2-7, rho=.40/.47, three-seed excess and turnover",
+    "adaptations": [
+      "portable example command"
+    ]
+  },
+  {
+    "path": "theory_checks/reference_results/probe_excess_growth_out.json",
+    "source": "deposit_bundle/d107_paper2_addon/probe_excess_growth_out.json",
+    "source_sha256": "e33c262c5601425d12e27dfe60bc73302186bdea72f76b91af7690beafbfc163",
+    "sha256": "674b3a0925f95c969b1ab0be158f593c915dd24688e87a7ae0964deb923e60db",
+    "SI": "E.9: historical three-seed excess summary at rho=.40/.47",
+    "adaptations": [
+      "LF line endings only; JSON values unchanged"
+    ]
+  }
+]

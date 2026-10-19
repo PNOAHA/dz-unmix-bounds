@@ -4,6 +4,26 @@ All notable changes to this reproducibility package. Version DOIs are minted by
 Zenodo from the GitHub releases (concept DOI: https://doi.org/10.5281/zenodo.20768131,
 which always resolves to the latest version).
 
+## [1.2.1] - 2026-10-19 (prepared, not released)
+
+- Prepared on local branch `release-v1.2.1` from `release-v1.2.0`; no push, tag,
+  GitHub release or Zenodo action. Published v1.2.0 remains the citation target
+  until Louise authorizes a release.
+- Added selected SI B.6/C.6-C.7/D.1-D.6/E.1-E.9 probes, eight small historical
+  summaries, source hashes, exact per-script commands and isolated execution checks.
+  The B.6 Dirichlet probe is a labelled reconstruction, not a recovered original.
+- Added atlas generator, array dispatcher, merge script and portable Slurm wrapper;
+  recorded the distinction between the planned full grid and partial saved atlas.
+- Documented all Fig.3 CLI flags and seed; verified four R=600 cells against the
+  saved JSON to floating-point precision. Existing scan defaults are unchanged.
+- Withdrew the unverified claim that per-seed atlas raw has a separate public
+  archive; raw is omitted and may be requested from the author. No DOI invented.
+- Fixed Fig.1 companion label to `Pan, submitted-a` and re-rendered PDF/PNG/SVG.
+  Added Barthelme & Usevich (2021), using the paper's existing reference data.
+- Updated version metadata; removed `date-released` from this unreleased candidate.
+- Recorded numerical matches, mismatches and reduced-test limits; this preparation
+  does not certify that every quoted supplementary number has been reproduced.
+
 ## [1.2.0] - 2026-10-19
 
 Accompanies the manuscript as submitted to *Sedimentary Geology*.

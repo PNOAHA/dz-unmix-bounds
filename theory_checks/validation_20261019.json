@@ -1,0 +1,745 @@
+{
+  "date": "2026-10-19",
+  "status": "local candidate v1.2.1; prepared, not released",
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9",
+    "sklearn": "1.8.0"
+  },
+  "test_location": "isolated temporary copies; no Slurm job submitted",
+  "orchestrator": "theory_checks/run_checks.py exercised for all listed probes",
+  "theory_results": [
+    {
+      "script": "analytic_worst_mode.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.782,
+      "output": "Continuous tangent-Fisher smallest-eigenvector vs degree-(K-1) contrast\n(sigma=25, endpoint w; I_ij=∫ h_i h_j / q)\n K   rho |   lam_min   lam_2nd | |.deg(K-1)| | dom_deg(=K-1?)\n 2  0.47 | 6.072e-01       nan |    1.000 | deg=1 YES\n 3  0.47 | 3.182e-01 1.673e+00 |    0.998 | deg=2 YES\n 4  0.47 | 1.986e-01 1.030e+00 |    0.997 | deg=3 YES\n 5  0.47 | 1.417e-01 6.928e-01 |    0.993 | deg=4 YES\n 6  0.47 | 1.121e-01 4.996e-01 |    0.987 | deg=5 YES\n 7  0.47 | 9.574e-02 3.835e-01 |    0.978 | deg=6 YES\n\n 2  0.35 | 3.549e-01       nan |    1.000 | deg=1 YES\n 3  0.35 | 1.199e-01 1.127e+00 |    0.999 | deg=2 YES\n 4  0.35 | 4.725e-02 4.767e-01 |    0.999 | deg=3 YES\n 5  0.35 | 2.143e-02 2.204e-01 |    0.998 | deg=4 YES\n 6  0.35 | 1.104e-02 1.111e-01 |    0.995 | deg=5 YES\n 7  0.35 | 6.350e-03 6.104e-02 |    0.992 | deg=6 YES\n\n"
+    },
+    {
+      "script": "c1_prefactor.py",
+      "mode": "reduced execution smoke",
+      "changes": [
+        {
+          "line": 135,
+          "before": "100000",
+          "after": "2000"
+        },
+        {
+          "line": 135,
+          "before": "600",
+          "after": "24"
+        },
+        {
+          "line": 135,
+          "before": "40000",
+          "after": "4000"
+        },
+        {
+          "line": 201,
+          "before": "[20000, 100000, 400000]",
+          "after": "[500, 1000, 2000]"
+        }
+      ],
+      "exit_code": 0,
+      "seconds": 31.828,
+      "output": "K=3: rho_c=0.3224 D=0.3333 kbar=0.8333 Vk=0.6389\nK=4: rho_c=0.1897 D=1.0000 kbar=1.2917 Vk=1.2066\nK=5: rho_c=0.1348 D=2.0000 kbar=1.7500 Vk=1.9375\nK=6: rho_c=0.1046 D=3.3333 kbar=2.2083 Vk=2.8316\nK=3 rho=0.040 sigma_err=1.5992e-01 std_a=1.1406e-01 ratio=1.402 max_int=5.52e-02 rho_1K=0.0799 [1s]\nK=3 rho=0.060 sigma_err=7.3238e-02 std_a=5.1829e-02 ratio=1.413 max_int=2.20e-03 rho_1K=0.1197 [1s]\nK=3 rho=0.080 sigma_err=6.8613e-02 std_a=4.8517e-02 ratio=1.414 max_int=2.10e-06 rho_1K=0.1592 [1s]\nK=3 rho=0.110 sigma_err=4.6075e-02 std_a=3.2580e-02 ratio=1.414 max_int=4.69e-10 rho_1K=0.2179 [1s]\nK=3 rho=0.150 sigma_err=3.9236e-02 std_a=2.7744e-02 ratio=1.414 max_int=3.60e-14 rho_1K=0.2947 [1s]\nK=4 rho=0.040 sigma_err=5.5079e-02 std_a=3.8941e-02 ratio=1.414 max_int=9.63e-04 rho_1K=0.1196 [1s]\nK=4 rho=0.060 sigma_err=4.7256e-02 std_a=3.3415e-02 ratio=1.414 max_int=3.64e-06 rho_1K=0.1787 [1s]\nK=4 rho=0.080 sigma_err=5.4786e-02 std_a=3.8740e-02 ratio=1.414 max_int=6.80e-09 rho_1K=0.2368 [1s]\nK=4 rho=0.110 sigma_err=3.4026e-02 std_a=2.4060e-02 ratio=1.414 max_int=9.71e-09 rho_1K=0.3218 [1s]\nK=4 rho=0.150 sigma_err=2.6421e-02 std_a=1.8688e-02 ratio=1.414 max_int=1.05e-03 rho_1K=0.4295 [1s]\nK=5 rho=0.040 sigma_err=7.3651e-02 std_a=5.2077e-02 ratio=1.414 max_int=8.08e-05 rho_1K=0.1590 [1s]\nK=5 rho=0.060 sigma_err=3.5207e-02 std_a=2.4895e-02 ratio=1.414 max_int=5.99e-08 rho_1K=0.2366 [1s]\nK=5 rho=0.080 sigma_err=2.9180e-02 std_a=2.0634e-02 ratio=1.414 max_int=8.09e-09 rho_1K=0.3121 [1s]\nK=5 rho=0.110 sigma_err=3.0083e-02 std_a=1.7877e-02 ratio=1.683 max_int=9.91e-02 rho_1K=0.4199 [1s]\nSKIP K=5 rho=0.15 (>= rho_c=0.1348)\nK=6 rho=0.040 sigma_err=5.4981e-02 std_a=3.8879e-02 ratio=1.414 max_int=4.84e-05 rho_1K=0.1980 [1s]\nK=6 rho=0.060 sigma_err=4.3729e-02 std_a=3.0921e-02 ratio=1.414 max_int=3.80e-07 rho_1K=0.2933 [1s]\nK=6 rho=0.080 sigma_err=3.5323e-02 std_a=2.4969e-02 ratio=1.415 max_int=2.27e-04 rho_1K=0.3845 [1s]\nSKIP K=6 rho=0.11 (>= rho_c=0.1046)\nSKIP K=6 rho=0.15 (>= rho_c=0.1046)\n\nFIT K=3: slope(log rho)=-0.518 (R2=1.000) A_K=1.4686e-02 cK=A_K*sqrt(N)=6.5678e-01 cK*(K-1)=1.3136e+00\n        vs rho_1K: slope=-0.532 (R2=1.000) c_1K=9.1610e-01\n\nFIT K=4: slope(log rho)=-1.496 (R2=1.000) A_K=1.2533e-03 cK=A_K*sqrt(N)=5.6048e-02 cK*(K-1)=1.6814e-01\n        vs rho_1K: slope=-1.553 (R2=1.000) c_1K=2.6148e-01\n\nFIT K=5: slope(log rho)=-0.653 (R2=1.000) A_K=5.6134e-03 cK=A_K*sqrt(N)=2.5104e-01 cK*(K-1)=1.0042e+00\n        vs rho_1K: slope=-0.678 (R2=1.000) c_1K=5.9244e-01\nN-scan K=3 N=500 sigma_err=1.3098e-01 max_int=1.14e-02 [1s]\nN-scan K=3 N=1000 sigma_err=1.4017e-01 max_int=2.06e-04 [1s]\nN-scan K=3 N=2000 sigma_err=9.1095e-02 max_int=9.31e-04 [1s]\nN-scan K=4 N=500 sigma_err=1.2884e-01 max_int=4.06e-02 [1s]\nN-scan K=4 N=1000 sigma_err=7.0482e-02 max_int=4.47e-06 [1s]\nN-scan K=4 N=2000 sigma_err=6.3312e-02 max_int=3.04e-06 [1s]\nN-scan K=5 N=500 sigma_err=8.3422e-02 max_int=9.84e-04 [1s]\nN-scan K=5 N=1000 sigma_err=7.5703e-02 max_int=2.97e-05 [1s]\nN-scan K=5 N=2000 sigma_err=3.8697e-02 max_int=9.39e-06 [1s]\nN-scan K=6 N=500 sigma_err=8.5602e-02 max_int=1.71e-03 [1s]\nN-scan K=6 N=1000 sigma_err=6.1173e-02 max_int=8.93e-03 [1s]\nN-scan K=6 N=2000 sigma_err=3.3624e-02 max_int=1.02e-05 [1s]\n\n===== SUMMARY cK table =====\nK=3: cK=6.5678e-01  cK*(K-1)=1.3136e+00  c_1K=9.1610e-01\nK=4: cK=5.6048e-02  cK*(K-1)=1.6814e-01  c_1K=2.6148e-01\nK=5: cK=2.5104e-01  cK*(K-1)=1.0042e+00  c_1K=5.9244e-01\ncK ratios to K=3: {3: 1.0, 4: 0.085, 5: 0.382}\n(K-1)*cK: {3: 1.31356, 4: 0.16814, 5: 1.00415}\n\nDONE. Saved to <TEMP_REPO>\\theory_checks\\c1_prefactor_vs_K.json\n"
+    },
+    {
+      "script": "c3_top1_split.py",
+      "mode": "reduced execution smoke",
+      "changes": [
+        {
+          "line": 94,
+          "before": "min(24, os.cpu_count())",
+          "after": "2"
+        },
+        {
+          "line": 97,
+          "before": "20000",
+          "after": "2000"
+        },
+        {
+          "line": 97,
+          "before": "400",
+          "after": "24"
+        },
+        {
+          "line": 97,
+          "before": "40000",
+          "after": "4000"
+        },
+        {
+          "line": 119,
+          "before": "[10000, 40000, 160000]",
+          "after": "[500, 1000, 2000]"
+        },
+        {
+          "line": 120,
+          "before": "400",
+          "after": "24"
+        },
+        {
+          "line": 120,
+          "before": "40000",
+          "after": "4000"
+        },
+        {
+          "line": 149,
+          "before": "20000",
+          "after": "2000"
+        },
+        {
+          "line": 149,
+          "before": "60",
+          "after": "24"
+        },
+        {
+          "line": 156,
+          "before": "min(24, os.cpu_count())",
+          "after": "2"
+        }
+      ],
+      "exit_code": 0,
+      "seconds": 33.219,
+      "output": "=== PART 1 (K=4) === rho_c_est=0.1897\n  config=endpoint wstar=[0.3125 0.2708 0.2292 0.1875] kstar=0\n    rho=0.05 top1=0.875 w_kstar=0.5514 meanw=[0.551 0.    0.    0.449] t=1s\n    rho=0.08 top1=0.917 w_kstar=0.5513 meanw=[0.551 0.    0.    0.449] t=1s\n    rho=0.11 top1=1.000 w_kstar=0.5639 meanw=[0.564 0.    0.    0.436] t=2s\n    rho=0.14 top1=0.958 w_kstar=0.5571 meanw=[0.557 0.    0.    0.443] t=2s\n    rho=0.18 top1=1.000 w_kstar=0.5528 meanw=[0.553 0.011 0.025 0.411] t=2s\n    rho=0.22 top1=1.000 w_kstar=0.4825 meanw=[0.483 0.029 0.199 0.289] t=3s\n    rho=0.28 top1=0.958 w_kstar=0.4127 meanw=[0.413 0.129 0.195 0.263] t=3s\n    rho=0.35 top1=1.000 w_kstar=0.3709 meanw=[0.371 0.195 0.212 0.222] t=3s\n  config=middle wstar=[0.2292 0.1875 0.3125 0.2708] kstar=2\n    rho=0.05 top1=0.000 w_kstar=0.0000 meanw=[0.476 0.    0.    0.524] t=4s\n    rho=0.08 top1=0.000 w_kstar=0.0000 meanw=[0.465 0.    0.    0.535] t=4s\n    rho=0.11 top1=0.000 w_kstar=0.0000 meanw=[0.462 0.    0.    0.538] t=4s\n    rho=0.14 top1=0.000 w_kstar=0.0000 meanw=[0.461 0.    0.    0.539] t=5s\n    rho=0.18 top1=0.000 w_kstar=0.0099 meanw=[0.441 0.028 0.01  0.521] t=5s\n    rho=0.22 top1=0.000 w_kstar=0.1014 meanw=[0.361 0.091 0.101 0.447] t=5s\n    rho=0.28 top1=0.000 w_kstar=0.1638 meanw=[0.288 0.172 0.164 0.376] t=6s\n    rho=0.35 top1=0.083 w_kstar=0.2287 meanw=[0.266 0.175 0.229 0.33 ] t=6s\n=== PART 2 endpoint pairwise threshold ===\n  K=3 rho=0.05 dw=0.02 N=   500 top1=0.417 sN*r*dw=0.022 sN*(K-1)*r*dw=0.045 t=6s\n  K=3 rho=0.05 dw=0.02 N=  1000 top1=0.375 sN*r*dw=0.032 sN*(K-1)*r*dw=0.063 t=6s\n  K=3 rho=0.05 dw=0.02 N=  2000 top1=0.292 sN*r*dw=0.045 sN*(K-1)*r*dw=0.089 t=7s\n  K=3 rho=0.05 dw=0.05 N=   500 top1=0.625 sN*r*dw=0.056 sN*(K-1)*r*dw=0.112 t=7s\n  K=3 rho=0.05 dw=0.05 N=  1000 top1=0.708 sN*r*dw=0.079 sN*(K-1)*r*dw=0.158 t=7s\n  K=3 rho=0.05 dw=0.05 N=  2000 top1=0.708 sN*r*dw=0.112 sN*(K-1)*r*dw=0.224 t=7s\n  K=3 rho=0.05 dw=0.10 N=   500 top1=0.458 sN*r*dw=0.112 sN*(K-1)*r*dw=0.224 t=8s\n  K=3 rho=0.05 dw=0.10 N=  1000 top1=0.625 sN*r*dw=0.158 sN*(K-1)*r*dw=0.316 t=8s\n  K=3 rho=0.05 dw=0.10 N=  2000 top1=0.750 sN*r*dw=0.224 sN*(K-1)*r*dw=0.447 t=8s\n  K=3 rho=0.05 dw=0.20 N=   500 top1=0.708 sN*r*dw=0.224 sN*(K-1)*r*dw=0.447 t=8s\n  K=3 rho=0.05 dw=0.20 N=  1000 top1=0.833 sN*r*dw=0.316 sN*(K-1)*r*dw=0.632 t=9s\n  K=3 rho=0.05 dw=0.20 N=  2000 top1=0.917 sN*r*dw=0.447 sN*(K-1)*r*dw=0.894 t=9s\n  K=3 rho=0.08 dw=0.02 N=   500 top1=0.500 sN*r*dw=0.036 sN*(K-1)*r*dw=0.072 t=9s\n  K=3 rho=0.08 dw=0.02 N=  1000 top1=0.542 sN*r*dw=0.051 sN*(K-1)*r*dw=0.101 t=9s\n  K=3 rho=0.08 dw=0.02 N=  2000 top1=0.542 sN*r*dw=0.072 sN*(K-1)*r*dw=0.143 t=10s\n  K=3 rho=0.08 dw=0.05 N=   500 top1=0.708 sN*r*dw=0.089 sN*(K-1)*r*dw=0.179 t=10s\n  K=3 rho=0.08 dw=0.05 N=  1000 top1=0.708 sN*r*dw=0.126 sN*(K-1)*r*dw=0.253 t=10s\n  K=3 rho=0.08 dw=0.05 N=  2000 top1=0.708 sN*r*dw=0.179 sN*(K-1)*r*dw=0.358 t=10s\n  K=3 rho=0.08 dw=0.10 N=   500 top1=0.708 sN*r*dw=0.179 sN*(K-1)*r*dw=0.358 t=11s\n  K=3 rho=0.08 dw=0.10 N=  1000 top1=0.750 sN*r*dw=0.253 sN*(K-1)*r*dw=0.506 t=11s\n  K=3 rho=0.08 dw=0.10 N=  2000 top1=0.833 sN*r*dw=0.358 sN*(K-1)*r*dw=0.716 t=11s\n  K=3 rho=0.08 dw=0.20 N=   500 top1=0.792 sN*r*dw=0.358 sN*(K-1)*r*dw=0.716 t=11s\n  K=3 rho=0.08 dw=0.20 N=  1000 top1=0.875 sN*r*dw=0.506 sN*(K-1)*r*dw=1.012 t=11s\n  K=3 rho=0.08 dw=0.20 N=  2000 top1=0.958 sN*r*dw=0.716 sN*(K-1)*r*dw=1.431 t=12s\n  K=3 rho=0.12 dw=0.02 N=   500 top1=0.583 sN*r*dw=0.054 sN*(K-1)*r*dw=0.107 t=12s\n  K=3 rho=0.12 dw=0.02 N=  1000 top1=0.583 sN*r*dw=0.076 sN*(K-1)*r*dw=0.152 t=12s\n  K=3 rho=0.12 dw=0.02 N=  2000 top1=0.625 sN*r*dw=0.107 sN*(K-1)*r*dw=0.215 t=12s\n  K=3 rho=0.12 dw=0.05 N=   500 top1=0.708 sN*r*dw=0.134 sN*(K-1)*r*dw=0.268 t=13s\n  K=3 rho=0.12 dw=0.05 N=  1000 top1=0.750 sN*r*dw=0.190 sN*(K-1)*r*dw=0.379 t=13s\n  K=3 rho=0.12 dw=0.05 N=  2000 top1=0.792 sN*r*dw=0.268 sN*(K-1)*r*dw=0.537 t=13s\n  K=3 rho=0.12 dw=0.10 N=   500 top1=0.750 sN*r*dw=0.268 sN*(K-1)*r*dw=0.537 t=13s\n  K=3 rho=0.12 dw=0.10 N=  1000 top1=0.875 sN*r*dw=0.379 sN*(K-1)*r*dw=0.759 t=14s\n  K=3 rho=0.12 dw=0.10 N=  2000 top1=1.000 sN*r*dw=0.537 sN*(K-1)*r*dw=1.073 t=14s\n  K=3 rho=0.12 dw=0.20 N=   500 top1=0.958 sN*r*dw=0.537 sN*(K-1)*r*dw=1.073 t=14s\n  K=3 rho=0.12 dw=0.20 N=  1000 top1=1.000 sN*r*dw=0.759 sN*(K-1)*r*dw=1.518 t=14s\n  K=3 rho=0.12 dw=0.20 N=  2000 top1=1.000 sN*r*dw=1.073 sN*(K-1)*r*dw=2.147 t=14s\n  K=4 rho=0.05 dw=0.02 N=   500 top1=0.542 sN*r*dw=0.022 sN*(K-1)*r*dw=0.067 t=15s\n  K=4 rho=0.05 dw=0.02 N=  1000 top1=0.292 sN*r*dw=0.032 sN*(K-1)*r*dw=0.095 t=15s\n  K=4 rho=0.05 dw=0.02 N=  2000 top1=0.292 sN*r*dw=0.045 sN*(K-1)*r*dw=0.134 t=15s\n  K=4 rho=0.05 dw=0.05 N=   500 top1=0.583 sN*r*dw=0.056 sN*(K-1)*r*dw=0.168 t=15s\n  K=4 rho=0.05 dw=0.05 N=  1000 top1=0.583 sN*r*dw=0.079 sN*(K-1)*r*dw=0.237 t=16s\n  K=4 rho=0.05 dw=0.05 N=  2000 top1=0.667 sN*r*dw=0.112 sN*(K-1)*r*dw=0.335 t=16s\n  K=4 rho=0.05 dw=0.10 N=   500 top1=0.583 sN*r*dw=0.112 sN*(K-1)*r*dw=0.335 t=16s\n  K=4 rho=0.05 dw=0.10 N=  1000 top1=0.667 sN*r*dw=0.158 sN*(K-1)*r*dw=0.474 t=16s\n  K=4 rho=0.05 dw=0.10 N=  2000 top1=0.833 sN*r*dw=0.224 sN*(K-1)*r*dw=0.671 t=17s\n  K=4 rho=0.05 dw=0.20 N=   500 top1=0.875 sN*r*dw=0.224 sN*(K-1)*r*dw=0.671 t=17s\n  K=4 rho=0.05 dw=0.20 N=  1000 top1=0.917 sN*r*dw=0.316 sN*(K-1)*r*dw=0.949 t=17s\n  K=4 rho=0.05 dw=0.20 N=  2000 top1=0.917 sN*r*dw=0.447 sN*(K-1)*r*dw=1.342 t=17s\n  K=4 rho=0.08 dw=0.02 N=   500 top1=0.542 sN*r*dw=0.036 sN*(K-1)*r*dw=0.107 t=17s\n  K=4 rho=0.08 dw=0.02 N=  1000 top1=0.625 sN*r*dw=0.051 sN*(K-1)*r*dw=0.152 t=18s\n  K=4 rho=0.08 dw=0.02 N=  2000 top1=0.625 sN*r*dw=0.072 sN*(K-1)*r*dw=0.215 t=18s\n  K=4 rho=0.08 dw=0.05 N=   500 top1=0.542 sN*r*dw=0.089 sN*(K-1)*r*dw=0.268 t=18s\n  K=4 rho=0.08 dw=0.05 N=  1000 top1=0.583 sN*r*dw=0.126 sN*(K-1)*r*dw=0.379 t=18s\n  K=4 rho=0.08 dw=0.05 N=  2000 top1=0.750 sN*r*dw=0.179 sN*(K-1)*r*dw=0.537 t=19s\n  K=4 rho=0.08 dw=0.10 N=   500 top1=0.833 sN*r*dw=0.179 sN*(K-1)*r*dw=0.537 t=19s\n  K=4 rho=0.08 dw=0.10 N=  1000 top1=0.833 sN*r*dw=0.253 sN*(K-1)*r*dw=0.759 t=19s\n  K=4 rho=0.08 dw=0.10 N=  2000 top1=0.875 sN*r*dw=0.358 sN*(K-1)*r*dw=1.073 t=19s\n  K=4 rho=0.08 dw=0.20 N=   500 top1=0.875 sN*r*dw=0.358 sN*(K-1)*r*dw=1.073 t=20s\n  K=4 rho=0.08 dw=0.20 N=  1000 top1=0.958 sN*r*dw=0.506 sN*(K-1)*r*dw=1.518 t=20s\n  K=4 rho=0.08 dw=0.20 N=  2000 top1=1.000 sN*r*dw=0.716 sN*(K-1)*r*dw=2.147 t=20s\n  K=4 rho=0.12 dw=0.02 N=   500 top1=0.625 sN*r*dw=0.054 sN*(K-1)*r*dw=0.161 t=20s\n  K=4 rho=0.12 dw=0.02 N=  1000 top1=0.667 sN*r*dw=0.076 sN*(K-1)*r*dw=0.228 t=21s\n  K=4 rho=0.12 dw=0.02 N=  2000 top1=0.708 sN*r*dw=0.107 sN*(K-1)*r*dw=0.322 t=21s\n  K=4 rho=0.12 dw=0.05 N=   500 top1=0.625 sN*r*dw=0.134 sN*(K-1)*r*dw=0.402 t=21s\n  K=4 rho=0.12 dw=0.05 N=  1000 top1=0.750 sN*r*dw=0.190 sN*(K-1)*r*dw=0.569 t=21s\n  K=4 rho=0.12 dw=0.05 N=  2000 top1=0.750 sN*r*dw=0.268 sN*(K-1)*r*dw=0.805 t=22s\n  K=4 rho=0.12 dw=0.10 N=   500 top1=0.542 sN*r*dw=0.268 sN*(K-1)*r*dw=0.805 t=22s\n  K=4 rho=0.12 dw=0.10 N=  1000 top1=0.875 sN*r*dw=0.379 sN*(K-1)*r*dw=1.138 t=22s\n  K=4 rho=0.12 dw=0.10 N=  2000 top1=1.000 sN*r*dw=0.537 sN*(K-1)*r*dw=1.610 t=22s\n  K=4 rho=0.12 dw=0.20 N=   500 top1=0.958 sN*r*dw=0.537 sN*(K-1)*r*dw=1.610 t=23s\n  K=4 rho=0.12 dw=0.20 N=  1000 top1=1.000 sN*r*dw=0.759 sN*(K-1)*r*dw=2.277 t=23s\n  K=4 rho=0.12 dw=0.20 N=  2000 top1=1.000 sN*r*dw=1.073 sN*(K-1)*r*dw=3.220 t=23s\n  K=5 rho=0.05 dw=0.02 N=   500 top1=0.542 sN*r*dw=0.022 sN*(K-1)*r*dw=0.089 t=23s\n  K=5 rho=0.05 dw=0.02 N=  1000 top1=0.542 sN*r*dw=0.032 sN*(K-1)*r*dw=0.126 t=23s\n  K=5 rho=0.05 dw=0.02 N=  2000 top1=0.583 sN*r*dw=0.045 sN*(K-1)*r*dw=0.179 t=24s\n  K=5 rho=0.05 dw=0.05 N=   500 top1=0.500 sN*r*dw=0.056 sN*(K-1)*r*dw=0.224 t=24s\n  K=5 rho=0.05 dw=0.05 N=  1000 top1=0.542 sN*r*dw=0.079 sN*(K-1)*r*dw=0.316 t=24s\n  K=5 rho=0.05 dw=0.05 N=  2000 top1=0.792 sN*r*dw=0.112 sN*(K-1)*r*dw=0.447 t=24s\n  K=5 rho=0.05 dw=0.10 N=   500 top1=0.833 sN*r*dw=0.112 sN*(K-1)*r*dw=0.447 t=25s\n  K=5 rho=0.05 dw=0.10 N=  1000 top1=0.917 sN*r*dw=0.158 sN*(K-1)*r*dw=0.632 t=25s\n  K=5 rho=0.05 dw=0.10 N=  2000 top1=0.917 sN*r*dw=0.224 sN*(K-1)*r*dw=0.894 t=25s\n  K=5 rho=0.05 dw=0.20 N=   500 top1=0.917 sN*r*dw=0.224 sN*(K-1)*r*dw=0.894 t=25s\n  K=5 rho=0.05 dw=0.20 N=  1000 top1=0.958 sN*r*dw=0.316 sN*(K-1)*r*dw=1.265 t=26s\n  K=5 rho=0.05 dw=0.20 N=  2000 top1=1.000 sN*r*dw=0.447 sN*(K-1)*r*dw=1.789 t=26s\n  K=5 rho=0.08 dw=0.02 N=   500 top1=0.667 sN*r*dw=0.036 sN*(K-1)*r*dw=0.143 t=26s\n  K=5 rho=0.08 dw=0.02 N=  1000 top1=0.583 sN*r*dw=0.051 sN*(K-1)*r*dw=0.202 t=26s\n  K=5 rho=0.08 dw=0.02 N=  2000 top1=0.792 sN*r*dw=0.072 sN*(K-1)*r*dw=0.286 t=27s\n  K=5 rho=0.08 dw=0.05 N=   500 top1=0.625 sN*r*dw=0.089 sN*(K-1)*r*dw=0.358 t=27s\n  K=5 rho=0.08 dw=0.05 N=  1000 top1=0.708 sN*r*dw=0.126 sN*(K-1)*r*dw=0.506 t=27s\n  K=5 rho=0.08 dw=0.05 N=  2000 top1=0.875 sN*r*dw=0.179 sN*(K-1)*r*dw=0.716 t=28s\n  K=5 rho=0.08 dw=0.10 N=   500 top1=0.875 sN*r*dw=0.179 sN*(K-1)*r*dw=0.716 t=28s\n  K=5 rho=0.08 dw=0.10 N=  1000 top1=0.958 sN*r*dw=0.253 sN*(K-1)*r*dw=1.012 t=28s\n  K=5 rho=0.08 dw=0.10 N=  2000 top1=1.000 sN*r*dw=0.358 sN*(K-1)*r*dw=1.431 t=29s\n  K=5 rho=0.08 dw=0.20 N=   500 top1=0.917 sN*r*dw=0.358 sN*(K-1)*r*dw=1.431 t=29s\n  K=5 rho=0.08 dw=0.20 N=  1000 top1=1.000 sN*r*dw=0.506 sN*(K-1)*r*dw=2.024 t=29s\n  K=5 rho=0.08 dw=0.20 N=  2000 top1=1.000 sN*r*dw=0.716 sN*(K-1)*r*dw=2.862 t=29s\n  K=5 rho=0.12 dw=0.02 N=   500 top1=0.667 sN*r*dw=0.054 sN*(K-1)*r*dw=0.215 t=30s\n  K=5 rho=0.12 dw=0.02 N=  1000 top1=0.750 sN*r*dw=0.076 sN*(K-1)*r*dw=0.304 t=30s\n  K=5 rho=0.12 dw=0.02 N=  2000 top1=0.708 sN*r*dw=0.107 sN*(K-1)*r*dw=0.429 t=30s\n  K=5 rho=0.12 dw=0.05 N=   500 top1=0.875 sN*r*dw=0.134 sN*(K-1)*r*dw=0.537 t=30s\n  K=5 rho=0.12 dw=0.05 N=  1000 top1=0.833 sN*r*dw=0.190 sN*(K-1)*r*dw=0.759 t=31s\n  K=5 rho=0.12 dw=0.05 N=  2000 top1=0.875 sN*r*dw=0.268 sN*(K-1)*r*dw=1.073 t=31s\n  K=5 rho=0.12 dw=0.10 N=   500 top1=0.875 sN*r*dw=0.268 sN*(K-1)*r*dw=1.073 t=31s\n  K=5 rho=0.12 dw=0.10 N=  1000 top1=1.000 sN*r*dw=0.379 sN*(K-1)*r*dw=1.518 t=31s\n  K=5 rho=0.12 dw=0.10 N=  2000 top1=1.000 sN*r*dw=0.537 sN*(K-1)*r*dw=2.147 t=32s\n  K=5 rho=0.12 dw=0.20 N=   500 top1=1.000 sN*r*dw=0.537 sN*(K-1)*r*dw=2.147 t=32s\n  K=5 rho=0.12 dw=0.20 N=  1000 top1=1.000 sN*r*dw=0.759 sN*(K-1)*r*dw=3.036 t=32s\n  K=5 rho=0.12 dw=0.20 N=  2000 top1=1.000 sN*r*dw=1.073 sN*(K-1)*r*dw=4.293 t=32s\nDONE total_sec=32.5\n"
+    },
+    {
+      "script": "c_calib_analytic.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.75,
+      "output": "K  rho   a_inf   I_red     sig_naive  sig_meas   kappa   rho_1K   C=sig*sqrtN*rho1K\n3  0.04  0.5682  3.9869e-02  2.2397e-02  1.9100e-02  0.8528  0.0799  0.4826\n3  0.06  0.5687  8.8773e-02  1.5010e-02  1.1900e-02  0.7928  0.1197  0.4503\n3  0.08  0.5694  1.5559e-01  1.1338e-02  9.5320e-03  0.8407  0.1592  0.4799\n3  0.11  0.5707  2.8619e-01  8.3597e-03  6.9120e-03  0.8268  0.2179  0.4763\n3  0.15  0.5727  5.0806e-01  6.2742e-03  5.2360e-03  0.8345  0.2947  0.4880\n4  0.04  0.5574  8.8650e-02  1.5020e-02  1.2730e-02  0.8475  0.1196  0.4815\n4  0.06  0.5584  1.9469e-01  1.0135e-02  8.5760e-03  0.8461  0.1787  0.4845\n4  0.08  0.5597  3.3524e-01  7.7239e-03  6.3310e-03  0.8197  0.2368  0.4741\n4  0.11  0.5619  5.9728e-01  5.7866e-03  4.8060e-03  0.8305  0.3218  0.4891\n4  0.15  0.5650  1.0103e+00  4.4493e-03  3.8730e-03  0.8705  0.4295  0.5261\n5  0.04  0.5523  1.5508e-01  1.1356e-02  9.4870e-03  0.8354  0.1590  0.4770\n5  0.06  0.5539  3.3460e-01  7.7313e-03  6.6560e-03  0.8609  0.2366  0.4981\n5  0.08  0.5558  5.6387e-01  5.9556e-03  5.1220e-03  0.8600  0.3121  0.5055\n5  0.11  0.5587  9.6880e-01  4.5436e-03  4.1960e-03  0.9235  0.4199  0.5571\n6  0.04  0.5496  2.3752e-01  9.1763e-03  7.3660e-03  0.8027  0.1980  0.4612\n6  0.06  0.5518  5.0202e-01  6.3118e-03  5.3730e-03  0.8513  0.2933  0.4984\n6  0.08  0.5542  8.2613e-01  4.9203e-03  4.4200e-03  0.8983  0.3845  0.5374\n\nkappa (sig_meas/sig_naive): mean=0.8467 std=0.0308 CV=0.036 range=[0.793,0.924]\nC = sig_meas*sqrtN*rho_1K:  mean=0.4922 std=0.0262 CV=0.053\n\n-- small-rho closed form check (K=3, rho=0.04) --\nI_red exact=3.9869e-02  pred 2pi((K-1)rho)^2=4.0212e-02  ratio=0.9915\nC_naive predicted = 1/sqrt(pi) = 0.5642  (times kappa gives measured C)\n\n-- top1 endpoint threshold (the endpoint w* used: a_inf and margin) --\nK=3 rho=0.06: a_inf=0.5687 Dw=a-0.5=0.0687 std(a)=8.4146e-03 z=Dw/std=8.17  P_fail=Phi(-z)=1.67e-16\nK=4 rho=0.06: a_inf=0.5584 Dw=a-0.5=0.0584 std(a)=6.0641e-03 z=Dw/std=9.64  P_fail=Phi(-z)=0.00e+00\nK=5 rho=0.06: a_inf=0.5539 Dw=a-0.5=0.0539 std(a)=4.7065e-03 z=Dw/std=11.46  P_fail=Phi(-z)=0.00e+00\nK=6 rho=0.06: a_inf=0.5518 Dw=a-0.5=0.0518 std(a)=3.7993e-03 z=Dw/std=13.63  P_fail=Phi(-z)=0.00e+00\n"
+    },
+    {
+      "script": "compute_factors.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.563,
+      "output": "\n=== rho=0.47 ===\n K |    lam_min   CR_exc     S(K)   S_pred | exc=CR*S exp_lnfit omega_eff |    bw*om\n 2 | 6.0718e-01    1.000   0.9627   0.8485 |    0.963            0.0478 |    0.573\n 3 | 3.1821e-01    1.381   0.8862   0.7802 |    1.224            0.0587 |    0.705\n 4 | 1.9864e-01    1.748   0.8221   0.7808 |    1.437            0.0586 |    0.703\n 5 | 1.4171e-01    2.070   0.7648   0.7598 |    1.583            0.0618 |    0.741\n 6 | 1.1212e-01    2.327   0.7186   0.7668 |    1.672            0.0607 |    0.729\n 7 | 9.5738e-02    2.518   0.6796   0.7383 |    1.711            0.0649 |    0.779\n 8 | 8.6366e-02    2.651   0.6485   0.7557 |    1.720            0.0624 |    0.748\n 9 | 8.1027e-02    2.737   0.6228   0.6990 |    1.705            0.0705 |    0.846\n10 | 7.8168e-02    2.787   0.6023   0.7345 |    1.679            0.0655 |    0.786\n  fit excess ~ a + b*ln(K-1) over K=2..7:  a=0.952 b=0.437  R2=0.994\n  lam_min/lam_min(2) ~ (K-1)^-0.95   (CR_exc ~ (K-1)^0.48)\n  omega_eff ~ (K-1)^0.10\n\n=== rho=0.4 ===\n K |    lam_min   CR_exc     S(K)   S_pred | exc=CR*S exp_lnfit omega_eff |    bw*om\n 2 | 4.5388e-01    1.000   0.9692   0.8273 |    0.969            0.0513 |    0.616\n 3 | 1.8720e-01    1.557   0.8940   0.7779 |    1.392            0.0591 |    0.709\n 4 | 9.1010e-02    2.233   0.8302   0.7922 |    1.854            0.0569 |    0.683\n 5 | 5.0977e-02    2.984   0.7678   0.7556 |    2.291            0.0624 |    0.749\n 6 | 3.2270e-02    3.750   0.7153   0.7888 |    2.683            0.0574 |    0.689\n 7 | 2.2588e-02    4.483   0.6675   0.7619 |    2.992            0.0615 |    0.738\n 8 | 1.7138e-02    5.146   0.6275   0.7818 |    3.229            0.0585 |    0.702\n 9 | 1.3859e-02    5.723   0.5919   0.7294 |    3.387            0.0662 |    0.794\n10 | 1.1783e-02    6.206   0.5620   0.7686 |    3.488            0.0605 |    0.725\n  fit excess ~ a + b*ln(K-1) over K=2..7:  a=0.782 b=1.139  R2=0.954\n  lam_min/lam_min(2) ~ (K-1)^-1.88   (CR_exc ~ (K-1)^0.94)\n  omega_eff ~ (K-1)^0.04\n"
+    },
+    {
+      "script": "compute_sandwich.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.922,
+      "output": "\n=== rho=0.47 ===  (predicted excess vs MEASURED real-NMF)\n K |     se(bw)    exc  deg |   se(noBW)  excCR |     MEAS     d%\n 2 | 1.2355e+00   1.00    1 | 1.2833e+00   1.00 |     1.04    -4%\n 3 | 1.5710e+00   1.27    2 | 1.7727e+00   1.38 |     1.43   -11%\n 4 | 1.8457e+00   1.49    3 | 2.2437e+00   1.75 |     1.62    -8%\n 5 | 2.0334e+00   1.65    4 | 2.6564e+00   2.07 |     1.84   -11%\n 6 | 2.1489e+00   1.74    5 | 2.9865e+00   2.33 |     1.92    -9%\n 7 | 2.2001e+00   1.78    6 | 3.2319e+00   2.52 |     1.94    -8%\n\n=== rho=0.4 ===  (predicted excess vs MEASURED real-NMF)\n K |     se(bw)    exc  deg |   se(noBW)  excCR |     MEAS     d%\n 2 | 1.4386e+00   1.00    1 | 1.4843e+00   1.00 |     1.01    -1%\n 3 | 2.0663e+00   1.44    2 | 2.3112e+00   1.56 |     1.56    -8%\n 4 | 2.7533e+00   1.91    3 | 3.3148e+00   2.23 |     1.99    -4%\n 5 | 3.4032e+00   2.37    4 | 4.4291e+00   2.98 |     2.15   +10%\n 6 | 3.9871e+00   2.77    5 | 5.5667e+00   3.75 |     2.40   +15%\n 7 | 4.4492e+00   3.09    6 | 6.6536e+00   4.48 |     2.19   +41%\n"
+    },
+    {
+      "script": "d2_moment_envelope.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.984,
+      "output": "======================================================================\n(1) LP max-mixing-variance == (mu_K-m)(m-mu_1)  [Bauer max principle]\n======================================================================\n  K=4 rho=0.15 m@0.5: LP=201.182508 analytic=201.182508 diff=0.00e+00 support=[0, 3]\n  MAX |LP - analytic| over all (K,rho,m) = 2.274e-13\n  LP support is always the two extreme vertices {0,K-1}: verified by construction above\n\n======================================================================\n(2) envelope variance at data-mean identity:\n    Env(mubar*) - sigma^2  ==  (mu_K-mubar*)(mubar*-mu_1)\n======================================================================\n  K=3: (mu_K-mubar)(mubar-mu_1)=159.347568  rhs=159.347568  diff=0.00e+00\n  K=4: (mu_K-mubar)(mubar-mu_1)=358.532028  rhs=358.532028  diff=0.00e+00\n  K=5: (mu_K-mubar)(mubar-mu_1)=639.340330  rhs=639.340330  diff=0.00e+00\n\n======================================================================\n(3) deficit criterion rho_c  vs  N2 rho_star_obs / rho_pred\n======================================================================\n   K    bw  rho_c(mine)  rho_pred(N2)  rho*_obs(N2) relerr vs obs\n   3   6.0     0.147479      0.147479      0.155938        0.0542\n   3  12.0     0.289963      0.289963      0.265000        0.0942\n   3  24.0     0.542889      0.542889      0.420312        0.2916\n   4   6.0     0.095517      0.095517      0.093125        0.0257\n   4  12.0     0.189670      0.189670      0.179375        0.0574\n   4  24.0     0.368773      0.368773      0.288750        0.2771\n   5   6.0     0.065607      0.065607      0.066875        0.0190\n   5  12.0     0.130772      0.130772      0.123125        0.0621\n   5  24.0     0.258054      0.258054      0.208750        0.2362\n\n  consistency: rho_c(mine) vs rho_pred(N2) (same criterion, should match):\n    K=3 bw=  6.0: mine=0.147479 N2=0.147479 reldiff=1.42e-10\n    K=3 bw= 12.0: mine=0.289963 N2=0.289963 reldiff=9.42e-13\n    K=3 bw= 24.0: mine=0.542889 N2=0.542889 reldiff=7.35e-13\n    K=4 bw=  6.0: mine=0.095517 N2=0.095517 reldiff=5.70e-12\n    K=4 bw= 12.0: mine=0.189670 N2=0.189670 reldiff=1.12e-13\n    K=4 bw= 24.0: mine=0.368773 N2=0.368773 reldiff=4.59e-14\n    K=5 bw=  6.0: mine=0.065607 N2=0.065607 reldiff=1.53e-11\n    K=5 bw= 12.0: mine=0.130772 N2=0.130772 reldiff=1.18e-12\n    K=5 bw= 24.0: mine=0.258054 N2=0.258054 reldiff=7.92e-11\n\n  w_star moment reconstruction check (index units):\n    K=3: kbar=1.083333 Vk=0.576389  w_star=[0.25, 0.416667, 0.333333]\n    K=4: kbar=1.625000 Vk=1.234375  w_star=[0.212525, 0.237424, 0.262576, 0.287475]\n    K=5: kbar=2.125000 Vk=1.859375  w_star=[0.157943, 0.194688, 0.218281, 0.222604, 0.206485]\n\nwrote d2_envelope_check.json\n"
+    },
+    {
+      "script": "d3_mode_algebra_check.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.297,
+      "output": "predicted ratios_to_t (unit-normalized modes):\n  t: 1.000000000000000\n  c1: 0.288675134594813\n  c2: 0.288675134594813\n  m: 0.000000000000000\n  p1: 0.500000000000000\n  p3: 0.500000000000000\n\n1/sqrt12 = 0.2886751345948129\nc1.u exact = 0.2886751345948129  = (1*1 + 0 + 0 + 0*-1)/(sqrt6*sqrt2) = 1/sqrt12 = 0.2886751345948129\n\nUnnormalized dot products v.(e1-eK), e1-eK = (1,0,0,-1):\n  c1_un (1,-2,1,0).(e1-eK) = 1\n  c2_un (0,1,-2,1).(e1-eK) = -1\n  m_un  (0,1,-1,0).(e1-eK) = 0\n  p1_un (1,-1,0,0).(e1-eK) = 1\n  p3_un (0,0,1,-1).(e1-eK) = 1\n\nK=3: u3 = (1,0,-1)/sqrt2, curvature c=(1,-2,1)/sqrt6\n  c3.u3 = 0.0 (should be 0 -> frozen, F4)\n\n n3 rho=0.05: empirical std-ratios to t:\n   c1: emp=2.886751345948129e-01   pred=0.288675134594813\n   c2: emp=2.886751345948129e-01   pred=0.288675134594813\n   m: emp=2.367313362085366e-49   pred=0.000000000000000\n   p1: emp=5.000000000000000e-01   pred=0.500000000000000\n   p3: emp=4.999999999999999e-01   pred=0.500000000000000\n\n n3 rho=0.10: empirical std-ratios to t:\n   c1: emp=2.886751345948130e-01   pred=0.288675134594813\n   c2: emp=2.886751345948129e-01   pred=0.288675134594813\n   m: emp=1.109330034830634e-113   pred=0.000000000000000\n   p1: emp=5.000000000000002e-01   pred=0.500000000000000\n   p3: emp=4.999999999999999e-01   pred=0.500000000000000\nK=3: live(d)=1 + frozen(perp d, sum0)=1 + removed(sum-to-1)=1 = 3 = K? True\nK=4: live(d)=1 + frozen(perp d, sum0)=2 + removed(sum-to-1)=1 = 4 = K? True\nK=5: live(d)=1 + frozen(perp d, sum0)=3 + removed(sum-to-1)=1 = 5 = K? True\nK=6: live(d)=1 + frozen(perp d, sum0)=4 + removed(sum-to-1)=1 = 6 = K? True\n"
+    },
+    {
+      "script": "diag_k3_mode.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 29.719,
+      "output": "K=3 worst-mode identification  (u1=pairwise (1,0,-1), u2=curvature (1,-2,1))\n  rho    n |  sqrt_l1  sqrt_l2 | |.u1| |.u2| |    C_u1    C_u2 | floor/excess\n 0.47   70 |   0.1833   0.0873 |  0.05  1.00 |   0.345   0.720 | 0.1272 / 1.44x\n 0.47  350 |   0.0765   0.0402 |  0.11  0.99 |   0.359   0.670 | 0.0569 / 1.35x\n 0.35  350 |   0.1136   0.0490 |  0.01  1.00 |   0.321   0.744 | 0.0764 / 1.49x\n 0.19  160 |   0.1314   0.1073 |  0.05  1.00 |   0.258   0.316 | 0.2080 / 0.63x\n 0.10  350 |   0.1287   0.0172 |  1.00  0.01 |   0.241   0.032 | 0.2673 / 0.48x\n"
+    },
+    {
+      "script": "diag_kge4_mode.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 57.11,
+      "output": "<TEMP_REPO>\\theory_checks\\diag_kge4_mode.py:36: RuntimeWarning: invalid value encountered in divide\n  q /= np.linalg.norm(q)\nK>=4 unpinned worst-mode test  (sym_frac: 1.0=pure curvature-like, 0.0=pure pairwise-like)\n K   rho    n |  sig_err excess | sym_frac   |.q|   |.d| |  l2/l1 | n_active(>1%l1)\n 2  0.35  350 |   0.0751   0.98 |     n/a    nan   1.00 |   0.00 | 0\n 3  0.35  350 |   0.1207   1.58 |    1.00   1.00   0.01 |   0.15 | 1\n 4  0.35  350 |   0.1749   2.29 |    0.00   0.02   0.35 |   0.14 | 2\n 5  0.35  350 |   0.1490   1.95 |    0.98   0.06   0.07 |   0.30 | 3\n\n 2  0.47  350 |   0.0627   1.10 |     n/a    nan   1.00 |   0.00 | 0\n 3  0.47  350 |   0.0811   1.43 |    0.99   1.00   0.08 |   0.24 | 1\n 4  0.47  350 |   0.0937   1.65 |    0.00   0.06   0.38 |   0.24 | 2\n 5  0.47  350 |   0.1073   1.89 |    1.00   0.14   0.04 |   0.25 | 3\n\n 2  0.47  105 |   0.1084   1.04 |     n/a    nan   1.00 |   0.00 | 0\n 3  0.47  105 |   0.1392   1.34 |    1.00   1.00   0.05 |   0.26 | 1\n 4  0.47  105 |   0.1668   1.61 |    0.01   0.08   0.36 |   0.25 | 2\n 5  0.47  105 |   0.1702   1.64 |    0.98   0.12   0.08 |   0.33 | 3\n\n"
+    },
+    {
+      "script": "diag_kge4_poly.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 106.172,
+      "output": "Worst-mode degree test: dominant contrast degree should = K-1 (highest, most oscillatory)\n K   rho    n  seed   nit |  sig_err excess | dom_deg =K-1? | overlaps deg=1..K-1\n 2  0.47  350   101  2000 |   0.0565   0.99 | deg=1   YES | 1.00\n 2  0.47  350   202  2000 |   0.0601   1.06 | deg=1   YES | 1.00\n\n 3  0.47  350   101  2000 |   0.0788   1.39 | deg=2   YES | 0.08 1.00\n 3  0.47  350   202  2000 |   0.0850   1.49 | deg=2   YES | 0.03 1.00\n\n 4  0.47  350   101  2000 |   0.0981   1.72 | deg=3   YES | 0.07 0.09 0.99\n 4  0.47  350   202  2000 |   0.0954   1.68 | deg=3   YES | 0.05 0.09 0.99\n\n 5  0.47  350   101  2000 |   0.1077   1.89 | deg=4   YES | 0.02 0.13 0.12 0.98\n 5  0.47  350   202  2000 |   0.1037   1.82 | deg=4   YES | 0.01 0.11 0.09 0.99\n\nconvergence guard (rho near rho_c / high K): n_iter 2000 vs 6000\n  K=5 rho=0.47 n=350 nit= 2000 | sig_err=0.1077 excess=1.89 dom_deg=4(K-1=4)\n  K=5 rho=0.47 n=350 nit= 6000 | sig_err=0.1077 excess=1.89 dom_deg=4(K-1=4)\n  K=4 rho=0.35 n=350 nit= 2000 | sig_err=0.1791 excess=2.35 dom_deg=3(K-1=3)\n  K=4 rho=0.35 n=350 nit= 6000 | sig_err=0.1793 excess=2.35 dom_deg=3(K-1=3)\n  K=5 rho=0.35 n=350 nit= 2000 | sig_err=0.1545 excess=2.02 dom_deg=4(K-1=4)\n  K=5 rho=0.35 n=350 nit= 6000 | sig_err=0.1555 excess=2.04 dom_deg=4(K-1=4)\n"
+    },
+    {
+      "script": "final_analysis.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.328,
+      "output": "=== A. N-scan cK_est (rho=0.06, pure 1/sqrtN regime) ===\ncK_est = sigma_err*sqrt(N)*rho  (adjacent-rho normalization)\n K     cK_est   cK/cK3  2/(K-1)   (K-1)*cK\n 3 2.3368e-01    1.000    1.000 4.6735e-01\n 4 1.6225e-01    0.694    0.667 4.8676e-01\n 5 1.2159e-01    0.520    0.500 4.8637e-01\n 6 1.0163e-01    0.435    0.400 5.0817e-01\n\n=== B. Extreme-pair collapse: c_1K_ns = sigma_err*sqrt(N)*rho_1K (rho=0.06) ===\nIf sigma_err = C/(sqrt(N)*rho_1K) with K-INDEPENDENT C, this is flat.\n K   rho_1K    c_1K_ns c_1K/c_1K3\n 3   0.1197 4.6603e-01      1.000\n 4   0.1787 4.8311e-01      1.037\n 5   0.2366 4.7958e-01      1.029\n 6   0.2933 4.9689e-01      1.066\n\n=== C. Direct ratio test on N-scan sigma_err at each N (rho fixed 0.06) ===\nsigma_err(K)/sigma_err(K=3) at matched N, and rho_1K(3)/rho_1K(K) prediction\n N=20000:\n   K=3: se/se3=1.000  pred[1/rho_1K]=1.000  pred[1/(K-1)]=1.000\n   K=4: se/se3=0.703  pred[1/rho_1K]=0.670  pred[1/(K-1)]=0.667\n   K=5: se/se3=0.516  pred[1/rho_1K]=0.506  pred[1/(K-1)]=0.500\n   K=6: se/se3=0.432  pred[1/rho_1K]=0.408  pred[1/(K-1)]=0.400\n N=100000:\n   K=3: se/se3=1.000  pred[1/rho_1K]=1.000  pred[1/(K-1)]=1.000\n   K=4: se/se3=0.668  pred[1/rho_1K]=0.670  pred[1/(K-1)]=0.667\n   K=5: se/se3=0.508  pred[1/rho_1K]=0.506  pred[1/(K-1)]=0.500\n   K=6: se/se3=0.412  pred[1/rho_1K]=0.408  pred[1/(K-1)]=0.400\n N=400000:\n   K=3: se/se3=1.000  pred[1/rho_1K]=1.000  pred[1/(K-1)]=1.000\n   K=4: se/se3=0.714  pred[1/rho_1K]=0.670  pred[1/(K-1)]=0.667\n   K=5: se/se3=0.538  pred[1/rho_1K]=0.506  pred[1/(K-1)]=0.500\n   K=6: se/se3=0.463  pred[1/rho_1K]=0.408  pred[1/(K-1)]=0.400\n\n=== D. exponent s_K (adjacent rho fit) and saturation diagnosis ===\nK=3: s_K(adjacent)=-0.967 (R2=0.996); s_K(vs rho_1K)=-0.979 (R2=0.997); N-scan slope=-0.520\nK=4: s_K(adjacent)=-0.912 (R2=0.995); s_K(vs rho_1K)=-0.943 (R2=0.996); N-scan slope=-0.516\nK=5: s_K(adjacent)=-0.818 (R2=0.994); s_K(vs rho_1K)=-0.852 (R2=0.996); N-scan slope=-0.507\nK=6: s_K(adjacent)=-0.740 (R2=0.999); s_K(vs rho_1K)=-0.772 (R2=0.999); N-scan slope=-0.498\n\n=== E. ratio sigma_err/std(a_hat) across all pinned cells (PRE3) ===\nall-cell ratio: mean=1.4142 min=1.4142 max=1.4142 (sqrt2=1.4142)\n\n=== F. Power-law fit of cK_est_Nscan vs (K-1) ===\nlog(cK_est_Nscan) = -0.8167 + -0.9189*log(K-1)  => cK_est ~ (K-1)^-0.919\nlog(c_1K_rhofit) ~ (K-1)^0.336  (flat => exponent~0)\n"
+    },
+    {
+      "script": "n1_k3_pinning.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 353.89,
+      "output": "rho=0.05 dmu=3.135 seed=1284 | w2[max=1.342e-26 mean=1.602e-28 min=1.169e-34] curv[mean=0.4082482905 std=1.241e-17 id=5.55e-17] pair_std=3.4689e-02 lam2/lam1=1.280e-31 | kde=30.8s unmix=12.9s\nrho=0.09 dmu=5.652 seed=1324 | w2[max=3.431e-75 mean=2.232e-77 min=1.099e-94] curv[mean=0.4082482905 std=1.360e-17 id=5.55e-17] pair_std=1.9065e-02 lam2/lam1=5.084e-31 | kde=30.8s unmix=7.2s\nrho=0.13 dmu=8.183 seed=1364 | w2[max=4.147e-124 mean=2.312e-126 min=8.667e-160] curv[mean=0.4082482905 std=1.302e-17 id=5.55e-17] pair_std=1.3430e-02 lam2/lam1=9.330e-31 | kde=34.6s unmix=16.2s\nrho=0.18 dmu=11.377 seed=1414 | w2[max=2.563e-131 mean=1.282e-133 min=1.092e-214] curv[mean=0.4082482905 std=1.241e-17 id=5.55e-17] pair_std=1.0461e-02 lam2/lam1=1.408e-30 | kde=34.0s unmix=15.2s\nrho=0.25 dmu=15.932 seed=1484 | w2[max=8.940e-19 mean=6.229e-21 min=4.535e-139] curv[mean=0.4082482905 std=1.178e-17 id=5.55e-17] pair_std=7.3172e-03 lam2/lam1=2.567e-30 | kde=34.0s unmix=15.1s\nrho=0.30 dmu=19.266 seed=1534 | w2[max=1.467e-01 mean=9.409e-02 min=2.691e-02] curv[mean=0.2930152909 std=2.253e-02 id=1.11e-16] pair_std=7.0125e-03 lam2/lam1=9.683e-02 | kde=31.4s unmix=8.1s\nrho=0.35 dmu=22.688 seed=1584 | w2[max=2.349e-01 mean=1.985e-01 min=1.631e-01] curv[mean=0.1651036829 std=1.602e-02 id=8.33e-17] pair_std=6.7066e-03 lam2/lam1=1.752e-01 | kde=32.2s unmix=15.0s\nrho=0.05 n_iter=20000 | w2_max=1.291e-13 curv_std=1.595e-14 curv_mean=0.4082482905 pair_std=3.4689e-02\n\n==== VERDICTS ====\nP1_pass True\nP2_pass True\nP3_pass True\nP4_pass True\nP5_pass True\nP3_fit_slope -0.9521446734603455\nlast_pinned_rho 0.25 first_interior_rho 0.3\npinned cells: ['0.05', '0.09', '0.13', '0.18', '0.25'] interior cells: ['0.30', '0.35']\ntotal time 353.2s\nSAVED <TEMP_REPO>\\theory_checks\\n1_k3_pinning.json\n"
+    },
+    {
+      "script": "n2_population_kkt.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 288.687,
+      "output": "grid K=3 rho=0.02 done  t=3.6s\ngrid K=3 rho=0.05 done  t=7.7s\ngrid K=3 rho=0.08 done  t=12.6s\ngrid K=3 rho=0.11 done  t=18.2s\ngrid K=3 rho=0.14 done  t=23.6s\ngrid K=3 rho=0.17 done  t=28.9s\ngrid K=3 rho=0.20 done  t=34.1s\ngrid K=3 rho=0.24 done  t=39.9s\ngrid K=3 rho=0.28 done  t=44.8s\ngrid K=3 rho=0.32 done  t=50.0s\ngrid K=3 rho=0.36 done  t=55.8s\ngrid K=3 rho=0.40 done  t=60.4s\ngrid K=3 rho=0.45 done  t=64.4s\ngrid K=4 rho=0.02 done  t=67.6s\ngrid K=4 rho=0.05 done  t=72.3s\ngrid K=4 rho=0.08 done  t=77.8s\ngrid K=4 rho=0.11 done  t=83.7s\ngrid K=4 rho=0.14 done  t=90.0s\ngrid K=4 rho=0.17 done  t=97.5s\ngrid K=4 rho=0.20 done  t=102.7s\ngrid K=4 rho=0.24 done  t=107.8s\ngrid K=4 rho=0.28 done  t=112.7s\ngrid K=4 rho=0.32 done  t=116.9s\ngrid K=4 rho=0.36 done  t=120.8s\ngrid K=4 rho=0.40 done  t=125.0s\ngrid K=4 rho=0.45 done  t=129.3s\ngrid K=5 rho=0.02 done  t=134.1s\ngrid K=5 rho=0.05 done  t=140.6s\ngrid K=5 rho=0.08 done  t=147.8s\ngrid K=5 rho=0.11 done  t=154.9s\ngrid K=5 rho=0.14 done  t=161.4s\ngrid K=5 rho=0.17 done  t=167.5s\ngrid K=5 rho=0.20 done  t=173.6s\ngrid K=5 rho=0.24 done  t=179.1s\ngrid K=5 rho=0.28 done  t=185.0s\ngrid K=5 rho=0.32 done  t=190.4s\ngrid K=5 rho=0.36 done  t=196.8s\ngrid K=5 rho=0.40 done  t=203.1s\ngrid K=5 rho=0.45 done  t=208.6s\n  bisect (3, 6.0, 'middle') [0.1400,0.1550] mid=0.1550 pinned=False\n  bisect (3, 6.0, 'middle') [0.1400,0.1475] mid=0.1475 pinned=False\n  bisect (3, 6.0, 'middle') [0.1438,0.1475] mid=0.1438 pinned=True\nthr (3, 6.0, 'middle') rho*_obs=0.1456 rho*_pred=0.1475 t=215.3s\n  bisect (3, 12.0, 'middle') [0.2600,0.2800] mid=0.2600 pinned=True\n  bisect (3, 12.0, 'middle') [0.2600,0.2700] mid=0.2700 pinned=False\n  bisect (3, 12.0, 'middle') [0.2650,0.2700] mid=0.2650 pinned=True\n  bisect (3, 12.0, 'middle') [0.2675,0.2700] mid=0.2675 pinned=True\nthr (3, 12.0, 'middle') rho*_obs=0.2688 rho*_pred=0.2900 t=223.7s\n  bisect (3, 24.0, 'middle') [0.4000,0.4250] mid=0.4250 pinned=False\n  bisect (3, 24.0, 'middle') [0.4125,0.4250] mid=0.4125 pinned=True\n  bisect (3, 24.0, 'middle') [0.4188,0.4250] mid=0.4188 pinned=True\n  bisect (3, 24.0, 'middle') [0.4188,0.4219] mid=0.4219 pinned=False\nthr (3, 24.0, 'middle') rho*_obs=0.4203 rho*_pred=0.5429 t=232.6s\n  bisect (4, 6.0, 'middle') [0.0800,0.0950] mid=0.0950 pinned=False\n  bisect (4, 6.0, 'middle') [0.0875,0.0950] mid=0.0875 pinned=True\n  bisect (4, 6.0, 'middle') [0.0912,0.0950] mid=0.0912 pinned=True\nthr (4, 6.0, 'middle') rho*_obs=0.0931 rho*_pred=0.0955 t=238.8s\n  bisect (4, 12.0, 'middle') [0.1700,0.1850] mid=0.1850 pinned=False\n  bisect (4, 12.0, 'middle') [0.1775,0.1850] mid=0.1775 pinned=True\n  bisect (4, 12.0, 'middle') [0.1775,0.1812] mid=0.1812 pinned=False\nthr (4, 12.0, 'middle') rho*_obs=0.1794 rho*_pred=0.1897 t=244.8s\n  bisect (4, 24.0, 'middle') [0.2800,0.3000] mid=0.3000 pinned=False\n  bisect (4, 24.0, 'middle') [0.2800,0.2900] mid=0.2900 pinned=False\n  bisect (4, 24.0, 'middle') [0.2850,0.2900] mid=0.2850 pinned=True\n  bisect (4, 24.0, 'middle') [0.2875,0.2900] mid=0.2875 pinned=True\nthr (4, 24.0, 'middle') rho*_obs=0.2888 rho*_pred=0.3688 t=254.1s\n  bisect (5, 6.0, 'middle') [0.0650,0.0800] mid=0.0650 pinned=True\n  bisect (5, 6.0, 'middle') [0.0650,0.0725] mid=0.0725 pinned=False\n  bisect (5, 6.0, 'middle') [0.0650,0.0688] mid=0.0688 pinned=False\nthr (5, 6.0, 'middle') rho*_obs=0.0669 rho*_pred=0.0656 t=260.3s\n  bisect (5, 12.0, 'middle') [0.1100,0.1250] mid=0.1250 pinned=False\n  bisect (5, 12.0, 'middle') [0.1175,0.1250] mid=0.1175 pinned=True\n  bisect (5, 12.0, 'middle') [0.1212,0.1250] mid=0.1212 pinned=True\nthr (5, 12.0, 'middle') rho*_obs=0.1231 rho*_pred=0.1308 t=267.2s\n  bisect (5, 24.0, 'middle') [0.2000,0.2200] mid=0.2200 pinned=False\n  bisect (5, 24.0, 'middle') [0.2000,0.2100] mid=0.2100 pinned=False\n  bisect (5, 24.0, 'middle') [0.2050,0.2100] mid=0.2050 pinned=True\n  bisect (5, 24.0, 'middle') [0.2075,0.2100] mid=0.2075 pinned=True\nthr (5, 24.0, 'middle') rho*_obs=0.2088 rho*_pred=0.2581 t=280.2s\n  bisect (3, 12.0, 'endpoint') [0.2800,0.3000] mid=0.3000 pinned=False\n  bisect (3, 12.0, 'endpoint') [0.2900,0.3000] mid=0.2900 pinned=True\n  bisect (3, 12.0, 'endpoint') [0.2900,0.2950] mid=0.2950 pinned=False\n  bisect (3, 12.0, 'endpoint') [0.2900,0.2925] mid=0.2925 pinned=False\nthr (3, 12.0, 'endpoint') rho*_obs=0.2913 rho*_pred=0.3224 t=288.0s\nALL DONE  total=288.0s  -> <TEMP_REPO>\\theory_checks\\n2_population_kkt.json\n"
+    },
+    {
+      "script": "n3_k4_modes.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 165.875,
+      "output": "wstar = [0.22916666666666669, 0.18749999999999997, 0.3125, 0.2708333333333333]\n\n=== rho=0.05 (seed=5728, dmu=3.1353) elapsed=84.0s ===\nmean w_hat = ['4.665615e-01', '1.762777e-51', '2.189464e-51', '5.334385e-01']\ninterior w1: max=2.085219e-49 mean=1.762777e-51 ; w2: max=3.352828e-49 mean=2.189464e-51\nstds: {'t': '2.419886e-02', 'c1': '6.985610e-03', 'c2': '6.985610e-03', 'm': '5.728629e-51', 'p1': '1.209943e-02', 'p3': '1.209943e-02'}\nratios to t: {'t': '1.000000', 'c1': '0.288675', 'c2': '0.288675', 'm': '0.000000', 'p1': '0.500000', 'p3': '0.500000'}\ncov eigs (desc): ['5.875434e-04', '9.883249e-85', '-5.097894e-57', '-5.001734e-36']\nlambda2/lambda1 = 1.682131e-81\ntop eigvec = ['0.707107', '0.000000', '-0.000000', '-0.707107']\npinning: lhs=21.9647 rhs=156.1343 -> pinned=True\n\n=== rho=0.1 (seed=5778, dmu=6.2831) elapsed=81.2s ===\nmean w_hat = ['4.637837e-01', '2.463115e-118', '1.040630e-116', '5.362163e-01']\ninterior w1: max=4.006480e-116 mean=2.463115e-118 ; w2: max=3.119419e-114 mean=1.040630e-116\nstds: {'t': '1.133785e-02', 'c1': '3.272956e-03', 'c2': '3.272956e-03', 'm': '1.257742e-115', 'p1': '5.668926e-03', 'p3': '5.668926e-03'}\nratios to t: {'t': '1.000000', 'c1': '0.288675', 'c2': '0.288675', 'm': '0.000000', 'p1': '0.500000', 'p3': '0.500000'}\ncov eigs (desc): ['1.289768e-04', '4.574911e-136', '-4.574911e-136', '-1.355253e-20']\nlambda2/lambda1 = 3.547080e-132\ntop eigvec = ['0.707107', '-0.000000', '-0.000000', '-0.707107']\npinning: lhs=88.2063 rhs=192.7293 -> pinned=True\n\nSaved -> <TEMP_REPO>\\theory_checks\\n3_k4_modes.json\n"
+    },
+    {
+      "script": "n4_stability_decay.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 206.11,
+      "output": "== Part 1 ==\nP1 N=    500 R=200  P(w1>1e-4)=0.0000 P(w1>1e-2)=0.0000  curv_std=2.531e-15 pair_std=1.650e-01  pw*sqrtN=3.6896e+00  (14.3s)\nP1 N=   2000 R=200  P(w1>1e-4)=0.0000 P(w1>1e-2)=0.0000  curv_std=2.831e-17 pair_std=8.332e-02  pw*sqrtN=3.7263e+00  (9.6s)\nP1 N=   8000 R=200  P(w1>1e-4)=0.0000 P(w1>1e-2)=0.0000  curv_std=2.831e-17 pair_std=4.292e-02  pw*sqrtN=3.8385e+00  (26.3s)\nP1 N=  32000 R=200  P(w1>1e-4)=0.0000 P(w1>1e-2)=0.0000  curv_std=2.937e-17 pair_std=2.008e-02  pw*sqrtN=3.5926e+00  (56.0s)\nP1 N= 128000 R=100  P(w1>1e-4)=0.0000 P(w1>1e-2)=0.0000  curv_std=2.483e-17 pair_std=1.075e-02  pw*sqrtN=3.8466e+00  (98.3s)\n== Part 2 ==\nP2 rho=0.05  w2_first=3.1833e-01 w2_final=2.5497e-45  r=0.843581  eta_decay=1.699552e-03 eta_kkt=1.699552e-03  |diff|=0.000e+00  4000*eta=6.80  (0.3s)\nP2 rho=0.09  w2_first=2.4807e-01 w2_final=3.6301e-126  r=0.618667  eta_decay=4.790377e-03 eta_kkt=4.790377e-03  |diff|=0.000e+00  4000*eta=19.16  (0.3s)\nP2 rho=0.13  w2_first=1.7488e-01 w2_final=1.7384e-210  r=0.447758  eta_decay=8.002831e-03 eta_kkt=8.002831e-03  |diff|=0.000e+00  4000*eta=32.01  (0.3s)\n\nDONE total=205.4s  wrote <TEMP_REPO>\\theory_checks\\n4_stability_decay.json\n"
+    },
+    {
+      "script": "near_boundary_probe.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.953,
+      "output": "{\n  \"status\": \"reconstructed check; not historical seed\",\n  \"seed\": 20261019,\n  \"rows\": [\n    {\n      \"K\": 3,\n      \"alpha\": 0.3,\n      \"draws\": 1000000,\n      \"near_boundary_threshold\": 0.001,\n      \"fraction\": 0.280668,\n      \"median_min_weight\": 0.008619979148283592\n    },\n    {\n      \"K\": 4,\n      \"alpha\": 0.3,\n      \"draws\": 1000000,\n      \"near_boundary_threshold\": 0.001,\n      \"fraction\": 0.412638,\n      \"median_min_weight\": 0.0021911430072370217\n    },\n    {\n      \"K\": 5,\n      \"alpha\": 0.3,\n      \"draws\": 1000000,\n      \"near_boundary_threshold\": 0.001,\n      \"fraction\": 0.528689,\n      \"median_min_weight\": 0.0007831507589403767\n    },\n    {\n      \"K\": 6,\n      \"alpha\": 0.3,\n      \"draws\": 1000000,\n      \"near_boundary_threshold\": 0.001,\n      \"fraction\": 0.629741,\n      \"median_min_weight\": 0.0003369413210772119\n    }\n  ]\n}\n"
+    },
+    {
+      "script": "probe2_clip_effK_reconcile.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 292.375,
+      "output": "EFFECTIVE-K RECONCILE  rho=0.4 n=350 R=4000 tau=0.02\nActive-set mixture with MEASURED P(n_clip=j) and MEASURED conditional std sigma_cond(K,j):\n  sigma_clip(K)^2 = sum_j P(n_clip=j) sigma_cond(K,j)^2  (= total variance, exact identity)\n\nK=2  exc_pooled=1.000  P(n_clip>=1)=0.000\n      P(n_clip=j): 0:1.000 1:0.000\n      exc_cond(j): 0:1.000 1:  - \nK=3  exc_pooled=1.463  P(n_clip>=1)=0.014\n      P(n_clip=j): 0:0.986 1:0.014 2:0.000\n      exc_cond(j): 0:1.415 1:0.707 2:  - \nK=4  exc_pooled=1.929  P(n_clip>=1)=0.039\n      P(n_clip=j): 0:0.961 1:0.039 2:0.000 3:0.000\n      exc_cond(j): 0:1.764 1:4.333 2:  -  3:  - \nK=5  exc_pooled=2.017  P(n_clip>=1)=0.320\n      P(n_clip=j): 0:0.680 1:0.264 2:0.057 3:0.000 4:0.000\n      exc_cond(j): 0:1.704 1:1.461 2:0.776 3:  -  4:  - \nK=6  exc_pooled=2.352  P(n_clip>=1)=0.377\n      P(n_clip=j): 0:0.623 1:0.329 2:0.048 3:0.000 4:0.000\n      exc_cond(j): 0:1.756 1:2.920 2:4.042 3:  -  4:  - \nK=7  exc_pooled=2.055  P(n_clip>=1)=0.616\n      P(n_clip=j): 0:0.384 1:0.423 2:0.172 3:0.021 4:0.000\n      exc_cond(j): 0:1.590 1:1.934 2:1.716 3:0.686 4:  - \nK=8  exc_pooled=2.085  P(n_clip>=1)=0.689\n      P(n_clip=j): 0:0.311 1:0.439 2:0.213 3:0.036 4:0.000\n      exc_cond(j): 0:1.404 1:2.081 2:2.623 3:2.974 4:  - \n\nK*(measured pooled) = 6\n\n[active-set ordering: exc_cond(j) decreasing in j => active-set reduction]\n  K=5  exc_cond = ['1.70', '1.46', '0.78']   monotone_decr=True\n  K=6  exc_cond = ['1.76', '2.92', '4.04']   monotone_decr=False\n  K=7  exc_cond = ['1.59', '1.93', '1.72', '0.69']   monotone_decr=False\n  K=8  exc_cond = ['1.40', '2.08', '2.62', '2.97']   monotone_decr=False\n"
+    },
+    {
+      "script": "probe2_clip_effectiveK.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.313,
+      "output": "==========================================================================================\nCLIP-EFFECTIVE-K  rho=0.40  (two-state active-set mixture on VARIANCE)\n  excess_clip(K)^2 = (1-f)*exc_unc(K)^2 + f*exc_unc(K-1)^2,  f = measured frac(w_hat<.01)\n==========================================================================================\n\n[sanity] recomputed unconstrained excess vs printed sandwich dict:\n K | exc_recomp   exc_dict\n 2 |      1.000      1.000\n 3 |      1.436      1.440\n 4 |      1.914      1.910\n 5 |      2.366      2.370\n 6 |      2.772      2.770\n 7 |      3.093      3.090\n\n[LINK frac->reduction]  R_pred = sqrt(1 - f*(1-(exc(K-1)/exc(K))^2)),  f = measured frac<.01\n K |   f_meas | exc_un(K-1)  exc_un(K) |     R_meas     R_pred |   resid%\n 3 |    0.003 |      1.000      1.436 |      1.015      0.999 |    -1.5\n 4 |    0.009 |      1.436      1.914 |      1.052      0.998 |    -5.2\n 5 |    0.063 |      1.914      2.366 |      0.889      0.989 |   +11.2\n 6 |    0.061 |      2.366      2.772 |      0.882      0.992 |   +12.5\n 7 |    0.099 |      2.772      3.093 |      0.690      0.990 |   +43.5\n  mean |resid| of reduction factor: 14.8%\n\n[FULL excess_clip vs measured]  predicted turnover from this model:\n K |    exc_unc   exc_clip   exc_meas | clip-meas%\n 2 |      1.000      1.000      1.000 |    +0.0\n 3 |      1.436      1.435      1.461 |    -1.8\n 4 |      1.914      1.910      2.010 |    -5.0\n 5 |      2.366      2.340      2.108 |   +11.0\n 6 |      2.772      2.749      2.442 |   +12.6\n 7 |      3.093      3.062      2.132 |   +43.6\n 8 |      3.339      3.317      2.169 |   +52.9\n  mean |resid| of excess_clip vs measured (K=2..8): 18.1%\n  K*(clip-effK model) = 8   |   K*(measured) = 6\n\n[CROSS-CHECK 'sigma_err ~ w*_min' onset model]\n  onset where exc_unc(K)/w*_min(K) crosses a threshold; w*_min~O(1/K), exc_unc grows.\n K |    exc_unc     w*_min   exc/w*_min | frac_meas\n 2 |      1.000     0.3750        2.667 |    0.000\n 3 |      1.436     0.2500        5.745 |    0.003\n 4 |      1.914     0.1875       10.207 |    0.009\n 5 |      2.366     0.1500       15.771 |    0.063\n 6 |      2.772     0.1250       22.172 |    0.061\n 7 |      3.093     0.1071       28.866 |    0.099\n 8 |      3.339     0.0937       35.621 |    0.096\n  onset threshold (calib at frac-jump K=5): exc/w*_min >= 15.77 -> onset K=5\n\n[AGREEMENT]\n  clip-effectiveK turnover K* = 8\n  sigma~w*_min onset K        = 5  (clipping ACTIVE for K>=this)\n  measured turnover K*        = 6\n"
+    },
+    {
+      "script": "probe2_clip_eigcross.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 292.609,
+      "output": "EIG-CROSSOVER / turnover-reality  rho=0.4 n=350 R=4000 (endpoint w)\n K |       lam1       lam2 |  sqrt_l1  sqrt_l2 |   deg1   deg2 |  se_boot\n 2 |  4.812e-03  0.000e+00 |   0.0694   0.0000 |      1      0 |   0.0111\n 3 |  1.030e-02  1.972e-03 |   0.1015   0.0444 |      2      1 |   0.0150\n 4 |  1.791e-02  3.067e-03 |   0.1338   0.0554 |      3      2 |   0.0202\n 5 |  1.958e-02  4.532e-03 |   0.1399   0.0673 |      4      3 |   0.0209\n 6 |  2.663e-02  6.739e-03 |   0.1632   0.0821 |      5      4 |   0.0167\n 7 |  2.032e-02  8.122e-03 |   0.1426   0.0901 |      6      5 |   0.0210\n 8 |  2.092e-02  9.269e-03 |   0.1447   0.0963 |      7      6 |   0.0147\n\n[excess +/- bootstrap sd, is K=7<K=6 real?]\n  K=2  exc=1.000 +/- 0.011\n  K=3  exc=1.463 +/- 0.015\n  K=4  exc=1.929 +/- 0.020\n  K=5  exc=2.017 +/- 0.021\n  K=6  exc=2.352 +/- 0.017\n  K=7  exc=2.055 +/- 0.021\n  K=8  exc=2.085 +/- 0.015\n  K*(measured, R=4000) = 6\n  drop exc(6)-exc(7) = 0.297  (11.1 sigma)\n"
+    },
+    {
+      "script": "probe2_clip_final.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 38.735,
+      "output": "CLIP-HARDNESS kappa calibrated on rho=0.40, K=7 only:  kappa = 1.805\n  (kappa=1 => one-shot Gaussian projection floor; kappa>1 => MUR active-set compounding)\n\n==============================================================================\nrho=0.40  n_eff=436.5\n K |   Lambda |    ms_raw  ms_model |     MEAS      err\n 2 |    7.702 |     1.000     1.000 |     1.00    +0.0%\n 3 |    4.133 |     1.000     1.000 |     1.01    -1.0%\n 4 |    2.783 |     0.995     0.991 |     1.05    -5.6%\n 5 |    1.889 |     0.949     0.910 |     0.89    +2.2%\n 6 |    1.488 |     0.886     0.804 |     0.88    -8.7%\n 7 |    1.199 |     0.814     0.690 |     0.69    +0.0%\n==============================================================================\nrho=0.47  n_eff=415.0\n K |   Lambda |    ms_raw  ms_model |     MEAS      err\n 2 |    8.744 |     1.000     1.000 |       --       --\n 3 |    5.306 |     1.000     1.000 |       --       --\n 4 |    4.147 |     1.000     1.000 |       --       --\n 5 |    3.171 |     0.999     0.997 |       --       --\n 6 |    2.799 |     0.995     0.992 |       --       --\n 7 |    2.455 |     0.987     0.977 |       --       --\n\n==============================================================================\nTURNOVER PEAK K*(rho): excess_obs(K) = excess_unc(K) * meas/sand_model(K)\n  rho=0.40: excess_obs = {2: np.float64(1.0), 3: np.float64(1.44), 4: np.float64(1.89), 5: np.float64(2.16), 6: np.float64(2.23), 7: np.float64(2.13)}  => K*=6\n  rho=0.47: excess_obs = {2: np.float64(1.0), 3: np.float64(1.3), 4: np.float64(1.49), 5: np.float64(1.67), 6: np.float64(1.76), 7: np.float64(1.82)}  => K*=7\n"
+    },
+    {
+      "script": "probe2_clip_mechanism.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 107.672,
+      "output": "CLIP MECHANISM  rho=0.4 n=350 R=1500 tau=0.02 (endpoint w)\n K |  exc_all   p_clip n_clip_mu  frac_ent |   exc_int  exc_clip exc_int/all |       Pn1\n 2 |    1.000    0.000     0.000    0.0000 |     1.000       nan     1.000 |     0.000\n 3 |    1.449    0.009     0.009    0.0029 |     1.418     0.787     0.978 |     0.009\n 4 |    1.938    0.039     0.039    0.0097 |     1.773     4.361     0.915 |     0.039\n 5 |    2.026    0.307     0.365    0.0729 |     1.708     1.468     0.843 |     0.249\n 6 |    2.360    0.374     0.425    0.0709 |     1.739     3.137     0.737 |     0.323\n 7 |    2.048    0.617     0.830    0.1186 |     1.599     1.971     0.781 |     0.423\n 8 |    2.075    0.677     0.957    0.1197 |     1.373     2.333     0.662 |     0.434\n\n[interior subensemble = unconstrained?]  exc_int vs sandwich 1/1.44/1.91/2.37/2.77/3.09\n  K=2  exc_int=1.000  sand=1.00  ratio=1.000\n  K=3  exc_int=1.418  sand=1.44  ratio=0.985\n  K=4  exc_int=1.773  sand=1.91  ratio=0.928\n  K=5  exc_int=1.708  sand=2.37  ratio=0.721\n  K=6  exc_int=1.739  sand=2.77  ratio=0.628\n  K=7  exc_int=1.599  sand=3.09  ratio=0.517\n\n[n_clip distribution P(n_clip=j)]\n  K=2: 0:1.000 1:0.000\n  K=3: 0:0.991 1:0.009 2:0.000\n  K=4: 0:0.961 1:0.039 2:0.000 3:0.000\n  K=5: 0:0.693 1:0.249 2:0.058 3:0.000 4:0.000\n  K=6: 0:0.626 1:0.323 2:0.051 3:0.000 4:0.000\n  K=7: 0:0.383 1:0.423 2:0.173 3:0.020 4:0.000\n  K=8: 0:0.323 1:0.434 2:0.207 3:0.037 4:0.000\n"
+    },
+    {
+      "script": "probe2_clip_model.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 17.89,
+      "output": "======================================================================================\nrho=0.4: n_eff=436.5 (calibrated K=2 abs std=0.0689)\n K |    Lambda  sigma_unc |    g(Lam)  ms_model |     MEAS      err\n 2 |     7.702     0.0689 |    1.0000     1.000 |     1.00    +0.0%\n 3 |     4.133     0.0989 |    1.0000     1.000 |     1.01    -1.0%\n 4 |     2.783     0.1318 |    0.9951     0.998 |     1.05    -5.0%\n 5 |     1.889     0.1629 |    0.9489     0.974 |     0.89    +9.5%\n 6 |     1.488     0.1908 |    0.8859     0.941 |     0.88    +7.0%\n 7 |     1.199     0.2130 |    0.8142     0.902 |     0.69   +30.8%\n======================================================================================\nrho=0.47: n_eff=415.0 (calibrated K=2 abs std=0.0607)\n K |    Lambda  sigma_unc |    g(Lam)  ms_model |     MEAS      err\n 2 |     8.744     0.0607 |    1.0000     1.000 |       --       --\n 3 |     5.306     0.0771 |    1.0000     1.000 |       --       --\n 4 |     4.147     0.0906 |    1.0000     1.000 |       --       --\n 5 |     3.171     0.0998 |    0.9986     0.999 |       --       --\n 6 |     2.799     0.1055 |    0.9953     0.998 |       --       --\n 7 |     2.455     0.1080 |    0.9873     0.994 |       --       --\n"
+    },
+    {
+      "script": "probe2_clip_truncgauss.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 47.438,
+      "output": "============================================================================================\nSTEP 1: confirm the truncation picture on REAL w_hat samples (rho=0.40, endpoint w)\n  -> at the smallest-w* component, expect: skew>0, boundary mass, mean pulled UP off w*\n K |   w*_min     kmin |   mean_hat    std_hat       skew   frac<.01\n 2 |   0.3750        1 |     0.3948     0.0497     +0.094      0.000\n 3 |   0.2500        2 |     0.3208     0.0494     -0.058      0.000\n 4 |   0.1875        3 |     0.2112     0.0467     -0.066      0.000\n 5 |   0.1500        4 |     0.1859     0.0406     -0.128      0.000\n 6 |   0.1250        5 |     0.1480     0.0386     -0.168      0.000\n 7 |   0.1071        6 |     0.1259     0.0325     -0.083      0.000\n\n============================================================================================\nSTEP 2: calibrate effective scale so lambda_k = w*_k/s_k reproduces the K=5 onset.\n  The sandwich s_k is per-grain (n in Sigma). The rep-to-rep std that actually clips\n  is sigma_err itself; calibrate one scalar 'scale' (and effective n) on rho=0.40.\n  measured K=2 sigma_err=0.0703 ; sandwich(n=1)=1.4386 => n_eff=418.3\n\n============================================================================================\nSTEP 3: model meas/sand(K) at rho=0.40 with rectified-Gaussian factor (n_eff)\n K |    lam_min   r_kmin       RA |       RB     MEAS |   RA-err\n 2 |      7.540    1.000    1.000 |    1.000    1.000 |    -0.0%\n 3 |      5.222    1.000    1.000 |    1.000    1.010 |    -1.0%\n 4 |      4.112    1.000    0.994 |    1.000    1.050 |    -5.3%\n 5 |      3.548    1.000    0.959 |    1.000    0.890 |    +7.7%\n 6 |      3.158    0.999    0.898 |    1.000    0.880 |    +2.0%\n 7 |      2.897    0.997    0.836 |    1.000    0.690 |   +21.2%\n\n============================================================================================\nSTEP 4: predict meas/sand(K) at rho=0.47 (Phase-1: weak clipping expected -> ~1)\n K |    lam_min   r_kmin       RA |       RB\n 2 |      8.779    1.000    1.000 |    1.000\n 3 |      6.486    1.000    1.000 |    1.000\n 4 |      5.341    1.000    1.000 |    1.000\n 5 |      4.722    1.000    0.999 |    1.000\n 6 |      4.273    1.000    0.994 |    1.000\n 7 |      3.951    1.000    0.985 |    1.000\n"
+    },
+    {
+      "script": "probe2_deflation3.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 21.375,
+      "output": "\nWITH 0.55 (reconcile3 set):  K0=0.6789  R2=0.9987\n   rho=0.30 b=4.475 p7=2.923 <exc>=4.499  per-rho K0=b/((p/2)<exc>)=0.681\n   rho=0.35 b=2.213 p7=2.258 <exc>=2.865  per-rho K0=b/((p/2)<exc>)=0.684\n   rho=0.40 b=1.139 p7=1.695 <exc>=2.030  per-rho K0=b/((p/2)<exc>)=0.662\n   rho=0.47 b=0.437 p7=1.054 <exc>=1.432  per-rho K0=b/((p/2)<exc>)=0.579\n   rho=0.55 b=0.091 p7=0.499 <exc>=1.096  per-rho K0=b/((p/2)<exc>)=0.331\n\nWITHOUT 0.55:  K0=0.6793  R2=0.9993\n   rho=0.30 b=4.475 p7=2.923 <exc>=4.499  per-rho K0=b/((p/2)<exc>)=0.681\n   rho=0.35 b=2.213 p7=2.258 <exc>=2.865  per-rho K0=b/((p/2)<exc>)=0.684\n   rho=0.40 b=1.139 p7=1.695 <exc>=2.030  per-rho K0=b/((p/2)<exc>)=0.662\n   rho=0.47 b=0.437 p7=1.054 <exc>=1.432  per-rho K0=b/((p/2)<exc>)=0.579\n\nnarrow 0.40-0.47:  K0=0.6484  R2=0.9868\n   rho=0.40 b=1.139 p7=1.695 <exc>=2.030  per-rho K0=b/((p/2)<exc>)=0.662\n   rho=0.47 b=0.437 p7=1.054 <exc>=1.432  per-rho K0=b/((p/2)<exc>)=0.579\n\nper-rho K0 (b/((p/2)<exc>)):  0.681 0.684 0.662 0.579 0.331 mean=0.587\nGLOBAL leverage-weighted K0 = 0.6789  (this is the published 0.679-type number)\n"
+    },
+    {
+      "script": "probe2_lncoincidence_a.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.953,
+      "output": "\n================  rho=0.47  ================\n K :  CR(K)    S(K)    excess\n 2 :  1.0000  0.9627   0.9627\n 3 :  1.3814  0.8862   1.2241\n 4 :  1.7483  0.8221   1.4373\n 5 :  2.0699  0.7648   1.5831\n 6 :  2.3271  0.7186   1.6722\n 7 :  2.5184  0.6796   1.7115\n 8 :  2.6515  0.6485   1.7196\n 9 :  2.7374  0.6228   1.7049\n10 :  2.7870  0.6023   1.6786\n\n  [a-i] ln-fit excess ~ a + b ln(K-1) across windows  (drift => coincidence):\n   window     a       b      R2_ln  |  powfit A    B     R2_pow\n    2..5     0.946   0.447  0.9927  |   0.960  0.361  0.9992\n    2..7     0.952   0.437  0.9939  |   0.975  0.333  0.9858\n    2..10    1.013   0.358  0.9332  |   1.025  0.266  0.8878\n    3..10    1.087   0.315  0.8534  |   1.126  0.213  0.8164\n   --> a drift: min=0.946 max=1.087  span=0.141  (14% of mean)\n   --> b drift: min=0.315 max=0.447  span=0.132  (34% of mean)\n\n  [a-ii] CR(K): power-law (K-1)^0.489  R2_pow=0.98086   vs   log-fit R2=0.98573\n         curvature of ln CR vs ln(K-1) (quad coef, ~0 => pure power law): -4.64e-02\n  [a-ii] S(K): stretched-exp exp(-a (K-1)^beta), beta=0.951  R2(ln(-lnS))=0.9875\n         (beta!=0 and S not linear in ln(K-1): log-fit of S R2=0.9849)\n\n================  rho=0.40  ================\n K :  CR(K)    S(K)    excess\n 2 :  1.0000  0.9692   0.9692\n 3 :  1.5571  0.8940   1.3921\n 4 :  2.2332  0.8302   1.8539\n 5 :  2.9839  0.7678   2.2909\n 6 :  3.7503  0.7153   2.6828\n 7 :  4.4826  0.6675   2.9923\n 8 :  5.1462  0.6275   3.2291\n 9 :  5.7227  0.5919   3.3872\n10 :  6.2064  0.5620   3.4881\n\n  [a-i] ln-fit excess ~ a + b ln(K-1) across windows  (drift => coincidence):\n   window     a       b      R2_ln  |  powfit A    B     R2_pow\n    2..5     0.888   0.930  0.9568  |   0.947  0.618  0.9917\n    2..7     0.782   1.139  0.9539  |   0.936  0.642  0.9962\n    2..10    0.707   1.244  0.9707  |   0.956  0.615  0.9875\n    3..10    0.313   1.469  0.9948  |   0.937  0.627  0.9778\n   --> a drift: min=0.313 max=0.888  span=0.574  (85% of mean)\n   --> b drift: min=0.930 max=1.469  span=0.539  (45% of mean)\n\n  [a-ii] CR(K): power-law (K-1)^0.869  R2_pow=0.99613   vs   log-fit R2=0.91558\n         curvature of ln CR vs ln(K-1) (quad coef, ~0 => pure power law): 8.06e-02\n  [a-ii] S(K): stretched-exp exp(-a (K-1)^beta), beta=1.089  R2(ln(-lnS))=0.9947\n         (beta!=0 and S not linear in ln(K-1): log-fit of S R2=0.9693)\n\n================  rho=0.35  ================\n K :  CR(K)    S(K)    excess\n 2 :  1.0000  0.9742   0.9742\n 3 :  1.7208  0.9030   1.5539\n 4 :  2.7407  0.8427   2.3096\n 5 :  4.0699  0.7802   3.1754\n 6 :  5.6709  0.7269   4.1223\n 7 :  7.4758  0.6763   5.0558\n 8 :  9.4008  0.6327   5.9476\n 9 : 11.3609  0.5923   6.7295\n10 : 13.2813  0.5574   7.4023\n\n  [a-i] ln-fit excess ~ a + b ln(K-1) across windows  (drift => coincidence):\n   window     a       b      R2_ln  |  powfit A    B     R2_pow\n    2..5     0.794   1.522  0.9202  |   0.934  0.843  0.9826\n    2..7     0.438   2.213  0.8903  |   0.894  0.929  0.9844\n    2..10   -0.164   3.027  0.8933  |   0.871  0.967  0.9945\n    3..10   -1.872   4.005  0.9586  |   0.735  1.064  0.9975\n   --> a drift: min=-1.872 max=0.794  span=2.666  (1328% of mean)\n   --> b drift: min=1.522 max=4.005  span=2.483  (92% of mean)\n\n  [a-ii] CR(K): power-law (K-1)^1.225  R2_pow=0.98289   vs   log-fit R2=0.82289\n         curvature of ln CR vs ln(K-1) (quad coef, ~0 => pure power law): 2.27e-01\n  [a-ii] S(K): stretched-exp exp(-a (K-1)^beta), beta=1.161  R2(ln(-lnS))=0.9970\n         (beta!=0 and S not linear in ln(K-1): log-fit of S R2=0.9580)\n\nVERDICT NOTE: window-stable (a,b) + ln winning on every window would SUPPORT a true log law;\ndrifting (a,b) + power-law CR + stretched-exp S => 'ln(K-1)' is a fitted-window coincidence.\n"
+    },
+    {
+      "script": "probe2_lncoincidence_b.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.031,
+      "output": "\n================  p(rho) fit over K=2..7  ================\n  rho   erfinv  p_true   1/erfinv^2   1/rho^2   1/rho   -1/lnrho\n  0.28  0.2535   3.963     15.565    12.755   3.571    0.786\n  0.30  0.2725   3.565     13.471    11.111   3.333    0.831\n  0.32  0.2917   3.193     11.756     9.766   3.125    0.878\n  0.34  0.3111   2.846     10.335     8.651   2.941    0.927\n  0.36  0.3307   2.521      9.143     7.716   2.778    0.979\n  0.38  0.3506   2.218      8.134     6.925   2.632    1.034\n  0.40  0.3708   1.937      7.273     6.250   2.500    1.091\n  0.42  0.3913   1.675      6.531     5.669   2.381    1.153\n  0.45  0.4227   1.320      5.597     4.938   2.222    1.252\n  0.47  0.4441   1.106      5.071     4.527   2.128    1.324\n  0.50  0.4769   0.819      4.396     4.000   2.000    1.443\n  0.53  0.5109   0.568      3.832     3.560   1.887    1.575\n  0.56  0.5460   0.352      3.354     3.189   1.786    1.725\n  0.60  0.5951   0.109      2.824     2.778   1.667    1.958\n\n  candidate            a        b        R2       RMSE\n  E2  1/erfinv^2      -0.491    0.308  0.97834  0.1743\n  DM2 (dmu/sig)^-2    -0.491    2.465  0.97834  0.1743\n  R2  1/rho^2         -0.709    0.393  0.97799  0.1757\n  R1  1/rho           -3.291    2.068  0.99777  0.0559\n  NL  -1/ln rho        5.840   -3.278  0.89885  0.3766\n\n  RANK by R2 (E2 = the claim; competitors R2/R1/NL):\n     R1  1/rho          R2=0.99777\n     E2  1/erfinv^2     R2=0.97834\n     R2  1/rho^2        R2=0.97799\n     NL  -1/ln rho      R2=0.89885\n  --> best functional form: R1  1/rho\n\n  p * erfinv^2 (flat => p ∝ 1/erfinv^2; trend => needs intercept/curvature):\n     [0.255 0.265 0.272 0.275 0.276 0.273 0.266 0.257 0.236 0.218 0.186 0.148\n 0.105 0.039]\n    mean=0.219  CV=32.5%\n\n================  p(rho) fit over K=2..10  ================\n  rho   erfinv  p_true   1/erfinv^2   1/rho^2   1/rho   -1/lnrho\n  0.28  0.2535   4.407     15.565    12.755   3.571    0.786\n  0.30  0.2725   3.893     13.471    11.111   3.333    0.831\n  0.32  0.2917   3.419     11.756     9.766   3.125    0.878\n  0.34  0.3111   2.982     10.335     8.651   2.941    0.927\n  0.36  0.3307   2.581      9.143     7.716   2.778    0.979\n  0.38  0.3506   2.215      8.134     6.925   2.632    1.034\n  0.40  0.3708   1.883      7.273     6.250   2.500    1.091\n  0.42  0.3913   1.581      6.531     5.669   2.381    1.153\n  0.45  0.4227   1.184      5.597     4.938   2.222    1.252\n  0.47  0.4441   0.953      5.071     4.527   2.128    1.324\n  0.50  0.4769   0.651      4.396     4.000   2.000    1.443\n  0.53  0.5109   0.398      3.832     3.560   1.887    1.575\n  0.56  0.5460   0.186      3.354     3.189   1.786    1.725\n  0.60  0.5951  -0.043      2.824     2.778   1.667    1.958\n\n  candidate            a        b        R2       RMSE\n  E2  1/erfinv^2      -0.872    0.359  0.98911  0.1431\n  DM2 (dmu/sig)^-2    -0.872    2.871  0.98911  0.1431\n  R2  1/rho^2         -1.127    0.458  0.98887  0.1447\n  R1  1/rho           -4.104    2.396  0.99940  0.0337\n  NL  -1/ln rho        6.401   -3.735  0.87041  0.4937\n\n  RANK by R2 (E2 = the claim; competitors R2/R1/NL):\n     R1  1/rho          R2=0.99940\n     E2  1/erfinv^2     R2=0.98911\n     R2  1/rho^2        R2=0.98887\n     NL  -1/ln rho      R2=0.87041\n  --> best functional form: R1  1/rho\n\n  p * erfinv^2 (flat => p ∝ 1/erfinv^2; trend => needs intercept/curvature):\n     [ 0.283  0.289  0.291  0.289  0.282  0.272  0.259  0.242  0.212  0.188\n  0.148  0.104  0.055 -0.015]\n    mean=0.207  CV=46.0%\n\nVERDICT NOTE: if E2 (1/erfinv^2) has the highest R2 on BOTH windows and beats\nR2/R1/NL, claim (b) SURVIVES as the controlling rho-invariant (with the honest caveat\nthat an intercept is needed because p is a window-local theta-descent slope, not exact).\n"
+    },
+    {
+      "script": "probe2_lncoincidence_b2.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.25,
+      "output": "\n================  K=2..7  ================\n  rho   erfinv   p_M     p_G     p_R(=pM-pG)  pM*erfinv^2  pG*erfinv^2\n  0.28  0.2535   4.614   3.963     0.651        0.296        0.255\n  0.30  0.2725   4.150   3.565     0.585        0.308        0.265\n  0.32  0.2917   3.725   3.193     0.532        0.317        0.272\n  0.34  0.3111   3.337   2.846     0.491        0.323        0.275\n  0.36  0.3307   2.982   2.521     0.461        0.326        0.276\n  0.38  0.3506   2.660   2.218     0.441        0.327        0.273\n  0.40  0.3708   2.367   1.937     0.430        0.325        0.266\n  0.42  0.3913   2.101   1.675     0.426        0.322        0.257\n  0.45  0.4227   1.750   1.320     0.430        0.313        0.236\n  0.47  0.4441   1.545   1.106     0.439        0.305        0.218\n  0.50  0.4769   1.276   0.819     0.458        0.290        0.186\n  0.53  0.5109   1.049   0.568     0.481        0.274        0.148\n  0.56  0.5460   0.858   0.352     0.506        0.256        0.105\n  0.60  0.5951   0.651   0.109     0.541        0.230        0.039\n\n  --- fit p_M (RIGOROUS symbol claim) ---\n    candidate        affine_R2   affine_RMSE  prop_R2(no-intc)\n    E2 1/erfinv^2   0.98929    0.1260      0.98845\n    R2 1/rho^2      0.98905    0.1274      0.97827\n    R1 1/rho        0.99954    0.0260      0.70672\n    NL -1/ln rho    0.87112    0.4370      -1.16279\n    => best affine: R1 1/rho ;  best PURE-proportional: E2 1/erfinv^2\n    p_M * erfinv^2: mean=0.301 CV=9.4%  (flat <=> ∝ 1/erfinv^2)\n\n  --- fit p_G (full empirical) ---\n    candidate        affine_R2   affine_RMSE  prop_R2(no-intc)\n    E2 1/erfinv^2   0.97834    0.1743      0.94444\n    R2 1/rho^2      0.97799    0.1757      0.91668\n    R1 1/rho        0.99777    0.0559      0.61246\n    NL -1/ln rho    0.89885    0.3766      -0.90290\n    => best affine: R1 1/rho ;  best PURE-proportional: E2 1/erfinv^2\n    p_G * erfinv^2: mean=0.219 CV=32.5%  (flat <=> ∝ 1/erfinv^2)\n\n================  K=2..10  ================\n  rho   erfinv   p_M     p_G     p_R(=pM-pG)  pM*erfinv^2  pG*erfinv^2\n  0.28  0.2535   4.923   4.407     0.515        0.316        0.283\n  0.30  0.2725   4.357   3.893     0.464        0.323        0.289\n  0.32  0.2917   3.847   3.419     0.429        0.327        0.291\n  0.34  0.3111   3.390   2.982     0.408        0.328        0.289\n  0.36  0.3307   2.980   2.581     0.399        0.326        0.282\n  0.38  0.3506   2.614   2.215     0.399        0.321        0.272\n  0.40  0.3708   2.289   1.883     0.407        0.315        0.259\n  0.42  0.3913   2.001   1.581     0.420        0.306        0.242\n  0.45  0.4227   1.631   1.184     0.447        0.291        0.212\n  0.47  0.4441   1.420   0.953     0.467        0.280        0.188\n  0.50  0.4769   1.151   0.651     0.500        0.262        0.148\n  0.53  0.5109   0.931   0.398     0.533        0.243        0.104\n  0.56  0.5460   0.750   0.186     0.564        0.224        0.055\n  0.60  0.5951   0.559  -0.043     0.602        0.198       -0.015\n\n  --- fit p_M (RIGOROUS symbol claim) ---\n    candidate        affine_R2   affine_RMSE  prop_R2(no-intc)\n    E2 1/erfinv^2   0.99563    0.0887      0.98209\n    R2 1/rho^2      0.99549    0.0901      0.96115\n    R1 1/rho        0.99765    0.0650      0.65815\n    NL -1/ln rho    0.84410    0.5293      -1.00654\n    => best affine: R1 1/rho ;  best PURE-proportional: E2 1/erfinv^2\n    p_M * erfinv^2: mean=0.290 CV=14.2%  (flat <=> ∝ 1/erfinv^2)\n\n  --- fit p_G (full empirical) ---\n    candidate        affine_R2   affine_RMSE  prop_R2(no-intc)\n    E2 1/erfinv^2   0.98911    0.1431      0.90928\n    R2 1/rho^2      0.98887    0.1447      0.87354\n    R1 1/rho        0.99940    0.0337      0.55243\n    NL -1/ln rho    0.87041    0.4937      -0.74361\n    => best affine: R1 1/rho ;  best PURE-proportional: E2 1/erfinv^2\n    p_G * erfinv^2: mean=0.207 CV=46.0%  (flat <=> ∝ 1/erfinv^2)\n\nVERDICT NOTE: claim (b)'s RIGOROUS content is p_M ∝ 1/erfinv^2 (symbol-level).\nIf p_M*erfinv^2 is flat & E2 wins the PURE-proportional fit on p_M, the rigorous core\nsurvives; the 1/rho win on p_G is then an artifact of the empirical reweight p_R over a\nnarrow rho window. If even p_M prefers 1/rho proportionally, claim (b) NEEDS-REVISION.\n"
+    },
+    {
+      "script": "probe2_omega_edge.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.641,
+      "output": "===============================================================================================\nomega_q^2 = (vAv)/lam_min ; fit to omega_inf^2 (K-1)/(K+a). Nyq=pi/dmu, kappa=2erfinv^2\n===============================================================================================\n\n--- rho=0.47  kappa=0.3944  Nyq=pi/dmu=0.10005 ---\n  FIT: omega_inf^2=1.75351e-02 (omega_inf=0.13242) ; a=11.043 ; R2=0.99661\n  PRED omega_inf=0.92*Nyq/sqrt(kappa)=0.14657  (ratio fit/pred=0.903)\n  PRED a=2.4/kappa^2=15.430  (fit a=11.043, ratio=0.716)\n  omega_q^2 measured vs Dirichlet-symbol(theta=K pi/(K+1)):\n    K= 2  meas=1.24792e-03  sym=1.24792e-03  ratio=1.000\n    K= 3  meas=2.28786e-03  sym=2.66658e-03  ratio=1.166\n    K= 4  meas=3.35559e-03  sym=1.72415e-03  ratio=0.514\n    K= 5  meas=4.35150e-03  sym=1.79190e-03  ratio=0.412\n    K= 6  meas=5.23032e-03  sym=1.77281e-03  ratio=0.339\n    K= 7  meas=5.97879e-03  sym=1.77989e-03  ratio=0.298\n    K= 8  meas=6.60298e-03  sym=1.80033e-03  ratio=0.273\n    K= 9  meas=7.11765e-03  sym=1.83027e-03  ratio=0.257\n    K=10  meas=7.53996e-03  sym=1.86706e-03  ratio=0.248\n    K=11  meas=7.88625e-03  sym=1.90883e-03  ratio=0.242\n    K=12  meas=8.17079e-03  sym=1.95427e-03  ratio=0.239\n\n--- rho=0.4  kappa=0.2750  Nyq=pi/dmu=0.11982 ---\n  FIT: omega_inf^2=3.40391e-02 (omega_inf=0.18450) ; a=23.520 ; R2=0.99858\n  PRED omega_inf=0.92*Nyq/sqrt(kappa)=0.21020  (ratio fit/pred=0.878)\n  PRED a=2.4/kappa^2=31.736  (fit a=23.520, ratio=0.741)\n  omega_q^2 measured vs Dirichlet-symbol(theta=K pi/(K+1)):\n    K= 2  meas=1.33157e-03  sym=1.33157e-03  ratio=1.000\n    K= 3  meas=2.41727e-03  sym=4.34815e-03  ratio=1.799\n    K= 4  meas=3.55980e-03  sym=9.19448e-04  ratio=0.258\n    K= 5  meas=4.69595e-03  sym=1.40552e-03  ratio=0.299\n    K= 6  meas=5.78194e-03  sym=1.21223e-03  ratio=0.210\n    K= 7  meas=6.78740e-03  sym=1.16360e-03  ratio=0.171\n    K= 8  meas=7.69629e-03  sym=1.12453e-03  ratio=0.146\n    K= 9  meas=8.50371e-03  sym=1.09765e-03  ratio=0.129\n    K=10  meas=9.21225e-03  sym=1.07871e-03  ratio=0.117\n    K=11  meas=9.82886e-03  sym=1.06541e-03  ratio=0.108\n    K=12  meas=1.03627e-02  sym=1.05622e-03  ratio=0.102\n\n--- rho=0.35  kappa=0.2059  Nyq=pi/dmu=0.13847 ---\n  FIT: omega_inf^2=6.57871e-02 (omega_inf=0.25649) ; a=48.013 ; R2=0.99945\n  PRED omega_inf=0.92*Nyq/sqrt(kappa)=0.28074  (ratio fit/pred=0.914)\n  PRED a=2.4/kappa^2=56.611  (fit a=48.013, ratio=0.848)\n  omega_q^2 measured vs Dirichlet-symbol(theta=K pi/(K+1)):\n    K= 2  meas=1.38668e-03  sym=1.38668e-03  ratio=1.000\n    K= 3  meas=2.51279e-03  sym=1.18930e-02  ratio=4.733\n    K= 4  meas=3.68577e-03  sym=1.80331e-04  ratio=0.049\n    K= 5  meas=4.87793e-03  sym=1.59471e-03  ratio=0.327\n    K= 6  meas=6.06260e-03  sym=9.98108e-04  ratio=0.165\n    K= 7  meas=7.21293e-03  sym=1.02655e-03  ratio=0.142\n    K= 8  meas=8.30773e-03  sym=9.79685e-04  ratio=0.118\n    K= 9  meas=9.33265e-03  sym=9.52323e-04  ratio=0.102\n    K=10  meas=1.02795e-02  sym=9.30927e-04  ratio=0.091\n    K=11  meas=1.11451e-02  sym=9.14109e-04  ratio=0.082\n    K=12  meas=1.19299e-02  sym=9.00567e-04  ratio=0.075\n\n--- rho=0.3  kappa=0.1485  Nyq=pi/dmu=0.16306 ---\n  FIT: omega_inf^2=1.65057e-01 (omega_inf=0.40627) ; a=124.792 ; R2=0.99978\n  PRED omega_inf=0.92*Nyq/sqrt(kappa)=0.38934  (ratio fit/pred=1.044)\n  PRED a=2.4/kappa^2=108.874  (fit a=124.792, ratio=1.146)\n  omega_q^2 measured vs Dirichlet-symbol(theta=K pi/(K+1)):\n    K= 2  meas=1.43745e-03  sym=1.43745e-03  ratio=1.000\n    K= 3  meas=2.61593e-03  sym=-8.02601e-03  ratio=-3.068\n    K= 4  meas=3.80956e-03  sym=-3.79122e-04  ratio=-0.100\n    K= 5  meas=5.02680e-03  sym=2.84253e-03  ratio=0.565\n    K= 6  meas=6.26111e-03  sym=6.70463e-04  ratio=0.107\n    K= 7  meas=7.49753e-03  sym=1.12523e-03  ratio=0.150\n    K= 8  meas=8.71995e-03  sym=9.70789e-04  ratio=0.111\n    K= 9  meas=9.91389e-03  sym=9.60003e-04  ratio=0.097\n    K=10  meas=1.10675e-02  sym=9.35914e-04  ratio=0.085\n    K=11  meas=1.21716e-02  sym=9.18519e-04  ratio=0.075\n    K=12  meas=1.32199e-02  sym=9.04215e-04  ratio=0.068\n"
+    },
+    {
+      "script": "probe2_omega_mobius.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.656,
+      "output": "===============================================================================================\nDecompose omega_q^2 = vAv/lam_min ; test x^2=(pi/(K+1))^2 Dirichlet-edge expansion\n===============================================================================================\n\n--- rho=0.47  kappa=0.3944 ---\n  vAv ~ (K-1)^-0.093   lam_min ~ (K-1)^-0.794\n  MOBIUS  omega_q^2=1.6667e-02*(K-1)/(K+10.166)  R2=0.99580   omega_inf=0.12910\n  X2-EDGE omega_q^2=(a0+a2 x^2)/(g0+g2 x^2), x=pi/(K+1)  R2=0.99990  -> omega_inf^2=a0/g0=1.0450e-02 (omega_inf=0.10223)\n    a0=9.1234e-02 a2=-2.7323e-02 g0=8.7302e+00 g2=3.8037e+01 ; a2/a0=-0.299 g2/g0=4.357\n  CHECK omega_inf(mobius)=0.12910 vs 0.92*Nyq/sqrt(kappa)=0.14657  ratio=0.881\n  CHECK a(mobius)=10.166 vs 2.4/kappa^2=15.430 ratio=0.659 ; vs 2.0/kappa^2=12.858 ratio=0.791\n\n--- rho=0.4  kappa=0.2750 ---\n  vAv ~ (K-1)^-0.827   lam_min ~ (K-1)^-1.755\n  MOBIUS  omega_q^2=3.1439e-02*(K-1)/(K+21.166)  R2=0.99810   omega_inf=0.17731\n  X2-EDGE omega_q^2=(a0+a2 x^2)/(g0+g2 x^2), x=pi/(K+1)  R2=0.99999  -> omega_inf^2=a0/g0=1.5061e-02 (omega_inf=0.12272)\n    a0=9.4938e-03 a2=-1.5081e-03 g0=6.3035e-01 g2=4.7510e+00 ; a2/a0=-0.159 g2/g0=7.537\n  CHECK omega_inf(mobius)=0.17731 vs 0.92*Nyq/sqrt(kappa)=0.21020  ratio=0.844\n  CHECK a(mobius)=21.166 vs 2.4/kappa^2=31.736 ratio=0.667 ; vs 2.0/kappa^2=26.447 ratio=0.800\n\n--- rho=0.35  kappa=0.2059 ---\n  vAv ~ (K-1)^-1.590   lam_min ~ (K-1)^-2.737\n  MOBIUS  omega_q^2=5.8884e-02*(K-1)/(K+42.168)  R2=0.99922   omega_inf=0.24266\n  X2-EDGE omega_q^2=(a0+a2 x^2)/(g0+g2 x^2), x=pi/(K+1)  R2=0.99989  -> omega_inf^2=a0/g0=1.9668e-02 (omega_inf=0.14024)\n    a0=1.9449e-04 a2=-3.3873e-06 g0=9.8886e-03 g2=1.0985e-01 ; a2/a0=-0.017 g2/g0=11.109\n  CHECK omega_inf(mobius)=0.24266 vs 0.92*Nyq/sqrt(kappa)=0.28074  ratio=0.864\n  CHECK a(mobius)=42.168 vs 2.4/kappa^2=56.611 ratio=0.745 ; vs 2.0/kappa^2=47.176 ratio=0.894\n\n--- rho=0.3  kappa=0.1485 ---\n  vAv ~ (K-1)^-2.603   lam_min ~ (K-1)^-4.026\n  MOBIUS  omega_q^2=1.4375e-01*(K-1)/(K+107.652)  R2=0.99975   omega_inf=0.37914\n  X2-EDGE omega_q^2=(a0+a2 x^2)/(g0+g2 x^2), x=pi/(K+1)  R2=0.16544  -> omega_inf^2=a0/g0=8.4435e-03 (omega_inf=0.09189)\n    a0=1.9813e-04 a2=-3.2485e-04 g0=2.3466e-02 g2=-3.9473e-02 ; a2/a0=-1.640 g2/g0=-1.682\n  CHECK omega_inf(mobius)=0.37914 vs 0.92*Nyq/sqrt(kappa)=0.38934  ratio=0.974\n  CHECK a(mobius)=107.652 vs 2.4/kappa^2=108.874 ratio=0.989 ; vs 2.0/kappa^2=90.728 ratio=1.187\n"
+    },
+    {
+      "script": "probe2_pR_cap_final.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 1.657,
+      "output": "===============================================================================================\n3/8 cap:  D(K)=W0/sum|Wk| (surviving diagonal fraction of worst mode).  Limit -> 3/8 ?\n===============================================================================================\n\n--- rho=0.47  kappa=0.3944 ---\n K |  D_true  D_sine |   <1/q>_g     beta0\n 2 |  0.5973  0.5973 |   165.107     1.323\n 3 |  0.5096  0.4863 |   163.154     1.687\n 4 |  0.4590  0.4380 |   182.158     2.056\n 5 |  0.4290  0.4123 |   203.504     2.422\n 6 |  0.4098  0.3970 |   226.543     2.787\n 7 |  0.3969  0.3871 |   250.995     3.152\n 8 |  0.3878  0.3803 |   276.581     3.515\n 9 |  0.3813  0.3754 |   303.065     3.878\n10 |  0.3765  0.3718 |   330.236     4.242\n11 |  0.3729  0.3690 |   357.924     4.604\n12 |  0.3701  0.3669 |   385.991     4.967\n13 |  0.3678  0.3652 |   414.325     5.330\n14 |  0.3661  0.3638 |   442.836     5.692\n15 |  0.3646  0.3627 |   471.454     6.055\n16 |  0.3635  0.3617 |   500.121     6.417\n  D_inf (1/K extrap) = 0.3238  (3/8=0.375)\n  p_R(K<=7 window) = 0.389 ; p0(beta0,K<=7) = 0.568 ; D_inf*p0 = 0.184 (vs p_R 0.389)\n\n--- rho=0.4  kappa=0.2750 ---\n K |  D_true  D_sine |   <1/q>_g     beta0\n 2 |  0.5683  0.5683 |   167.304     1.241\n 3 |  0.4718  0.4463 |   166.317     1.535\n 4 |  0.4185  0.3922 |   182.773     1.842\n 5 |  0.3862  0.3630 |   199.660     2.150\n 6 |  0.3648  0.3455 |   217.215     2.456\n 7 |  0.3498  0.3341 |   235.641     2.761\n 8 |  0.3390  0.3262 |   254.964     3.066\n 9 |  0.3309  0.3205 |   275.129     3.370\n10 |  0.3248  0.3163 |   296.049     3.673\n11 |  0.3201  0.3131 |   317.622     3.977\n12 |  0.3164  0.3106 |   339.752     4.280\n13 |  0.3134  0.3086 |   362.347     4.583\n14 |  0.3111  0.3070 |   385.328     4.886\n15 |  0.3091  0.3057 |   408.625     5.189\n16 |  0.3075  0.3046 |   432.176     5.492\n  D_inf (1/K extrap) = 0.2659  (3/8=0.375)\n  p_R(K<=7 window) = 0.314 ; p0(beta0,K<=7) = 0.533 ; D_inf*p0 = 0.142 (vs p_R 0.314)\n\n--- rho=0.35  kappa=0.2059 ---\n K |  D_true  D_sine |   <1/q>_g     beta0\n 2 |  0.5513  0.5513 |   169.027     1.189\n 3 |  0.4488  0.4219 |   171.335     1.431\n 4 |  0.3939  0.3633 |   187.451     1.694\n 5 |  0.3603  0.3313 |   202.373     1.960\n 6 |  0.3376  0.3119 |   217.019     2.226\n 7 |  0.3213  0.2991 |   231.907     2.491\n 8 |  0.3091  0.2903 |   247.278     2.755\n 9 |  0.2999  0.2840 |   263.232     3.019\n10 |  0.2927  0.2793 |   279.789     3.282\n11 |  0.2869  0.2756 |   296.930     3.545\n12 |  0.2824  0.2728 |   314.617     3.808\n13 |  0.2787  0.2706 |   332.802     4.070\n14 |  0.2757  0.2687 |   351.433     4.333\n15 |  0.2732  0.2672 |   370.461     4.595\n16 |  0.2711  0.2660 |   389.838     4.857\n  D_inf (1/K extrap) = 0.2290  (3/8=0.375)\n  p_R(K<=7 window) = 0.273 ; p0(beta0,K<=7) = 0.504 ; D_inf*p0 = 0.115 (vs p_R 0.273)\n\n--- rho=0.3  kappa=0.1485 ---\n K |  D_true  D_sine |   <1/q>_g     beta0\n 2 |  0.5370  0.5370 |   170.785     1.141\n 3 |  0.4290  0.4008 |   178.717     1.333\n 4 |  0.3728  0.3377 |   195.860     1.549\n 5 |  0.3381  0.3026 |   210.146     1.774\n 6 |  0.3142  0.2810 |   223.111     2.000\n 7 |  0.2968  0.2667 |   235.543     2.226\n 8 |  0.2836  0.2568 |   247.877     2.451\n 9 |  0.2732  0.2496 |   260.356     2.675\n10 |  0.2650  0.2442 |   273.113     2.900\n11 |  0.2582  0.2401 |   286.220     3.123\n12 |  0.2527  0.2368 |   299.709     3.347\n13 |  0.2482  0.2342 |   313.587     3.570\n14 |  0.2443  0.2321 |   327.850     3.793\n15 |  0.2411  0.2304 |   342.481     4.016\n16 |  0.2384  0.2290 |   357.462     4.239\n  D_inf (1/K extrap) = 0.1966  (3/8=0.375)\n  p_R(K<=7 window) = 0.250 ; p0(beta0,K<=7) = 0.466 ; D_inf*p0 = 0.092 (vs p_R 0.250)\n"
+    },
+    {
+      "script": "probe2_synth.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.672,
+      "output": "==============================================================================\n(1) Overlap Toeplitz check:  m_k = c*exp(-b k^2),  b = 2*erfinv(rho)^2\n==============================================================================\nrho=0.30  Toeplitz max-band-spread=1.98e-09 | b_fit=0.14847  b_theory=2erfinv^2=0.14847  ratio=1.0000\nrho=0.40  Toeplitz max-band-spread=1.98e-09 | b_fit=0.27500  b_theory=2erfinv^2=0.27500  ratio=1.0000\nrho=0.47  Toeplitz max-band-spread=1.98e-09 | b_fit=0.39439  b_theory=2erfinv^2=0.39439  ratio=1.0000\nrho=0.55  Toeplitz max-band-spread=1.98e-09 | b_fit=0.57065  b_theory=2erfinv^2=0.57065  ratio=1.0000\n\n==============================================================================\n(2) lambda_min(M) descent: window slope p (K=2..7) vs top-K local slope\n    claim: p is a window-local theta-descent slope; 1/erfinv^2 is the ASYMPTOTE\n==============================================================================\nrho=0.30  p_window(2..7)=3.373  p_topK(local)=4.420 | 1/erfinv^2=13.471  p_topK*erfinv^2=0.328\nrho=0.35  p_window(2..7)=2.609  p_topK(local)=2.670 | 1/erfinv^2=9.713  p_topK*erfinv^2=0.275\nrho=0.40  p_window(2..7)=1.996  p_topK(local)=1.595 | 1/erfinv^2=7.273  p_topK*erfinv^2=0.219\nrho=0.47  p_window(2..7)=1.345  p_topK(local)=0.786 | 1/erfinv^2=5.071  p_topK*erfinv^2=0.155\n\n    -> p_window deflated (~rho^-0.8 regime); p_topK approaches 1/erfinv^2 from below\n       (large-K float64 underflow caps how close we get; consistent w/ asymptotic claim)\n\n==============================================================================\n(3) Worst tangent mode of signal Fisher G = degree-(K-1) contrast?\n==============================================================================\nrho=0.40\n   K=3  worst-mode dominant contrast degree = 2  (expect K-1 = 2)  OK\n   K=4  worst-mode dominant contrast degree = 3  (expect K-1 = 3)  OK\n   K=5  worst-mode dominant contrast degree = 4  (expect K-1 = 4)  OK\n   K=6  worst-mode dominant contrast degree = 5  (expect K-1 = 5)  OK\n   K=7  worst-mode dominant contrast degree = 6  (expect K-1 = 6)  OK\nrho=0.47\n   K=3  worst-mode dominant contrast degree = 2  (expect K-1 = 2)  OK\n   K=4  worst-mode dominant contrast degree = 3  (expect K-1 = 3)  OK\n   K=5  worst-mode dominant contrast degree = 4  (expect K-1 = 4)  OK\n   K=6  worst-mode dominant contrast degree = 5  (expect K-1 = 5)  OK\n   K=7  worst-mode dominant contrast degree = 6  (expect K-1 = 6)  OK\n"
+    },
+    {
+      "script": "probe3_metric_projection.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 16.859,
+      "output": "<TEMP_REPO>\\theory_checks\\probe3_metric_projection.py:67: RuntimeWarning: invalid value encountered in divide\n  return np.array([[TRAPZ(h[i] * h[j] * qb / q ** 2, TGRID) for j in range(K)] for i in range(K)])\n[calib] real-core sigma_err(K=2, rho=0.4, n=350) = 0.07088\n[calib] sandwich se(n=1,K=2)=1.4386 -> n_eff=412 (cf measured n=350)\n\n K |  sig_unc | ratio_E ratio_G ratio_A    MEAS | best vs meas\n 2 |   0.0709 |   0.988   0.988   0.988   1.000 | E   -1% G   -1% A   -1%\n 3 |   0.1018 |   1.030   1.030   1.030   1.010 | E   +2% G   +2% A   +2%\n 4 |   0.1356 |   1.010   1.007   1.009   1.050 | E   -4% G   -4% A   -4%\n 5 |   0.1677 |   0.951   0.928   0.945   0.890 | E   +7% G   +4% A   +6%\n 6 |   0.1964 |   0.883   0.819   0.869   0.880 | E   +0% G   -7% A   -1%\n 7 |   0.2192 |   0.852   0.737   0.829   0.690 | E  +23% G   +7% A  +20%\n"
+    },
+    {
+      "script": "probe_S_exact.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 26.968,
+      "output": "====================================================================================================\nEXACT S^2 = [v^T Gs v - (v^T b)^2]/(v^T G v),  Gs from phi_i=(h_i/q)*K_bw (the Sigma kernel)\n====================================================================================================\n\n--- rho=0.47 ---\n K |   S_exact   S_field | match% |     om_q\n 2 |   0.96273   0.96273 | 100.00 |  0.03532\n 3 |   0.88618   0.88618 | 100.00 |  0.04783\n 4 |   0.82211   0.82211 | 100.00 |  0.05792\n 5 |   0.76481   0.76481 | 100.00 |  0.06595\n 6 |   0.71859   0.71859 | 100.00 |  0.07230\n 7 |   0.67960   0.67960 | 100.00 |  0.07730\n 8 |   0.64853   0.64853 | 100.00 |  0.08123\n 9 |   0.62281   0.62281 | 100.00 |  0.08434\n10 |   0.60228   0.60228 | 100.00 |  0.08680\n  om_q^2 = om_inf^2 (1 - c/K):  om_inf=0.09096  c=1.928  R2=0.8940   (Nyq pi/dmu=0.10005, ratio om_inf/Nyq=0.909)\n  om_inf*sigma=2.2741   (1/sigma=0.04000; om_inf vs 1/sigma ratio=2.274)\n\n--- rho=0.4 ---\n K |   S_exact   S_field | match% |     om_q\n 2 |   0.96918   0.96918 | 100.00 |  0.03649\n 3 |   0.89403   0.89403 | 100.00 |  0.04916\n 4 |   0.83016   0.83016 | 100.00 |  0.05966\n 5 |   0.76777   0.76777 | 100.00 |  0.06851\n 6 |   0.71534   0.71534 | 100.00 |  0.07602\n 7 |   0.66755   0.66755 | 100.00 |  0.08236\n 8 |   0.62747   0.62747 | 100.00 |  0.08770\n 9 |   0.59188   0.59188 | 100.00 |  0.09218\n10 |   0.56201   0.56201 | 100.00 |  0.09594\n  om_q^2 = om_inf^2 (1 - c/K):  om_inf=0.09857  c=2.000  R2=0.8507   (Nyq pi/dmu=0.11982, ratio om_inf/Nyq=0.823)\n  om_inf*sigma=2.4641   (1/sigma=0.04000; om_inf vs 1/sigma ratio=2.464)\n"
+    },
+    {
+      "script": "probe_S_final.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 24.922,
+      "output": "FINAL CLOSED-FORM S(K) VERIFICATION\n====================================================================================================\n\n--- rho=0.47   omega_inf=0.1460 (=1.459*Nyq, Nyq=0.1000)  a=14.862  c_v(varw/m1^2)=0.083 ---\n   K |   S_true |   mono_m    e% |   2mom_m    e% |   mono_c    e% |   2mom_c    e%\n   2 |   0.9627 |   0.9141  -5.1 |   0.9141  -5.1 |   0.9130  -5.2 |   0.9136  -5.1\n   3 |   0.8862 |   0.8482  -4.3 |   0.8482  -4.3 |   0.8421  -5.0 |   0.8442  -4.7\n   4 |   0.8221 |   0.7854  -4.5 |   0.7885  -4.1 |   0.7834  -4.7 |   0.7873  -4.2\n   5 |   0.7648 |   0.7311  -4.4 |   0.7397  -3.3 |   0.7341  -4.0 |   0.7399  -3.3\n   6 |   0.7186 |   0.6863  -4.5 |   0.6984  -2.8 |   0.6922  -3.7 |   0.7000  -2.6\n   7 |   0.6796 |   0.6504  -4.3 |   0.6640  -2.3 |   0.6562  -3.4 |   0.6660  -2.0\n   8 |   0.6485 |   0.6218  -4.1 |   0.6356  -2.0 |   0.6250  -3.6 |   0.6366  -1.8\n   9 |   0.6228 |   0.5992  -3.8 |   0.6124  -1.7 |   0.5978  -4.0 |   0.6110  -1.9\n  10 |   0.6023 |   0.5813  -3.5 |   0.5935  -1.5 |   0.5737  -4.7 |   0.5886  -2.3\n  RMS%  mono_meas=4.29 2mom_meas=3.22 mono_clsd=4.31 2mom_clsd=3.33 | MAX 2mom_clsd=5.10\n\n--- rho=0.4   omega_inf=0.2080 (=1.736*Nyq, Nyq=0.1198)  a=31.756  c_v(varw/m1^2)=0.098 ---\n   K |   S_true |   mono_m    e% |   2mom_m    e% |   mono_c    e% |   2mom_c    e%\n   2 |   0.9692 |   0.9086  -6.3 |   0.9086  -6.3 |   0.9119  -5.9 |   0.9126  -5.8\n   3 |   0.8940 |   0.8403  -6.0 |   0.8403  -6.0 |   0.8360  -6.5 |   0.8386  -6.2\n   4 |   0.8302 |   0.7740  -6.8 |   0.7740  -6.8 |   0.7701  -7.2 |   0.7753  -6.6\n   5 |   0.7678 |   0.7132  -7.1 |   0.7201  -6.2 |   0.7126  -7.2 |   0.7207  -6.1\n   6 |   0.7153 |   0.6596  -7.8 |   0.6735  -5.8 |   0.6621  -7.4 |   0.6733  -5.9\n   7 |   0.6675 |   0.6136  -8.1 |   0.6325  -5.3 |   0.6175  -7.5 |   0.6318  -5.4\n   8 |   0.6275 |   0.5748  -8.4 |   0.5966  -4.9 |   0.5780  -7.9 |   0.5953  -5.1\n   9 |   0.5919 |   0.5424  -8.4 |   0.5653  -4.5 |   0.5427  -8.3 |   0.5630  -4.9\n  10 |   0.5620 |   0.5154  -8.3 |   0.5382  -4.2 |   0.5111  -9.1 |   0.5343  -4.9\n  RMS%  mono_meas=7.50 2mom_meas=5.61 mono_clsd=7.50 2mom_clsd=5.69 | MAX 2mom_clsd=6.61\n\nrho-dependence summary:\n  rho=0.47: omega_inf=0.1460  omega_inf/Nyq=1.459  a=14.86  c_v=0.083\n  rho=0.40: omega_inf=0.2080  omega_inf/Nyq=1.736  a=31.76  c_v=0.098\n"
+    },
+    {
+      "script": "probe_excess_growth.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 201.062,
+      "output": "============================================================================================\nexcess(K) = sigma_err / [0.500/(sqrt(N)*rho)]   N=350, w=endpoint, R=600, seeds=[101, 202, 303]\n============================================================================================\n\n--- rho = 0.47 ---\n K |   excess per seed (101/202/303)  |     mean      std      rng | sig_err_mean\n 2 |  1.074  1.047  1.061               |    1.061   0.0113   0.0278 |  0.06031  (9s)\n 3 |  1.442  1.503  1.418               |    1.454   0.0359   0.0851 |  0.08270  (12s)\n 4 |  1.673  1.647  1.659               |    1.659   0.0106   0.0259 |  0.09436  (15s)\n 5 |  1.790  1.750  1.837               |    1.792   0.0355   0.0868 |  0.10191  (21s)\n 6 |  1.924  1.987  1.966               |    1.959   0.0260   0.0624 |  0.11140  (21s)\n 7 |  1.920  1.906  1.944               |    1.923   0.0157   0.0380 |  0.10936  (20s)\n  monotone increasing in K (mean): False   increments dK: +0.394 +0.205 +0.133 +0.167 -0.036\n  fit linear  a + b*K          a=+0.8751 b=+0.1703  R2=0.88144  rmse=0.1067\n  fit sqrt    a + b*sqrt(K-1)  a=+0.5330 b=+0.6140  R2=0.94619  rmse=0.0719\n  fit log     a + b*ln(K-1)    a=+1.0846 b=+0.5079  R2=0.98342  rmse=0.0399\n  BEST FIT: log (a + b*ln(K-1))  R2=0.98342\n  saturation check: d(2->3)=+0.394  d(6->7)=-0.036  ratio=-0.091 -> SATURATING (decreasing increments)\n\n--- rho = 0.40 ---\n K |   excess per seed (101/202/303)  |     mean      std      rng | sig_err_mean\n 2 |  0.970  1.001  1.088               |    1.019   0.0498   0.1177 |  0.06812  (6s)\n 3 |  1.582  1.527  1.551               |    1.553   0.0226   0.0552 |  0.10379  (18s)\n 4 |  1.956  1.917  1.969               |    1.948   0.0220   0.0518 |  0.13013  (18s)\n 5 |  2.134  2.192  2.069               |    2.132   0.0504   0.1235 |  0.14242  (19s)\n 6 |  2.515  2.431  2.482               |    2.476   0.0345   0.0838 |  0.16541  (20s)\n 7 |  2.249  2.236  2.074               |    2.186   0.0797   0.1756 |  0.14608  (20s)\n  monotone increasing in K (mean): False   increments dK: +0.534 +0.394 +0.184 +0.344 -0.289\n  fit linear  a + b*K          a=+0.7561 b=+0.2510  R2=0.80862  rmse=0.2085\n  fit sqrt    a + b*sqrt(K-1)  a=+0.2385 b=+0.9124  R2=0.88242  rmse=0.1635\n  fit log     a + b*ln(K-1)    a=+1.0531 b=+0.7592  R2=0.92816  rmse=0.1278\n  BEST FIT: log (a + b*ln(K-1))  R2=0.92816\n  saturation check: d(2->3)=+0.534  d(6->7)=-0.289  ratio=-0.542 -> SATURATING (decreasing increments)\n\n--- rho dependence: excess(0.40) - excess(0.47) per K ---\n K |  ex@0.47  ex@0.40 diff(40-47)\n 2 |    1.061    1.019   -0.041\n 3 |    1.454    1.553   +0.099\n 4 |    1.659    1.948   +0.288\n 5 |    1.792    2.132   +0.339\n 6 |    1.959    2.476   +0.517\n 7 |    1.923    2.186   +0.263\n  mean |excess(0.40)-excess(0.47)| over K = 0.258\n\nwrote probe_excess_growth_out.json\n"
+    },
+    {
+      "script": "probe_final_p.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.797,
+      "output": "rho   erfinv   1/erfinv^2   p_M(theory)=alpha*pi^2/4b   true p_G\n  0.50  0.4769     4.396        1.394                   0.722\n  0.47  0.4441     5.071        1.608                   0.977\n  0.45  0.4227     5.597        1.775                   1.170\n  0.40  0.3708     7.273        2.306                   1.738\n  0.38  0.3506     8.134        2.579                   2.004\n  0.35  0.3209     9.713        3.080                   2.449\n  0.32  0.2917    11.756        3.727                   2.953\n  0.30  0.2725    13.471        4.271                   3.324\n\nFIT  p_G(rho) = A/erfinv(rho)^2 + C :  A=0.2881  C=-0.4384  R2=0.9917\n   theory A = alpha*pi^2/8 = 0.3171  (alpha=0.257)\n   so p_G ~ 0.288/erfinv(rho)^2 -0.438\n   residuals (true - pred): [-0.106 -0.045 -0.004  0.081  0.099  0.089  0.004 -0.119]\n\nReconstruction lammin(G) = lammin(M)*<1/q>_{vg}  (vg=TRUE G worst eigvec): residuals\n  === rho=0.47 ===\n    recon err %%:  [ 0.  0.  0. -0.  0. -0. -0. -0. -0.]  (identity check, should be ~0)\n  === rho=0.40 ===\n    recon err %%:  [0. 0. 0. 0. 0. 0. 0. 0. 0.]  (identity check, should be ~0)\n  === rho=0.35 ===\n    recon err %%:  [ 0.  0.  0.  0.  0. -0.  0.  0.  0.]  (identity check, should be ~0)\n"
+    },
+    {
+      "script": "probe_reconcile3.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 10.421,
+      "output": "==============================================================================\nPART 1: omega_q exact identity + worst-mode = max gen-eig(A,G)\n==============================================================================\n  rho  K | omega_q2_form  overlap(genvec,v)\n 0.47  3 |  2.28786e-03   0.9991\n 0.47  6 |  5.23032e-03   0.9985\n 0.47 10 |  7.53996e-03   0.9973\n 0.40  3 |  2.41727e-03   0.9994\n 0.40  6 |  5.78194e-03   0.9989\n 0.40 10 |  9.21225e-03   0.9979\n\n==============================================================================\nPART 2: per-K excess reproduction (vs prompt targets) + b decomposition\n==============================================================================\nrho=0.47 excess: 0.963 1.224 1.437 1.583 1.672 1.711 1.720 1.705 1.679\n        vs tgt max|err|=0.03%\nrho=0.40 excess: 0.969 1.392 1.854 2.291 2.683 2.992 3.229 3.387 3.488\n        vs tgt max|err|=0.02%\n\n==============================================================================\nPART 3: CONSOLIDATED b(p) law and anchor reproduction\n==============================================================================\nCONSOLIDATED:  b(rho) = 0.679 * (p(rho)/2) * <excess>_{2..7}     R2=0.9987\n  where p(rho) = 0.24/erfinv(rho)^2 - 0.19 (K=2..7 window)\n  rho | b_fit  b_pred  p7    <exc>\n 0.30 | 4.475  4.464  2.923  4.499\n 0.35 | 2.213  2.196  2.258  2.865\n 0.40 | 1.139  1.168  1.695  2.030\n 0.47 | 0.437  0.512  1.054  1.432\n 0.55 | 0.091  0.186  0.499  1.096\n\nAnchors: b(0.47)=0.437 (prompt ~0.44), b(0.40)=1.139 (prompt ~1.14)\n"
+    },
+    {
+      "script": "probe_toeplitz.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.703,
+      "output": "Check overlap matrix M is Toeplitz & matches analytic m_k (rho=0.47, K=6)\n  numerical M row0: [1.128e-02 7.610e-03 2.330e-03 3.200e-04 2.000e-05 0.000e+00]\n  analytic  m_k   : [1.128e-02 7.610e-03 2.330e-03 3.200e-04 2.000e-05 0.000e+00]\n  Toeplitz dev (max |M_ij - m_{|i-j|}|): 2.23e-11\n\nr = exp(-Delta^2/(4 sigma^2)) by rho:\n  rho=0.47  Delta=31.40  r=0.6741  -ln r = Delta^2/(4 sig^2) = 0.3944\n  rho=0.40  Delta=26.22  r=0.7596  -ln r = Delta^2/(4 sig^2) = 0.2750\n  rho=0.35  Delta=22.69  r=0.8139  -ln r = Delta^2/(4 sig^2) = 0.2059\n\nSmallest tangent eigenvalue: M vs symbol f(pi - pi/K) vs G\n=== rho=0.47 ===\n K |   lammin(G)   lammin(M) |       f(pi)  f(pi-pi/K) | G/M ratio\n 2 |  6.0718e-01  3.6775e-03 |  1.2220e-04  6.6651e-03 |  165.1074\n 3 |  3.1821e-01  1.9187e-03 |  1.2220e-04  1.9751e-03 |  165.8467\n 4 |  1.9864e-01  9.0775e-04 |  1.2220e-04  9.4528e-04 |  218.8323\n 5 |  1.4171e-01  6.2750e-04 |  1.2220e-04  5.8487e-04 |  225.8357\n 6 |  1.1212e-01  4.3297e-04 |  1.2220e-04  4.1965e-04 |  258.9557\n 7 |  9.5738e-02  3.5006e-04 |  1.2220e-04  3.3027e-04 |  273.4894\n 8 |  8.6366e-02  2.8533e-04 |  1.2220e-04  2.7634e-04 |  302.6858\n 9 |  8.1027e-02  2.5099e-04 |  1.2220e-04  2.4121e-04 |  322.8226\n10 |  7.8168e-02  2.2230e-04 |  1.2220e-04  2.1699e-04 |  351.6281\n=== rho=0.40 ===\n K |   lammin(G)   lammin(M) |       f(pi)  f(pi-pi/K) | G/M ratio\n 2 |  4.5388e-01  2.7129e-03 |  9.6758e-06  4.0475e-03 |  167.3044\n 3 |  1.8720e-01  1.1080e-03 |  9.6758e-06  7.0713e-04 |  168.9597\n 4 |  9.1010e-02  3.8324e-04 |  9.6758e-06  2.4520e-04 |  237.4739\n 5 |  5.0977e-02  2.1559e-04 |  9.6758e-06  1.2241e-04 |  236.4551\n 6 |  3.2270e-02  1.1839e-04 |  9.6758e-06  7.5234e-05 |  272.5809\n 7 |  2.2588e-02  8.1840e-05 |  9.6758e-06  5.2608e-05 |  276.0071\n 8 |  1.7138e-02  5.6732e-05 |  9.6758e-06  4.0070e-05 |  302.0879\n 9 |  1.3859e-02  4.4518e-05 |  9.6758e-06  3.2394e-05 |  311.3115\n10 |  1.1783e-02  3.5194e-05 |  9.6758e-06  2.7344e-05 |  334.8027\n"
+    },
+    {
+      "script": "probe_turnover.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 53.688,
+      "output": "Turnover / clipping probe  rho=0.4 n=350 R=800  (endpoint w)\n K | exc_meas exc_sand meas/sand | min_what  frac<.01 frac<.005 wmin_true\n 2 |    1.000    1.000     1.00 |   0.2399     0.000     0.000    0.3750\n 3 |    1.461    1.440     1.01 |   0.0000     0.003     0.003    0.2500\n 4 |    2.010    1.910     1.05 |   0.0000     0.009     0.008    0.1875\n 5 |    2.108    2.370     0.89 |   0.0000     0.063     0.052    0.1500\n 6 |    2.442    2.770     0.88 |   0.0000     0.061     0.054    0.1250\n 7 |    2.132    3.090     0.69 |   0.0000     0.099     0.090    0.1071\n 8 |    2.169      nan      nan |   0.0000     0.096     0.083    0.0937\n"
+    },
+    {
+      "script": "ref_d1_check.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.937,
+      "output": "=== (B) symmetric K=3: leading constant of eta_mid / (d^2 deficit / s^4) ===\nauthor claims this -> 1/2 = 0.5, c-independent. We Richardson-extrapolate in d->0.\nc      rho        d              eta_mid        ratio_to_half \n0.333  0.0200     1.253445       2.868882e-04   0.49714349    \n0.333  0.0100     0.626673       7.221648e-05   0.49928238    \n0.333  0.0050     0.313331       1.808520e-05   0.49982037    \n0.333  0.0025     0.156665       4.523245e-06   0.49995508    \n   -> Richardson R0 (c=0.333) = 0.49999998\n\n0.250  0.0200     1.253445       2.863650e-04   0.49714413    \n0.250  0.0100     0.626673       7.218363e-05   0.49928242    \n0.250  0.0050     0.313331       1.808314e-05   0.49982038    \n0.250  0.0025     0.156665       4.523116e-06   0.49995508    \n   -> Richardson R0 (c=0.250) = 0.49999998\n\n0.400  0.0200     1.253445       2.873068e-04   0.49714298    \n0.400  0.0100     0.626673       7.224276e-05   0.49928235    \n0.400  0.0050     0.313331       1.808684e-05   0.49982037    \n0.400  0.0025     0.156665       4.523348e-06   0.49995508    \n   -> Richardson R0 (c=0.400) = 0.49999998\n\n=== (C) asymmetric K=3 'middle' mean-match a_pred vs index-mean formula ===\nw*(middle) = [0.25       0.41666667 0.33333333]\nindex mubar = 1.0833333333333333  a_pred=(2-mbar)/2 = 0.45833333333333337\n(n2 abar_pred reported 0.45833333) -> match: True\n\n=== (D) independent GH-quadrature eta_mid vs n2 (K=3 middle pinned cells) ===\nbw    rho    | a_n2           a_GH           da/a       | eta_n2         eta_GH         deta/eta  \n6     0.05   | 0.46030102     0.46030103     3.24e-08   | 3.887872e-04   3.887916e-04   1.12e-05  \n6     0.11   | 0.45931386     0.45931386     1.49e-08   | 8.418796e-04   8.418918e-04   1.45e-05  \n12    0.05   | 0.46574875     0.46574885     2.07e-07   | 1.699552e-03   1.699579e-03   1.58e-05  \n12    0.11   | 0.46448584     0.46448586     5.17e-08   | 6.474902e-03   6.474968e-03   1.02e-05  \n12    0.20   | 0.46192130     0.46192130     6.18e-09   | 9.526913e-03   9.526998e-03   8.85e-06  \n24    0.05   | 0.47778412     0.47779306     1.87e-05   | 6.857427e-03   6.860858e-03   5.00e-04  \n24    0.11   | 0.47613561     0.47613678     2.45e-06   | 2.767565e-02   2.768312e-02   2.70e-04  \n24    0.20   | 0.47281738     0.47281688     1.07e-06   | 5.954764e-02   5.955555e-02   1.33e-04  \nmax rel-err a (GH vs n2):   7.030e-05\nmax rel-err eta (GH vs n2): 6.236e-04\n\n=== (E) exact eta_mid/(d^2 deficit/s^4) at very small d, single c, high-order probe ===\n  rho=0.02000 d=1.25345 ratio=0.4971434897  (ratio-0.5)=-2.857e-03  /d^2=-1.8181e-03\n  rho=0.01000 d=0.62667 ratio=0.4992823797  (ratio-0.5)=-7.176e-04  /d^2=-1.8273e-03\n  rho=0.00500 d=0.31333 ratio=0.4998203745  (ratio-0.5)=-1.796e-04  /d^2=-1.8296e-03\n  rho=0.00250 d=0.15666 ratio=0.4999550798  (ratio-0.5)=-4.492e-05  /d^2=-1.8302e-03\n  rho=0.00125 d=0.07833 ratio=0.4999887691  (ratio-0.5)=-1.123e-05  /d^2=-1.8304e-03\n"
+    },
+    {
+      "script": "top1_confirm.py",
+      "mode": "reduced execution smoke",
+      "changes": [
+        {
+          "line": 51,
+          "before": "400",
+          "after": "24"
+        },
+        {
+          "line": 53,
+          "before": "15000",
+          "after": "4000"
+        },
+        {
+          "line": 49,
+          "before": "[300, 600, 1200, 2500, 5000, 10000]",
+          "after": "[300, 600]"
+        }
+      ],
+      "exit_code": 0,
+      "seconds": 12.375,
+      "output": "K=3 rho=0.08 N=   300 top1=0.708 pred=0.698 Dw=0.064 z=0.52 u_ext=0.176\nK=3 rho=0.08 N=   600 top1=0.875 pred=0.889 Dw=0.106 z=1.22 u_ext=0.414\nK=3 rho=0.12 N=   300 top1=0.917 pred=0.877 Dw=0.096 z=1.16 u_ext=0.393\nK=3 rho=0.12 N=   600 top1=0.917 pred=0.937 Dw=0.089 z=1.53 u_ext=0.520\nK=4 rho=0.08 N=   300 top1=0.750 pred=0.794 Dw=0.068 z=0.82 u_ext=0.278\nK=4 rho=0.08 N=   600 top1=0.958 pred=0.899 Dw=0.075 z=1.28 u_ext=0.433\nK=4 rho=0.12 N=   300 top1=0.917 pred=0.858 Dw=0.060 z=1.07 u_ext=0.363\nK=4 rho=0.12 N=   600 top1=0.917 pred=0.966 Dw=0.072 z=1.82 u_ext=0.618\nK=5 rho=0.08 N=   300 top1=0.833 pred=0.802 Dw=0.053 z=0.85 u_ext=0.288\nK=5 rho=0.08 N=   600 top1=0.875 pred=0.918 Dw=0.062 z=1.39 u_ext=0.473\nK=5 rho=0.12 N=   300 top1=0.792 pred=0.392 Dw=-0.012 z=-0.27 u_ext=-0.093\nK=5 rho=0.12 N=   600 top1=0.917 pred=0.952 Dw=0.051 z=1.66 u_ext=0.564\ndone 12s\n"
+    },
+    {
+      "script": "verification_summary.py",
+      "mode": "full",
+      "changes": [],
+      "exit_code": 0,
+      "seconds": 0.375,
+      "output": "{\n  \"KKT\": {\n    \"saved_grid_cells\": 130,\n    \"any_pinned_cells\": 82,\n    \"endpoint_face_cells\": 65,\n    \"partial_face_cells\": 17,\n    \"min_slack_any_pinned\": 1.1136185750215688e-06,\n    \"min_slack_endpoint_face\": 7.071200839203762e-05,\n    \"SI_claim_cells\": 82,\n    \"SI_claim_min_slack\": 1.11e-06,\n    \"status\": \"82-cell count/minimum recovered for any-pinned selection; endpoint-only claim mismatches 17 cells\",\n    \"partial_face_examples\": [\n      {\n        \"K\": 4,\n        \"bw\": 6.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.11,\n        \"survivors\": [\n          0,\n          1,\n          3\n        ],\n        \"pinned_set\": [\n          2\n        ],\n        \"min_eta_pinned\": 1.6373789420986995e-06\n      },\n      {\n        \"K\": 5,\n        \"bw\": 6.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.08,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 1.2185031861289275e-06\n      },\n      {\n        \"K\": 5,\n        \"bw\": 6.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.11,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 1.1724680905267348e-05\n      },\n      {\n        \"K\": 5,\n        \"bw\": 6.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.14,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 1.1136185750215688e-06\n      },\n      {\n        \"K\": 5,\n        \"bw\": 6.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.17,\n        \"survivors\": [\n          0,\n          2,\n          3,\n          4\n        ],\n        \"pinned_set\": [\n          1\n        ],\n        \"min_eta_pinned\": 0.00014136262210229233\n      },\n      {\n        \"K\": 5,\n        \"bw\": 6.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.2,\n        \"survivors\": [\n          0,\n          2,\n          3,\n          4\n        ],\n        \"pinned_set\": [\n          1\n        ],\n        \"min_eta_pinned\": 0.00017693870973911618\n      },\n      {\n        \"K\": 5,\n        \"bw\": 12.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.14,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 9.224481768932424e-05\n      },\n      {\n        \"K\": 5,\n        \"bw\": 12.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.17,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.00034724289047516343\n      },\n      {\n        \"K\": 5,\n        \"bw\": 12.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.2,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.0008647580779562736\n      },\n      {\n        \"K\": 5,\n        \"bw\": 12.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.24,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.0009475988455225348\n      },\n      {\n        \"K\": 5,\n        \"bw\": 12.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.28,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 5.1556259189622367e-05\n      },\n      {\n        \"K\": 5,\n        \"bw\": 12.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.32,\n        \"survivors\": [\n          0,\n          2,\n          3,\n          4\n        ],\n        \"pinned_set\": [\n          1\n        ],\n        \"min_eta_pinned\": 0.0029481633065965296\n      },\n      {\n        \"K\": 5,\n        \"bw\": 24.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.24,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.00588029403398449\n      },\n      {\n        \"K\": 5,\n        \"bw\": 24.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.28,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.009901428949126156\n      },\n      {\n        \"K\": 5,\n        \"bw\": 24.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.32,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.014303145301395648\n      },\n      {\n        \"K\": 5,\n        \"bw\": 24.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.36,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.013886875979398527\n      },\n      {\n        \"K\": 5,\n        \"bw\": 24.0,\n        \"kind\": \"middle\",\n        \"rho\": 0.4,\n        \"survivors\": [\n          0,\n          2,\n          4\n        ],\n        \"pinned_set\": [\n          1,\n          3\n        ],\n        \"min_eta_pinned\": 0.007323931159325947\n      }\n    ]\n  },\n  \"top1\": {\n    \"cells\": 36,\n    \"within_absolute_002\": 32,\n    \"within_absolute_003\": 34,\n    \"max_error\": 0.1530871633071793,\n    \"worst\": {\n      \"K\": 5,\n      \"rho\": 0.12,\n      \"N\": 300,\n      \"rho1K\": 0.45407448692854224,\n      \"top1\": 0.8475,\n      \"a_mean\": 0.521940284641004,\n      \"Dw\": 0.02194028464100395,\n      \"std_a\": 0.10119437271312061,\n      \"z_pred\": 0.5083978980102989,\n      \"top1_pred\": 0.6944128366928207,\n      \"u\": 0.18240810110756125,\n      \"u_extreme\": 0.1725559685875532\n    },\n    \"status\": \"36 cells recovered; inspect tolerance rather than asserting all 35 are within 2 percent\"\n  },\n  \"K3_to_6_fits\": {\n    \"3\": {\n      \"C_Nscan\": 0.46603412941375333,\n      \"adjacent_C_times_Km1\": 0.46735367304416897,\n      \"N_scan_slope\": -0.520122475142113\n    },\n    \"4\": {\n      \"C_Nscan\": 0.48311286422818667,\n      \"adjacent_C_times_Km1\": 0.486762285631546,\n      \"N_scan_slope\": -0.5158190919604\n    },\n    \"5\": {\n      \"C_Nscan\": 0.47957718717924,\n      \"adjacent_C_times_Km1\": 0.4863740870175322,\n      \"N_scan_slope\": -0.5069825000655812\n    },\n    \"6\": {\n      \"C_Nscan\": 0.4968890014462184,\n      \"adjacent_C_times_Km1\": 0.508165576426155,\n      \"N_scan_slope\": -0.4982286871209688\n    }\n  },\n  \"K4_modes\": {\n    \"0.05\": {\n      \"ratios_to_t\": {\n        \"t\": 1.0,\n        \"c1\": 0.2886751345948129,\n        \"c2\": 0.2886751345948129,\n        \"m\": 2.3673133620853665e-49,\n        \"p1\": 0.5,\n        \"p3\": 0.49999999999999994\n      },\n      \"interior\": {\n        \"w1_max\": 2.085218721680836e-49,\n        \"w1_mean\": 1.762776891425624e-51,\n        \"w2_max\": 3.352828451996558e-49,\n        \"w2_mean\": 2.1894637353181267e-51,\n        \"w1_min\": 5.5586061963505195e-62,\n        \"w2_min\": 1.3498923151152569e-62\n      }\n    },\n    \"0.10\": {\n      \"ratios_to_t\": {\n        \"t\": 1.0,\n        \"c1\": 0.28867513459481303,\n        \"c2\": 0.28867513459481287,\n        \"m\": 1.109330034830634e-113,\n        \"p1\": 0.5000000000000002,\n        \"p3\": 0.49999999999999994\n      },\n      \"interior\": {\n        \"w1_max\": 4.0064795307350847e-116,\n        \"w1_mean\": 2.4631152479483993e-118,\n        \"w2_max\": 3.1194186152706377e-114,\n        \"w2_mean\": 1.0406298068134088e-116,\n        \"w1_min\": 1.4487398624018468e-168,\n        \"w2_min\": 2.6530811494155858e-167\n      }\n    }\n  }\n}\n"
+    }
+  ],
+  "initial_failures_fixed": [
+    {
+      "script": "d3_mode_algebra_check.py",
+      "fix": "add missing os import and repo-local snapshot input",
+      "final_status": "full pass"
+    },
+    {
+      "script": "probe2_clip_truncgauss.py",
+      "fix": "correct diagnostic printf placeholder count; numerics unchanged",
+      "final_status": "full pass"
+    }
+  ],
+  "interpretation_update": "82 cells are any-pinned; 65 endpoint-only and 17 partial faces. Final verification_summary.py supersedes the initial endpoint-only selection interpretation.",
+  "existing_figure_and_analysis_runs": [
+    {
+      "command": [
+        "make_fig1_framework.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.734,
+      "output": "saved Fig1_framework.pdf/.png/.svg\n"
+    },
+    {
+      "command": [
+        "make_fig6_phase_atlas.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.25,
+      "output": "Loading <TEMP_REPO>\\scan\\phase3d_cellsummary.csv ...\n  1618 rows -> 1618 unique (K, sep, noise) cells\n  K range: [2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15]\n  sep range: 0.20..6.00 (25 values)\n  available noise: [0.02, 0.04, 0.06, 0.08, 0.1, 0.13, 0.16, 0.2, 0.25, 0.3, 0.4, 0.5]\n  selected noise panels: [0.06, 0.2, 0.4]\n  noise=0.06: 158/275 cells covered, mean n_seeds=1\n    K= 2: obs sep 0.2..6.0 (n=23), max=0.9705, first pass=0.7\n    K= 3: obs sep 1.4..6.0 (n=14), max=0.9894, first pass=1.4\n    K= 4: obs sep 1.6..6.0 (n=13), max=0.9963, first pass=1.6\n    K= 5: obs sep 1.6..6.0 (n=13), max=0.9986, first pass=1.6\n    K= 6: obs sep 1.6..6.0 (n=13), max=0.9992, first pass=1.6\n    K= 7: obs sep 1.4..6.0 (n=14), max=0.9996, first pass=1.4\n    K= 8: obs sep 0.3..6.0 (n=14), max=0.9996, first pass=1.6\n    K= 9: obs sep 0.2..6.0 (n=18), max=0.9996, first pass=1.4\n    K=10: obs sep 0.3..6.0 (n=14), max=0.9997, first pass=1.6\n    K=12: obs sep 2.0..6.0 (n=11), max=0.9995, first pass=2.0\n    K=15: obs sep 2.0..6.0 (n=11), max=0.9967, first pass=2.0\n  noise=0.2: 112/275 cells covered, mean n_seeds=1\n    K= 2: obs sep 0.2..6.0 (n=23), max=0.9406, first pass=0.7\n    K= 3: obs sep 1.6..6.0 (n=13), max=0.9537, first pass=2.5\n    K= 4: obs sep 2.0..6.0 (n=11), max=0.9532, first pass=2.8\n    K= 5: obs sep 2.8..6.0 (n=8), max=0.9405, first pass=3.2\n    K= 6: obs sep 2.5..6.0 (n=9), max=0.9117, first pass=4.0\n    K= 7: obs sep 1.2..6.0 (n=10), max=0.8715, first pass=5.0\n    K= 8: obs sep 0.4..6.0 (n=13), max=0.8369, first pass=None\n    K= 9: obs sep 0.4..6.0 (n=10), max=0.7984, first pass=None\n    K=10: obs sep 3.2..6.0 (n=6), max=0.7729, first pass=None\n    K=12: obs sep 4.5..6.0 (n=4), max=0.7067, first pass=None\n    K=15: obs sep 4.0..6.0 (n=5), max=0.6220, first pass=None\n  noise=0.4: 127/275 cells covered, mean n_seeds=1\n    K= 2: obs sep 0.2..6.0 (n=23), max=0.8636, first pass=1.8\n    K= 3: obs sep 1.2..6.0 (n=14), max=0.7670, first pass=None\n    K= 4: obs sep 1.4..5.5 (n=10), max=0.6755, first pass=None\n    K= 5: obs sep 1.4..5.5 (n=8), max=0.6236, first pass=None\n    K= 6: obs sep 1.8..6.0 (n=9), max=0.5889, first pass=None\n    K= 7: obs sep 1.2..6.0 (n=10), max=0.5461, first pass=None\n    K= 8: obs sep 0.4..6.0 (n=15), max=0.5100, first pass=None\n    K= 9: obs sep 0.3..6.0 (n=12), max=0.4794, first pass=None\n    K=10: obs sep 0.2..6.0 (n=10), max=0.4549, first pass=None\n    K=12: obs sep 1.6..6.0 (n=9), max=0.4079, first pass=None\n    K=15: obs sep 2.8..6.0 (n=7), max=0.3797, first pass=None\n  wrote <TEMP_REPO>\\figures\\Fig6_phase_atlas.pdf  (38.0 KB)\n  wrote <TEMP_REPO>\\figures\\Fig6_phase_atlas.png  (95.9 KB)\n  wrote <TEMP_REPO>\\figures\\Fig6_phase_atlas.svg  (228.4 KB)\ndone.\n"
+    },
+    {
+      "command": [
+        "fig_sigma_err_phase.py",
+        "--json",
+        "out_phase/sigma_err_slope_numpy.json",
+        "--out",
+        "figures/Fig7_sigma_err_phase"
+      ],
+      "exit_code": 0,
+      "seconds": 2.344,
+      "output": "[stitch] sigma_err = C/(sqrt(N)*rho)  -- DIRECT supervised-KL-NMF measurement\n[stitch] backend=numpy  R=600  w=endpoint  sigma=25  bw=12\n[stitch] grid: K=[2, 3]  rho=[0.05, 0.07, 0.1, 0.14, 0.19, 0.26, 0.35, 0.47]  n=[20, 30, 45, 70, 105, 160, 240, 350]\n[stitch] K=2 pairwise law: C = 0.500 +/- 0.026 (29 LAN cells, CV=5%)\n[stitch] calibration target C ~ 0.48 (pairwise_threshold_calibration.md) -> MATCH\n[stitch] one-number stitch: KS P=0.5 boundary (rho*sqrt(n)=1.35) == sigma_err ~ 0.37\n[stitch] K=3 finite-n contrast @rho=0.47,n=350: sigma_err K3/K2 = 1.25 (>1 = above floor)\n[stitch] K=2 LAN log-log slope (sigma_err vs 1/(sqrt(N)*rho)) = +0.95 (theory +1)\n\n[figure] figures/Fig7_sigma_err_phase.png / .pdf\n[report] figures/Fig7_sigma_err_phase_report.txt\n"
+    },
+    {
+      "command": [
+        "make_paper2_figures.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.703,
+      "output": "loaded: srcK 5 pts, noise 40 pts, sep 40 pts (each 50 seeds)\nsaved Fig2_source_number_K.pdf/.png/.svg\nsaved Fig3_noise_robustness.pdf/.png/.svg\nsaved Fig4_separability_cliff.pdf/.png/.svg\nsaved Fig5_supervised_advantage.pdf/.png/.svg\n\n临界可分性 Δ/σ (sup dominant 跨过 0.85) ≈ 1.103\n"
+    },
+    {
+      "command": [
+        "make_fig8_real_diagnostic.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.203,
+      "output": "{\n  \"n_samples\": 15,\n  \"basins\": [\n    \"NCC_north_margin\",\n    \"Songliao\"\n  ],\n  \"n_grains\": {\n    \"min\": 31,\n    \"max\": 111,\n    \"median\": 78.0,\n    \"total\": 1091\n  },\n  \"pair_rho\": {\n    \"S1-S2\": 0.999192,\n    \"S1-S3\": 1.0,\n    \"S2-S3\": 1.0\n  },\n  \"rho_split_130v145\": 0.3829,\n  \"rho_split_130v160\": 0.6827,\n  \"sigma_err_pred_range\": [\n    0.0664,\n    0.1527\n  ],\n  \"rho_crit_range\": [\n    0.1281,\n    0.2425\n  ],\n  \"dmu_crit_Ma_sigma15\": [\n    4.84,\n    9.26\n  ],\n  \"dmu_crit_Ma_sigma30\": [\n    9.68,\n    18.52\n  ],\n  \"split145_rho_sqrtN\": [\n    2.13,\n    4.03\n  ],\n  \"per_sample\": [\n    {\n      \"sample\": \"05FW007\",\n      \"basin\": \"NCC_north_margin\",\n      \"n\": 57\n    },\n    {\n      \"sample\": \"05FW008\",\n      \"basin\": \"NCC_north_margin\",\n      \"n\": 36\n    },\n    {\n      \"sample\": \"100821-1\",\n      \"basin\": \"NCC_north_margin\",\n      \"n\": 82\n    },\n    {\n      \"sample\": \"100821-3\",\n      \"basin\": \"NCC_north_margin\",\n      \"n\": 111\n    },\n    {\n      \"sample\": \"SL0929\",\n      \"basin\": \"Songliao\",\n      \"n\": 76\n    },\n    {\n      \"sample\": \"SL0930\",\n      \"basin\": \"Songliao\",\n      \"n\": 74\n    },\n    {\n      \"sample\": \"SL0931\",\n      \"basin\": \"Songliao\",\n      \"n\": 81\n    },\n    {\n      \"sample\": \"SL0932\",\n      \"basin\": \"Songliao\",\n      \"n\": 75\n    },\n    {\n      \"sample\": \"R31354-S12518\",\n      \"basin\": \"Songliao\",\n      \"n\": 79\n    },\n    {\n      \"sample\": \"R31354-S12519\",\n      \"basin\": \"Songliao\",\n      \"n\": 78\n    },\n    {\n      \"sample\": \"R31370-S12650\",\n      \"basin\": \"Songliao\",\n      \"n\": 78\n    },\n    {\n      \"sample\": \"R31370-S12651\",\n      \"basin\": \"Songliao\",\n      \"n\": 64\n    },\n    {\n      \"sample\": \"R31370-S12652\",\n      \"basin\": \"Songliao\",\n      \"n\": 91\n    },\n    {\n      \"sample\": \"R31370-S12653\",\n      \"basin\": \"Songliao\",\n      \"n\": 31\n    },\n    {\n      \"sample\": \"R31370-S12654\",\n      \"basin\": \"Songliao\",\n      \"n\": 78\n    }\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "make_graphical_abstract.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.141,
+      "output": "K=3 N=350: rho=[np.float64(0.05), np.float64(0.07), np.float64(0.1), np.float64(0.14), np.float64(0.19), np.float64(0.26), np.float64(0.35), np.float64(0.47)]\n   sd  = [0.254, 0.182, 0.129, 0.096, 0.074, 0.087, 0.114, 0.077]\n   bias= [0.369, 0.401, 0.406, 0.407, 0.402, 0.369, 0.257, 0.094]\n   rmse= [0.453, 0.441, 0.427, 0.419, 0.41, 0.384, 0.286, 0.127]\nK=3 N=160: rho=[np.float64(0.05), np.float64(0.07), np.float64(0.1), np.float64(0.14), np.float64(0.19), np.float64(0.26), np.float64(0.35), np.float64(0.47)]\n   sd  = [0.354, 0.256, 0.183, 0.145, 0.131, 0.141, 0.157, 0.121]\n   bias= [0.364, 0.382, 0.394, 0.382, 0.372, 0.337, 0.235, 0.092]\n   rmse= [0.515, 0.469, 0.443, 0.429, 0.409, 0.376, 0.291, 0.164]\nwrote <TEMP_REPO>\\figures\\GraphicalAbstract.png  (220.2 KB)\nwrote <TEMP_REPO>\\figures\\GraphicalAbstract.pdf  (34.8 KB)\nsep points: 40 | sup range 0.622-0.988 | uns range 0.313-0.983\ndone.\n"
+    },
+    {
+      "command": [
+        "analysis/bias_rmse.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.328,
+      "output": "ncal 29\nC_sd mean 0.5004 sd 0.0260\nC_rmse mean 0.5088 sd 0.0281\nbias range 0.0106-0.0433 median 0.0246\nbias/sigma_err range 0.070-0.340 median 0.163\nrmse/sigma_err range 1.002-1.056 median 1.013\nbias_frac_mse range 0.005-0.104\nbias/MCSE range 1.70-8.34\nslope sd 0.947 rmse 0.926\n0.10  350 sd=0.2465 tr^.5=0.2465 bias=0.0335(se 0.0101) rmse=0.2488 mean=0.6013;0.3987\n0.14  160 sd=0.2475 tr^.5=0.2475 bias=0.0368(se 0.0101) rmse=0.2502 mean=0.5990;0.4010\n0.14  240 sd=0.2211 tr^.5=0.2211 bias=0.0397(se 0.0090) rmse=0.2246 mean=0.5969;0.4031\n0.14  350 sd=0.1835 tr^.5=0.1835 bias=0.0425(se 0.0075) rmse=0.1884 mean=0.5950;0.4050\n0.19  105 sd=0.2388 tr^.5=0.2388 bias=0.0433(se 0.0097) rmse=0.2427 mean=0.5944;0.4056\n0.19  160 sd=0.2024 tr^.5=0.2024 bias=0.0393(se 0.0083) rmse=0.2061 mean=0.5972;0.4028\n0.19  240 sd=0.1644 tr^.5=0.1644 bias=0.0272(se 0.0067) rmse=0.1666 mean=0.6057;0.3943\n0.19  350 sd=0.1353 tr^.5=0.1353 bias=0.0285(se 0.0055) rmse=0.1383 mean=0.6049;0.3951\n0.26   45 sd=0.2714 tr^.5=0.2714 bias=0.0280(se 0.0111) rmse=0.2729 mean=0.6052;0.3948\n0.26   70 sd=0.2267 tr^.5=0.2267 bias=0.0235(se 0.0093) rmse=0.2279 mean=0.6083;0.3917\n0.26  105 sd=0.1882 tr^.5=0.1882 bias=0.0180(se 0.0077) rmse=0.1891 mean=0.6123;0.3877\n0.26  160 sd=0.1527 tr^.5=0.1527 bias=0.0106(se 0.0062) rmse=0.1531 mean=0.6175;0.3825\n0.26  240 sd=0.1205 tr^.5=0.1205 bias=0.0162(se 0.0049) rmse=0.1215 mean=0.6136;0.3864\n0.26  350 sd=0.1032 tr^.5=0.1032 bias=0.0232(se 0.0042) rmse=0.1058 mean=0.6086;0.3914\n0.35   30 sd=0.2744 tr^.5=0.2744 bias=0.0421(se 0.0112) rmse=0.2776 mean=0.5952;0.4048\n0.35   45 sd=0.2269 tr^.5=0.2269 bias=0.0333(se 0.0093) rmse=0.2293 mean=0.6015;0.3985\n0.35   70 sd=0.1774 tr^.5=0.1774 bias=0.0165(se 0.0072) rmse=0.1781 mean=0.6133;0.3867\n0.35  105 sd=0.1414 tr^.5=0.1414 bias=0.0231(se 0.0058) rmse=0.1433 mean=0.6087;0.3913\n0.35  160 sd=0.1101 tr^.5=0.1101 bias=0.0272(se 0.0045) rmse=0.1134 mean=0.6058;0.3942\n0.35  240 sd=0.0889 tr^.5=0.0889 bias=0.0215(se 0.0036) rmse=0.0914 mean=0.6098;0.3902\n0.35  350 sd=0.0743 tr^.5=0.0743 bias=0.0189(se 0.0030) rmse=0.0766 mean=0.6116;0.3884\n0.47   20 sd=0.2461 tr^.5=0.2461 bias=0.0251(se 0.0100) rmse=0.2474 mean=0.6073;0.3927\n0.47   30 sd=0.2012 tr^.5=0.2012 bias=0.0246(se 0.0082) rmse=0.2027 mean=0.6076;0.3924\n0.47   45 sd=0.1671 tr^.5=0.1671 bias=0.0158(se 0.0068) rmse=0.1678 mean=0.6138;0.3862\n0.47   70 sd=0.1374 tr^.5=0.1374 bias=0.0254(se 0.0056) rmse=0.1397 mean=0.6070;0.3930\n0.47  105 sd=0.1118 tr^.5=0.1118 bias=0.0171(se 0.0046) rmse=0.1131 mean=0.6129;0.3871\n0.47  160 sd=0.0885 tr^.5=0.0885 bias=0.0174(se 0.0036) rmse=0.0902 mean=0.6127;0.3873\n0.47  240 sd=0.0730 tr^.5=0.0730 bias=0.0224(se 0.0030) rmse=0.0763 mean=0.6091;0.3909\n0.47  350 sd=0.0613 tr^.5=0.0613 bias=0.0209(se 0.0025) rmse=0.0648 mean=0.6102;0.3898\n--- K=3 cells summary\nLAN 7 bias 0.086-0.257 bias/sd med 0.99\nill 57 bias 0.058-0.407 bias/sd med 1.03\n0.47   70 sd=0.1833 bias=0.0861 rmse=0.2205 mean=0.4471;0.2633;0.2896 w*=0.4167;0.3333;0.2500\n0.47  105 sd=0.1506 bias=0.0862 rmse=0.1873 mean=0.4486;0.2631;0.2883 w*=0.4167;0.3333;0.2500\n0.47  160 sd=0.1214 bias=0.0922 rmse=0.1638 mean=0.4520;0.2581;0.2899 w*=0.4167;0.3333;0.2500\n0.35  240 sd=0.1316 bias=0.2495 rmse=0.2882 mean=0.5136;0.1297;0.3567 w*=0.4167;0.3333;0.2500\n0.47  240 sd=0.0951 bias=0.0941 rmse=0.1420 mean=0.4528;0.2566;0.2907 w*=0.4167;0.3333;0.2500\n0.35  350 sd=0.1136 bias=0.2574 rmse=0.2856 mean=0.5174;0.1233;0.3593 w*=0.4167;0.3333;0.2500\n0.47  350 sd=0.0765 bias=0.0936 rmse=0.1274 mean=0.4519;0.2570;0.2911 w*=0.4167;0.3333;0.2500\nK2 ill bias 0.004-0.115\n"
+    },
+    {
+      "command": [
+        "analysis/pop_kl_example.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.781,
+      "output": "raw-sigma MU w= [0.499915 0.       0.500085] KL 0.003957331993996933 | NM w= [0.499871 0.       0.500129] KL 0.003957331401041214 | L2 bias 0.6123724474707181 MAE 0.3333333333333333\nbroadened MU w= [0.25 0.5  0.25] KL -6.106183201547166e-17 | NM w= [0.25 0.5  0.25] KL -1.5521084360508828e-16 | L2 bias 1.457450534907832e-14 MAE 7.93809462606987e-15\n"
+    },
+    {
+      "command": [
+        "sigma_err_scan.py",
+        "--backend",
+        "numpy",
+        "--task",
+        "slope",
+        "--K",
+        "2",
+        "3",
+        "--w",
+        "endpoint",
+        "--R",
+        "600",
+        "--Ns",
+        "20",
+        "--rhos",
+        "0.05",
+        "0.47",
+        "--sigma",
+        "25",
+        "--bw",
+        "12",
+        "--noise",
+        "0",
+        "--seed",
+        "20260611",
+        "--out-dir",
+        "seed_check"
+      ],
+      "exit_code": 0,
+      "seconds": 20.86,
+      "output": "[sigma_err_scan] backend=numpy K=[2, 3] Ns=[20] rhos=[0.05, 0.47] R=600 w=endpoint noise=0.0\n  K=2 N=      20 rho=0.050 [ill]  sigma_err=0.63418  top1=0.555  wstar_fail=0.067\n  K=2 N=      20 rho=0.470 [LAN]  sigma_err=0.24610  top1=0.740  wstar_fail=0.386\n  => K=2 N=20: LAN-window slope=+nan (theory -1)  over rho in []  [1 pts]  (11.2s)\n  K=3 N=      20 rho=0.050 [ill]  sigma_err=0.57356  top1=0.500  wstar_fail=0.113\n  K=3 N=      20 rho=0.470 [ill]  sigma_err=0.27941  top1=0.557  wstar_fail=0.296\n  => K=3 N=20: LAN-window slope=+nan (theory -2)  over rho in []  [0 pts]  (8.9s)\n\nwrote seed_check\\sigma_err_slope_numpy.json  (4 cells, 2 fits)\n"
+    }
+  ],
+  "figure_pixel_checks": [
+    {
+      "file": "Fig6_phase_atlas.png",
+      "size": [
+        3483,
+        1234
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "Fig7_sigma_err_phase.png",
+      "size": [
+        3684,
+        1427
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "Fig2_source_number_K.png",
+      "size": [
+        2706,
+        1176
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "Fig3_noise_robustness.png",
+      "size": [
+        1346,
+        1175
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "Fig4_separability_cliff.png",
+      "size": [
+        1346,
+        1175
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "Fig5_supervised_advantage.png",
+      "size": [
+        2861,
+        1053
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "Fig8_real_diagnostic.png",
+      "size": [
+        2107,
+        844
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    },
+    {
+      "file": "GraphicalAbstract.png",
+      "size": [
+        2551,
+        964
+      ],
+      "same_size": true,
+      "pixel_identical": true
+    }
+  ],
+  "fig1_visual_check": "PNG inspected; submitted-a fits without clipping; PDF/PNG/SVG rendered",
+  "other_figures_visual_check": "all eight rendered PNGs viewed in contact sheet; pixel-identical to existing inputs",
+  "fig3_seed_check": [
+    {
+      "K": 2,
+      "rho": 0.05,
+      "N": 20,
+      "sigma_err": 0.6341829552637885,
+      "saved_sigma_err": 0.6341829552637885,
+      "sigma_err_absdiff": 0.0,
+      "mean_max_absdiff": 2.220446049250313e-16
+    },
+    {
+      "K": 2,
+      "rho": 0.47,
+      "N": 20,
+      "sigma_err": 0.2460950129431033,
+      "saved_sigma_err": 0.2460950129431033,
+      "sigma_err_absdiff": 0.0,
+      "mean_max_absdiff": 1.1102230246251565e-16
+    },
+    {
+      "K": 3,
+      "rho": 0.05,
+      "N": 20,
+      "sigma_err": 0.5735637046217433,
+      "saved_sigma_err": 0.5735637046217434,
+      "sigma_err_absdiff": 1.1102230246251565e-16,
+      "mean_max_absdiff": 4.996003610813204e-16
+    },
+    {
+      "K": 3,
+      "rho": 0.47,
+      "N": 20,
+      "sigma_err": 0.27941137417124345,
+      "saved_sigma_err": 0.27941137417124345,
+      "sigma_err_absdiff": 0.0,
+      "mean_max_absdiff": 2.220446049250313e-16
+    }
+  ],
+  "atlas_smoke": [
+    {
+      "command": [
+        "scan/phase3d_scan.py",
+        "--smoke"
+      ],
+      "exit_code": 0,
+      "seconds": 37.97,
+      "output": "=== phase3d smoke: 8 configs ===\n  (K=2, sep=0.5, noise=0.05)  sup_dom=0.8670  uns_dom=0.8320\n  (K=2, sep=0.5, noise=0.2)  sup_dom=0.7850  uns_dom=0.3900\n  (K=2, sep=3.0, noise=0.05)  sup_dom=0.9580  uns_dom=0.9480\n  (K=2, sep=3.0, noise=0.2)  sup_dom=0.9230  uns_dom=0.9390\n  (K=5, sep=0.5, noise=0.05)  sup_dom=0.4818  uns_dom=0.2482\n  (K=5, sep=0.5, noise=0.2)  sup_dom=0.4109  uns_dom=0.1342\n  (K=5, sep=3.0, noise=0.05)  sup_dom=1.0000  uns_dom=0.9973\n  (K=5, sep=3.0, noise=0.2)  sup_dom=0.8364  uns_dom=0.9108\n(35.0s) — pipeline OK\n"
+    },
+    {
+      "command": [
+        "scan/phase3d_scan_hpc.py",
+        "0"
+      ],
+      "exit_code": 0,
+      "seconds": 4.56,
+      "output": "task     0: configs [0,1) -> 1 results in 1.7s -> smoke_parts\\part_00000.json\n"
+    },
+    {
+      "command": [
+        "scan/merge_phase3d.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.12,
+      "output": "合并 1 parts -> 1 configs (axis=phase3d)\n写 phase3d.csv\n写 phase3d.json\n\n=== sup_top1_dom @ noise=0.05  (K × sep) ===\n  K \\ sep       3\n  K=2        0.958\n\n全 3D 网格 sup dom ≥ 0.85（grid 可能不够 stress）\n"
+    },
+    {
+      "command": [
+        "-n",
+        "scan/phase3d.slurm"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "output": ""
+    }
+  ],
+  "atlas_summary": {
+    "cells": 1618,
+    "total_seeds": 1541100,
+    "planned_cells": 3300,
+    "planned_configs": 3300000
+  },
+  "atlas_wrapper_latest_syntax": "bash -n passed again after repo-root log-path and comment corrections",
+  "full_run_limits": [
+    {
+      "script": "top1_confirm.py",
+      "status": "full attempt stopped after partial progress; reduced execution smoke passed",
+      "last_observed_cells": 7,
+      "total_cells": 36,
+      "reason": "Observed speed projected beyond the task approximate 10-minute local-run scope. Saved 36-cell arithmetic is audited separately; no full rerun is claimed."
+    },
+    {
+      "script": "c1_prefactor.py",
+      "status": "reduced execution smoke only",
+      "reason": "Original MC includes N up to 400000, R=600 and 40000 updates; historical small outputs/postprocessing retained."
+    },
+    {
+      "script": "c3_top1_split.py",
+      "status": "reduced execution smoke only",
+      "reason": "Original multi-process large-N/400-replicate grid is HPC-scale; historical small output retained."
+    }
+  ],
+  "numerical_cautions": [
+    "Successful execution is distinct from agreement with every SI claim.",
+    "The full metric-projection run reproduces G=.737 and E=.852, but the widened-Hessian branch emits an invalid-divide RuntimeWarning and its printed A=.829 is not certified as a valid finite Hessian/projection result."
+  ]
+}
