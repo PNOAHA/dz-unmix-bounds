@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-CSV = os.path.join(BASE, "scan", "phase3d_cellsummary.csv")  # per-cell aggregate (reproduces Fig.6); full per-seed raw archived separately
+CSV = os.path.join(BASE, "scan", "phase3d.csv")
 OUTDIR = os.path.join(BASE, "figures")
 os.makedirs(OUTDIR, exist_ok=True)
 
@@ -39,9 +39,15 @@ OI = {"black": "#000000", "orange": "#E69F00", "skyblue": "#56B4E9",
 
 plt.rcParams.update({
     "pdf.fonttype": 42, "ps.fonttype": 42,
+    "font.family": "sans-serif",
+    "font.sans-serif": ["DejaVu Sans", "Arial", "Liberation Sans"],
+    "axes.unicode_minus": False,
     "font.size": 8, "axes.titlesize": 9, "axes.labelsize": 8,
     "legend.fontsize": 7, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
     "axes.linewidth": 0.8, "lines.linewidth": 1.4,
+    "xtick.direction": "out", "ytick.direction": "out",
+    "xtick.major.size": 3.5, "ytick.major.size": 3.5,
+    "xtick.major.width": 0.8, "ytick.major.width": 0.8,
 })
 
 THRESH = 0.85          # supervised pass threshold (沿用 §3)
@@ -113,6 +119,7 @@ def main():
     fig, axes = plt.subplots(1, 3, figsize=(11.5, 4.0), constrained_layout=True)
     im = None
 
+    panel_letters = "abc"
     for ax, n_target in zip(axes, selected_noises):
         sup, uns, n = build_grid(agg, K_vals, sep_vals, n_target)
         coverage = int(np.sum(~np.isnan(sup)))
@@ -139,7 +146,10 @@ def main():
                 except Exception as e:
                     print(f"    [warn] contour failed: {e}", flush=True)
 
-        ax.set_title(f"noise = {n_target:.2f}", fontsize=9, pad=4)
+        ax.set_title(f"noise = {n_target:.2f}", fontsize=9, pad=6)
+        ax.text(0.0, 1.045, f"({panel_letters[list(axes).index(ax)]})",
+                transform=ax.transAxes, fontsize=11, fontweight="bold",
+                va="bottom", ha="left")
         ax.set_xlabel(r"Source separability $\Delta/\sigma$")
         if ax is axes[0]:
             ax.set_ylabel(r"Number of sources $K$")
@@ -155,11 +165,7 @@ def main():
                  transform=cbar.ax.get_yaxis_transform(), fontsize=7)
 
     # suptitle 用一行；panel title 自带 pad=4 隔开
-    fig.suptitle(
-        r"Fig. 6  3D phase atlas $(K \times \Delta/\sigma \times \mathrm{noise})$"
-        r" — joint operating envelope",
-        fontsize=10, y=1.06
-    )
+    # suptitle 移除(2026-07-08):"Fig. 6" 字样不得烤进图(与排版 caption 编号冲突),图名归 caption
 
     for ext in ("pdf", "png", "svg"):
         out = os.path.join(OUTDIR, f"Fig6_phase_atlas.{ext}")

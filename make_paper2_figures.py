@@ -35,12 +35,30 @@ OI = {"black": "#000000", "orange": "#E69F00", "skyblue": "#56B4E9", "green": "#
 
 plt.rcParams.update({
     "pdf.fonttype": 42, "ps.fonttype": 42,
+    "font.family": "DejaVu Sans",
     "font.size": 8, "axes.titlesize": 9, "axes.labelsize": 8,
-    "legend.fontsize": 7, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
-    "axes.linewidth": 0.8, "lines.linewidth": 1.4,
+    "legend.fontsize": 7.5, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
+    "axes.linewidth": 0.8, "lines.linewidth": 1.6,
+    # 顶刊版式：去 top/right spine、tick 朝外、长度统一
+    "axes.spines.top": False, "axes.spines.right": False,
+    "xtick.direction": "out", "ytick.direction": "out",
+    "xtick.major.size": 3.5, "ytick.major.size": 3.5,
+    "xtick.major.width": 0.8, "ytick.major.width": 0.8,
+    # 图例极淡边框（措辞/内容不变，仅样式统一）
+    "legend.frameon": True, "legend.framealpha": 0.9,
+    "legend.edgecolor": "0.8", "legend.fancybox": False,
 })
 
 THRESH = 0.85  # 任务书阈值，沿用第一篇
+
+
+def _lgd(ax, **kw):
+    """统一图例样式：极淡边框、细线宽。措辞由调用方给定，一字不改。"""
+    leg = ax.legend(**kw)
+    fr = leg.get_frame()
+    fr.set_linewidth(0.6)
+    fr.set_edgecolor("0.8")
+    return leg
 
 
 def load_axis(axis):
@@ -76,8 +94,9 @@ def load_axis(axis):
 
 
 def _band(ax, x, m, sd, color, label, ls="-", marker=None):
-    ax.plot(x, m, color=color, ls=ls, marker=marker, ms=3.5, label=label)
-    ax.fill_between(x, m - sd, m + sd, color=color, alpha=0.15, linewidth=0)
+    ax.plot(x, m, color=color, ls=ls, marker=marker, ms=4.5,
+            markeredgecolor="white", markeredgewidth=0.6, label=label)
+    ax.fill_between(x, m - sd, m + sd, color=color, alpha=0.18, linewidth=0)
 
 
 def _save(fig, name):
@@ -107,13 +126,13 @@ def fig2_srcK(d):
     _band(a1, x, d["uns_top1_mean"], d["uns_top1_mean_sd"], OI["vermillion"], "unsupervised", marker="s")
     a1.plot(x, d["chance_top1"], color=OI["black"], ls=":", lw=1.0, label="chance (1/K)")
     a1.set_xlabel("Number of sources $K$"); a1.set_ylabel("Top-1 accuracy (all samples)")
-    a1.set_title("(a) All samples"); a1.set_xticks(x); a1.legend(loc="lower left")
+    a1.set_title("(a) All samples"); a1.set_xticks(x); _lgd(a1, loc="lower left")
     a1.set_ylim(0.0, 1.02)
     # 右：top1 dominant
     _band(a2, x, d["sup_top1_dom_mean"], d["sup_top1_dom_mean_sd"], OI["blue"], "supervised", marker="o")
     _band(a2, x, d["uns_top1_dom_mean"], d["uns_top1_dom_mean_sd"], OI["vermillion"], "unsupervised", marker="s")
     a2.set_xlabel("Number of sources $K$"); a2.set_ylabel("Top-1 accuracy (dominant subset)")
-    a2.set_title("(b) Dominant subset"); a2.set_xticks(x); a2.legend(loc="lower right")
+    a2.set_title("(b) Dominant subset"); a2.set_xticks(x); _lgd(a2, loc="lower right")
     a2.set_ylim(0.94, 1.004)  # 全在阈值 0.85 之上，故略去阈值线，放大有效区间
     fig.tight_layout()
     _save(fig, "Fig2_source_number_K")
@@ -131,8 +150,8 @@ def fig3_noise(d):
     ax.axhline(THRESH, color=OI["green"], ls=":", lw=1.0, label=f"threshold {THRESH}")
     ax.set_xlabel("Measurement noise (%, multiplicative $2\\sigma$)")
     ax.set_ylabel("Top-1 accuracy")
-    ax.set_title("Robustness to U-Pb measurement noise")
-    ax.set_ylim(0.80, 1.005); ax.legend(loc="lower left")
+    # 图级标题移除(2026-07-08):期刊惯例图名归 caption,图内不烤总标题
+    ax.set_ylim(0.80, 1.005); _lgd(ax, loc="center right", bbox_to_anchor=(0.99, 0.42))
     fig.tight_layout()
     _save(fig, "Fig3_noise_robustness")
 
@@ -161,8 +180,8 @@ def fig4_separability(d):
                 fontsize=7, color=OI["vermillion"])
     ax.set_xlabel("Source separability  $\\Delta/\\sigma$  (peak spacing / width)")
     ax.set_ylabel("Top-1 accuracy")
-    ax.set_title("Separability cliff (3 sources)")
-    ax.set_ylim(0.20, 1.02); ax.legend(loc="lower right")
+    # 图级标题移除(2026-07-08):同 Fig3,图名归 caption
+    ax.set_ylim(0.20, 1.02); _lgd(ax, loc="lower right")
     fig.tight_layout()
     _save(fig, "Fig4_separability_cliff")
     return xc
@@ -180,12 +199,13 @@ def fig5_overview(dK, dN, dS):
     ]
     for ax, d, x, xlab, title in specs:
         adv = d["sup_top1_mean"] - d["uns_top1_mean"]
-        ax.plot(x, adv, color=OI["purple"], marker="o", ms=3)
-        ax.fill_between(x, 0, adv, color=OI["purple"], alpha=0.12)
-        ax.axhline(0, color="gray", lw=0.6)
+        ax.plot(x, adv, color=OI["purple"], marker="o", ms=4.5,
+                markeredgecolor="white", markeredgewidth=0.6)
+        ax.fill_between(x, 0, adv, color=OI["purple"], alpha=0.15)
+        ax.axhline(0, color="gray", lw=1.0, ls="--")
         ax.set_xlabel(xlab); ax.set_title(title)
     axes[0].set_ylabel("Supervised advantage\n(Top-1$_{sup}$ − Top-1$_{uns}$)")
-    fig.suptitle("Where supervision helps most", y=1.02, fontsize=9)
+    # suptitle 移除(2026-07-08):图名归 caption;面板标题 (a)(b)(c) 保留
     fig.tight_layout()
     _save(fig, "Fig5_supervised_advantage")
 
