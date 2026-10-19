@@ -2,6 +2,10 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the accompanying article and this archive."
 title: "Applicability boundaries of NMF detrital-zircon unmixing — reproducibility package"
 type: software
+version: "1.2.0"
+date-released: "2026-10-19"
+doi: "10.5281/zenodo.20768131"
+repository-code: "https://github.com/PNOAHA/dz-unmix-bounds"
 authors:
   - family-names: Pan
     given-names: Lujia
@@ -22,6 +26,6 @@ preferred-citation:
   authors:
     - family-names: Pan
       given-names: Lujia
-  journal: "Minerals"
+  journal: "Sedimentary Geology"
   year: 2026
-  notes: "submitted"
+  notes: "Submitted to Sedimentary Geology"

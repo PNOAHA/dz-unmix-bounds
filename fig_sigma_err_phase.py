@@ -46,6 +46,9 @@ plt.rcParams.update({
     "font.size": 9, "axes.labelsize": 9, "axes.titlesize": 9.5,
     "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 7.2,
     "axes.linewidth": 0.6,
+    "xtick.direction": "out", "ytick.direction": "out",
+    "xtick.major.size": 3.5, "ytick.major.size": 3.5,
+    "xtick.major.width": 0.6, "ytick.major.width": 0.6,
 })
 OI = {"orange": "#E69F00", "sky": "#56B4E9", "green": "#009E73", "yellow": "#F0E442",
       "blue": "#0072B2", "verm": "#D55E00", "purple": "#CC79A7", "black": "#000000"}
@@ -107,7 +110,7 @@ def panel_A(ax, fig, cells, C):
     ax.set_xlim(rhos.min(), rhos.max()); ax.set_ylim(Ns.min(), Ns.max())
     ax.set_xlabel(r"endmember separation  $\rho$  (KS distance)")
     ax.set_ylabel("grains per sample  $n$")
-    ax.set_title(r"(A)  $K{=}2$: measured iso-$\sigma_{\mathrm{err}}$ $\parallel$ KS degeneracy boundary")
+    ax.set_title(r"(a)  $K{=}2$: measured iso-$\sigma_{\mathrm{err}}$ $\parallel$ KS degeneracy boundary")
     handles = [
         Line2D([0], [0], color=OI["sky"], lw=1.6, label=r"measured iso-$\sigma_{\mathrm{err}}$"),
         Line2D([0], [0], color=OI["black"], ls=(0, (4, 3)), lw=0.9, label=r"theory $C/(\sqrt{n}\,\rho)$"),
@@ -123,18 +126,18 @@ def panel_B(ax, cells, C):
     x = np.array([xof(c) for c in k2]); y = np.array([c["sigma_err"] for c in k2])
     lan = np.array([c["regime"] == "LAN" for c in k2])
     ax.scatter(x[lan], y[lan], s=30, color=OI["blue"], edgecolor="white", lw=0.4,
-               zorder=4, label="$K=2$ LAN (pairwise law)")
+               zorder=4, label="$K=2$ pairwise-law regime")
     ax.scatter(x[~lan], y[~lan], s=24, facecolor="white", edgecolor=OI["blue"], lw=1.0,
-               zorder=3, label="$K=2$ ill (vertex collapse)")
+               zorder=3, label="$K=2$ vertex-collapse")
     # K=3: same two regimes as K=2, but the LAN/well-separated cells sit ABOVE the K=2
     # floor (interior source adds error; curvature mode not frozen at n<=350).
     k3 = [c for c in cells if c["K"] == 3]
     x3 = np.array([xof(c) for c in k3]); y3 = np.array([c["sigma_err"] for c in k3])
     lan3 = np.array([c["regime"] == "LAN" for c in k3])
     ax.scatter(x3[lan3], y3[lan3], s=30, color=OI["orange"], marker="^", edgecolor="white",
-               lw=0.4, zorder=4, label="$K=3$ LAN (above floor)")
+               lw=0.4, zorder=4, label="$K=3$ well-separated (above floor)")
     ax.scatter(x3[~lan3], y3[~lan3], s=20, facecolor="white", edgecolor=OI["orange"],
-               marker="^", lw=0.8, zorder=2, alpha=0.7, label="$K=3$ ill")
+               marker="^", lw=0.8, zorder=2, alpha=0.7, label="$K=3$ vertex-collapse")
     # the measured pairwise law
     xs = np.array([min(x.min(), x3.min()), max(x.max(), x3.max())])
     ax.plot(xs, C * xs, color=OI["black"], lw=1.4, zorder=5,
@@ -145,9 +148,11 @@ def panel_B(ax, cells, C):
     ax.set_xscale("log"); ax.set_yscale("log")
     ax.set_xlabel(r"$1/(\sqrt{N}\,\rho)$   (adjacent-pair separation $\rho$)")
     ax.set_ylabel(r"measured $\sigma_{\mathrm{err}}$")
-    ax.set_title(r"(B)  pairwise law directly measured ($K{=}2$); $K{=}3$ finite-$n$ above floor")
-    ax.grid(True, which="both", ls=":", lw=0.3, alpha=0.4)
-    ax.text(0.97, 0.05, f"$K{{=}}2$ LAN slope $={slope:+.2f}$\n(theory $+1$)",
+    ax.set_title(r"(b)  pairwise law directly measured ($K{=}2$); $K{=}3$ finite-$n$ above floor")
+    ax.grid(True, which="both", ls=":", lw=0.4, alpha=0.15)
+    for sp in ("top", "right"):
+        ax.spines[sp].set_visible(False)
+    ax.text(0.97, 0.05, f"$K{{=}}2$ pairwise-regime slope $={slope:+.2f}$\n(theory $+1$)",
             transform=ax.transAxes, fontsize=7.0, va="bottom", ha="right", family="monospace",
             bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="0.7", lw=0.5, alpha=0.9))
     ax.legend(loc="upper left", framealpha=0.92, facecolor="white", fontsize=6.8)
@@ -183,13 +188,11 @@ def main():
     panel_A(axA, fig, cells, C)
     slope = panel_B(axB, cells, C)
     out("[stitch] K=2 LAN log-log slope (sigma_err vs 1/(sqrt(N)*rho)) = %+.2f (theory +1)" % slope)
-    fig.suptitle("Direct NMF $\\sigma_{\\mathrm{err}}$ on the $(\\rho,n)$ plane: "
-                 "iso-$\\sigma_{\\mathrm{err}}$ from assertion to measurement "
-                 "(bounds $\\S3$ $\\leftrightarrow$ paper 3)", fontsize=11)
-    fig.tight_layout(rect=(0, 0, 1, 0.95))
+    # suptitle 移除(2026-07-08):图名归 caption,面板标题 (a)/(b) 保留
+    fig.tight_layout()
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     for ext in ("png", "pdf"):
-        fig.savefig(f"{a.out}.{ext}", dpi=200, bbox_inches="tight")
+        fig.savefig(f"{a.out}.{ext}", dpi=300, bbox_inches="tight")
     out("\n[figure] %s.png / .pdf" % a.out)
     with io.open(a.out + "_report.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(LINES))

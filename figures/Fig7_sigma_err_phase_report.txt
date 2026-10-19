@@ -1,0 +1,10 @@
+[stitch] sigma_err = C/(sqrt(N)*rho)  -- DIRECT supervised-KL-NMF measurement
+[stitch] backend=numpy  R=600  w=endpoint  sigma=25  bw=12
+[stitch] grid: K=[2, 3]  rho=[0.05, 0.07, 0.1, 0.14, 0.19, 0.26, 0.35, 0.47]  n=[20, 30, 45, 70, 105, 160, 240, 350]
+[stitch] K=2 pairwise law: C = 0.500 +/- 0.026 (29 LAN cells, CV=5%)
+[stitch] calibration target C ~ 0.48 (pairwise_threshold_calibration.md) -> MATCH
+[stitch] one-number stitch: KS P=0.5 boundary (rho*sqrt(n)=1.35) == sigma_err ~ 0.37
+[stitch] K=3 finite-n contrast @rho=0.47,n=350: sigma_err K3/K2 = 1.25 (>1 = above floor)
+[stitch] K=2 LAN log-log slope (sigma_err vs 1/(sqrt(N)*rho)) = +0.95 (theory +1)
+
+[figure] figures/Fig7_sigma_err_phase.png / .pdf

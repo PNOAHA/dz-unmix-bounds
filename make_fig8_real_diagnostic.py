@@ -199,7 +199,7 @@ def main():
     ax_b.text(23, 0.06, "indistinguishable", fontsize=6.5, color="0.35")
     ax_b.text(26, 0.30, "distinguishable,\nweights unreliable",
               fontsize=6.5, color="0.35", va="center")
-    ax_b.text(23, 0.62, "weights recoverable", fontsize=6.5, color="0.35")
+    ax_b.text(23, 0.62, "far from overlap regime", fontsize=6.5, color="0.35")
 
     ax_b.set_xscale("log")
     ax_b.set_xlim(20, 600)

@@ -1,0 +1,5 @@
+# Tested 2026-10-19 with Python 3.12.13: numpy 2.4.3, scipy 1.17.1, matplotlib 3.10.9, scikit-learn 1.8.0
+numpy>=2.0        # numpy.trapezoid (renamed from numpy.trapz in NumPy 2.0); sigma_err_scan.py falls back to trapz
+scipy>=1.11
+scikit-learn>=1.4
+matplotlib>=3.8
