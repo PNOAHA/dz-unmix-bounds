@@ -3,7 +3,7 @@
 Fifteen real detrital-zircon U–Pb per-grain age samples used by
 `make_fig8_real_diagnostic.py` (paper Fig. 8): eleven from Cretaceous strata of the
 Songliao Basin and four from Jurassic–Lower Cretaceous strata of the northern North
-China Craton (NCC) margin; 1,091 grains in total (31–111 per sample). Each CSV carries
+China Craton (NCC) margin; 1,091 analyses in total (31–110 per sample). Each CSV carries
 its metadata as `#`-comment headers (sample name, basin, formation, source database,
 `source_doi`, grain count) followed by a single `age_Ma` column. (Earlier versions,
 v1.1, described all fifteen as "Lower Cretaceous"; that label is not supported for the
@@ -12,8 +12,17 @@ NCC-margin samples or for all Songliao formations and is no longer used.)
 ## Sources and licence
 
 Compiled from published open community datasets and redistributed under their
-original terms (CC-BY or equivalent); these data are **not** covered by the MIT licence
-of the code. Please cite the original studies (per-sample `source_doi`) when reusing:
+original terms verified live on 19 October 2026; these data are **not** covered by
+the MIT licence of the code. The compilation records and their stated licences are:
+
+- **OneDZ (Li et al., 2025).** Creators/compilers as listed in the record: Li, Keran; Hu, Xiumian; Chai, Rong; Yang, Jianghai; Xue, Weiwei; Pan, Yingdi; Li, Taiyang; Fang, Can; Ma, Anlin; Huang, Hu; Guo, Qianqian; Yang, Wentao; Hu, Lisha; Qi, Liang; Chen, Guohui; Sun, Gaoyuan; Zhang, Shijie; Deng, Tao; Li, Kuizhou; Sun, Jiaopeng; Gao, Biao. Version record DOI: https://doi.org/10.5281/zenodo.15522949 (record date 2025-05-27; the record supplies no version label). Licence field: `cc-by-4.0`; the Zenodo licence vocabulary names it **Creative Commons Attribution 4.0 International**, https://creativecommons.org/licenses/by/4.0/legalcode. Record/API: https://zenodo.org/api/records/15522949; licence vocabulary: https://zenodo.org/api/vocabularies/licenses/cc-by-4.0.
+- **Puetz et al. compilation, Figshare version 1.** Creators as listed in the record: Stephen Puetz; Christopher Spencer; Kent Condie; Nick Roberts. Record DOI: https://doi.org/10.6084/m9.figshare.24852987.v1. Licence field: **CC BY 4.0**, https://creativecommons.org/licenses/by/4.0/. Record/API: https://api.figshare.com/v2/articles/24852987/versions/1. The local DB7 file is checksum-identical to its counterpart in this version; this does not establish the versions of other component files.
+
+Changes made here comprise extraction of per-sample age arrays, renaming of
+sample files/identifiers for the CSV layout, and the record corrections below.
+These licence statements apply to the compilation records; no licence is
+asserted for the original journal articles. Cite the compilers above and the
+original studies (per-sample `source_doi`) when reusing:
 
 - NCC margin: Yang et al. (2006), EPSL 246, 336–352, https://doi.org/10.1016/j.epsl.2006.04.029
   (05FW007, 05FW008); Xu et al. (2016), Int. Geol. Rev. 58, 1528–1556,
@@ -33,8 +42,8 @@ of the code. Please cite the original studies (per-sample `source_doi`) when reu
 |---|---|---|
 | 05FW007 | Longmen Fm (Yang et al., 2006, Supplementary Table 1) | late Middle Jurassic in the Jingxi Basin (Hao et al., 2019, https://doi.org/10.1007/s00531-019-01743-5); youngest tabulated 206Pb/238U age 143 ± 3 Ma (1σ), unresolved conflict with the regional assignment |
 | 05FW008 | Jiulongshan Fm (Yang et al., 2006, Supplementary Table 1) | early Late Jurassic in the Jingxi Basin (Hao et al., 2019); youngest tabulated 206Pb/238U age 142 ± 2 Ma (1σ), unresolved conflict with the regional assignment |
-| 100821-1 | lower Tuchengzi Fm (Xu et al., 2016, Section 4.3; see note on labels) | Late Jurassic–Early Cretaceous, ≈154–137 Ma (Xu et al., 2012, https://doi.org/10.1016/j.palwor.2012.10.003) |
-| 100821-3 | upper Tuchengzi Fm (Xu et al., 2016, Section 4.3; see note on labels) | as above |
+| 100821-1 | Tuchengzi Fm (printed supplementary-table label; lower/upper linkage unresolved; see note below) | Late Jurassic–Early Cretaceous, ≈154–137 Ma (Xu et al., 2012, https://doi.org/10.1016/j.palwor.2012.10.003) |
+| 100821-3 | Tuchengzi Fm (printed supplementary-table label; lower/upper linkage unresolved; see note below) | as above |
 | SL0929, SL0930, SL0931 | Denglouku Fm (Li et al., 2012) | Cretaceous; youngest zircon of the group 117 ± 3 Ma (Li et al., 2012) |
 | SL0932 | Quantou Fm (Li et al., 2012) | Cretaceous; youngest zircon 103 ± 5 Ma reported in the text of Li et al. (2012, Section 4.1.2) but not identifiable in their Supplementary Table S1 (75 SL0932 analyses, youngest tabulated 206Pb/238U age 125 ± 3 Ma) |
 | R31354-S12518 | lower Denglouku Fm, ZC3.3 (Wang et al., 2022) | Lower Cretaceous (Wang et al., 2022) |
@@ -57,12 +66,13 @@ both are present in Yang et al. (2006), Supplementary Table 1, and in OneDZ.
 100821-1 and the first two analyses of the following sample (110909-1) to 100821-3.
 The arrays were rebuilt within the table boundaries of the original supplementary
 U-Pb table of Xu et al. (2016) under its printed sample labels (82 -> 81 and
-111 -> 110). Xu et al. (2016, Section 6.3.1) report the 81 / 110 analysis counts with
+111 -> 110). Section 4.3 of Xu et al. (2016) assigns 100821-1 to the lower part and
+100821-3 to the upper part. Their Section 6.3.1 reports the 81 / 110 analysis counts with
 the opposite labels, so the association of each array with the lower/upper
 Tuchengzi Formation remains unresolved.
 (iii) SL0932: unchanged (75 analyses = OneDZ Best Age values); the 103 ± 5 Ma
 analysis quoted in the text of Li et al. (2012) is not in their public table or in
-OneDZ, and is not added here.
+OneDZ, and is not included here.
 The ages are compiled analyses (OneDZ Best Age), not a uniformly
 concordance-filtered set. Total: 1091 analyses, 31-110 per sample. The same fifteen
 samples are analysed by the companion Bayesian study (dz-bayes-uq).
