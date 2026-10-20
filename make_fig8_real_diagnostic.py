@@ -65,6 +65,7 @@ SOURCES = [
 ]
 
 # --- 判据常数（与正文 §3/§5.2 严格一致） -----------------------------------
+EXTERNAL_REF = os.environ.get("DZ_FIG8_EXTERNAL_REF", "0") == "1"   # compstat-fix: legacy line off by default
 KS_BOUNDARY = 1.35        # 外部经验参考；仅供定向，不在此验证其检验设计
 CLIFF_RHO = 0.42          # 悬崖 Δ/σ≈1.10 ⇔ ρ≈0.42（等 σ 对）
 C_CURV_LO, C_CURV_HI = 0.70, 0.85   # 非钉扎支前因子（K=3 数值认证窗口）
@@ -169,9 +170,10 @@ def main():
 
     # (b) 诊断平面 (N, ρ)
     ngrid = np.geomspace(20, 600, 400)
-    hyper = KS_BOUNDARY / np.sqrt(ngrid)
-    ax_b.fill_between(ngrid, 0, np.minimum(hyper, 1.05), color="0.88", zorder=0)
-    ax_b.plot(ngrid, hyper, color=OI["black"], lw=1.4)
+    if EXTERNAL_REF:   # compstat-fix: legacy external reference, off by default
+        hyper = KS_BOUNDARY / np.sqrt(ngrid)
+        ax_b.fill_between(ngrid, 0, np.minimum(hyper, 1.05), color="0.88", zorder=0)
+        ax_b.plot(ngrid, hyper, color=OI["black"], lw=1.4)
     ax_b.axhline(CLIFF_RHO, color=OI["orange"], lw=1.4, ls="--")
 
     # 单侧向下 jitter：KS 距离 ρ≤1，任何点不得画到 1.0 之上
@@ -190,17 +192,19 @@ def main():
               fontsize=6.5, color=OI["green"], va="center")
     ax_b.text(170, rho_split_145 - 0.005, "hypothetical arc split\n130 vs 145 Ma",
               fontsize=6.5, color=OI["vermillion"], va="top")
-    ax_b.text(300, KS_BOUNDARY / np.sqrt(300) + 0.025,
-              "external reference\n" + r"$\rho\sqrt{N}=1.35$" + "\n(orientation only)", fontsize=6.5, color=OI["black"],
-              ha="center")
+    if EXTERNAL_REF:
+        ax_b.text(300, KS_BOUNDARY / np.sqrt(300) + 0.025,
+                  "external reference\n" + r"$\rho\sqrt{N}=1.35$" + "\n(orientation only)", fontsize=6.5, color=OI["black"],
+                  ha="center")
     ax_b.text(580, CLIFF_RHO + 0.025,
               "specified-design reference\n" + r"$\rho\approx0.42$ ($\Delta/\sigma\approx1.1$)",
               fontsize=6.5, color=OI["orange"], ha="right")
 
-    ax_b.text(23, 0.06, "below external\nreference", fontsize=6.5, color="0.35")
-    ax_b.text(26, 0.32, "between references",
-              fontsize=6.5, color="0.35", va="center")
-    ax_b.text(23, 0.78, "above both\nreferences", fontsize=6.5, color="0.35")
+    if EXTERNAL_REF:
+        ax_b.text(23, 0.06, "below external\nreference", fontsize=6.5, color="0.35")
+        ax_b.text(26, 0.32, "between references",
+                  fontsize=6.5, color="0.35", va="center")
+        ax_b.text(23, 0.78, "above both\nreferences", fontsize=6.5, color="0.35")
 
     ax_b.set_xscale("log")
     ax_b.set_xlim(20, 600)

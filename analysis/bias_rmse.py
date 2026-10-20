@@ -2,10 +2,15 @@
 
 Reads out_phase/sigma_err_slope_numpy.json and writes analysis/bias_rmse_allcells.csv:
 per cell, sampling spread sigma_err=sqrt(tr Cov), L2 bias ||mean(w_hat)-w*||, RMSE=sqrt(tr Cov+bias^2).
-Usage: python analysis/bias_rmse.py
+Usage: python analysis/bias_rmse.py [input.json [output.csv]]
+compstat-fix: optional arguments select the certified-solver input
+(out_phase/sigma_err_slope_numpy_certified.json -> analysis/bias_rmse_allcells_certified.csv).
 """
-import json, math, numpy as np, csv
-d=json.load(open(__import__('os').path.join(__import__('os').path.dirname(__file__),'..','out_phase','sigma_err_slope_numpy.json')))
+import json, math, numpy as np, csv, os, sys
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_IN = sys.argv[1] if len(sys.argv) > 1 else os.path.join(_HERE, '..', 'out_phase', 'sigma_err_slope_numpy.json')
+_OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(_HERE, 'bias_rmse_allcells.csv')
+d=json.load(open(_IN))
 R=d['meta']['R']
 def wstar(K):
     w=np.linspace(1.0,0.6,K); return w/w.sum()   # endpoint kind (meta w_kind=endpoint)
@@ -22,7 +27,7 @@ for c in d['cells']:
         bias_frac_mse=bn**2/(tr+bn**2), what_mean=';'.join(f'{x:.4f}' for x in m),
         wstar=';'.join(f'{x:.4f}' for x in w), C_sd=c['sigma_err']*math.sqrt(c['N'])*c['rho'],
         C_rmse=rmse*math.sqrt(c['N'])*c['rho'], top1=c['top1']))
-with open(__import__('os').path.join(__import__('os').path.dirname(__file__),'bias_rmse_allcells.csv'),'w',newline='') as f:
+with open(_OUT,'w',newline='') as f:
     wr=csv.DictWriter(f,fieldnames=list(rows[0].keys())); wr.writeheader(); wr.writerows(rows)
 cal=[r for r in rows if r['K']==2 and r['regime']=='LAN']
 print('ncal',len(cal))

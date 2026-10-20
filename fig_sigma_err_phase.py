@@ -74,7 +74,7 @@ def fit_C_k2(cells):
     return float(vals.mean()), float(vals.std()), len(vals)
 
 
-def panel_A(ax, fig, cells, C):
+def panel_A(ax, fig, cells, C, external_ref=False):
     k2 = [c for c in cells if c["K"] == 2]
     rhos = np.array(sorted({c["rho"] for c in k2}))
     Ns = np.array(sorted({c["N"] for c in k2}))
@@ -99,23 +99,26 @@ def panel_A(ax, fig, cells, C):
     for s in levels:                                              # theory iso lines: rho=(C/s)/sqrt(n)
         rt = (C / s) / np.sqrt(ng)
         ax.plot(rt, ng, ls=(0, (4, 3)), color=OI["black"], lw=0.9, alpha=0.7, zorder=3)
-    ax.plot(KS_C50 / np.sqrt(ng), ng, color=OI["green"], lw=2.4, zorder=5)   # external reference; orientation only
-    se_at_ks = C / KS_C50                                         # illustrative substitution, not a measured test boundary
-    ax.text(0.035, 0.045,
-            "illustrative substitution:\n$C/(\\sqrt{n}\\rho)\\approx%.2f$\nat the external reference" % se_at_ks,
-            transform=ax.transAxes, fontsize=7.2, color=OI["green"], va="bottom", ha="left",
-            bbox=dict(boxstyle="round,pad=0.3", fc="white", ec=OI["green"], lw=0.6, alpha=0.92))
+    if external_ref:   # compstat-fix: the external rho*sqrt(n)=1.35 reference is off by default
+        ax.plot(KS_C50 / np.sqrt(ng), ng, color=OI["green"], lw=2.4, zorder=5)   # external reference; orientation only
+        se_at_ks = C / KS_C50                                         # illustrative substitution, not a measured test boundary
+        ax.text(0.035, 0.045,
+                "illustrative substitution:\n$C/(\\sqrt{n}\\rho)\\approx%.2f$\nat the external reference" % se_at_ks,
+                transform=ax.transAxes, fontsize=7.2, color=OI["green"], va="bottom", ha="left",
+                bbox=dict(boxstyle="round,pad=0.3", fc="white", ec=OI["green"], lw=0.6, alpha=0.92))
 
     ax.set_xscale("linear"); ax.set_yscale("log")
     ax.set_xlim(rhos.min(), rhos.max()); ax.set_ylim(Ns.min(), Ns.max())
     ax.set_xlabel(r"endmember separation  $\rho$  (KS distance)")
     ax.set_ylabel("grains per sample  $n$")
-    ax.set_title(r"(a)  $K{=}2$: measured spread and external reference")
+    ax.set_title(r"(a)  $K{=}2$: measured spread and external reference" if external_ref
+                 else r"(a)  $K{=}2$: measured spread")
     handles = [
         Line2D([0], [0], color=OI["sky"], lw=1.6, label=r"measured iso-$\sigma_{\mathrm{err}}$"),
         Line2D([0], [0], color=OI["black"], ls=(0, (4, 3)), lw=0.9, label=r"theory $C/(\sqrt{n}\,\rho)$"),
-        Line2D([0], [0], color=OI["green"], lw=2.4, label=r"external reference $\rho\sqrt{n}{=}1.35$" + "\n(orientation only)"),
     ]
+    if external_ref:
+        handles.append(Line2D([0], [0], color=OI["green"], lw=2.4, label=r"external reference $\rho\sqrt{n}{=}1.35$" + "\n(orientation only)"))
     ax.legend(handles=handles, loc="upper right", framealpha=0.92, facecolor="white")
 
 
@@ -163,6 +166,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--json", default="out_phase/sigma_err_slope_numpy.json")
     ap.add_argument("--out", default="figures/fig_sigma_err_phase_v1")
+    ap.add_argument("--with-external-reference", action="store_true",
+                    help="draw the legacy external rho*sqrt(n)=1.35 orientation line (v1.2.2 figure)")
     a = ap.parse_args()
     cells, meta = load(a.json)
     C, Cstd, nC = fit_C_k2(cells)
@@ -185,7 +190,7 @@ def main():
                 % (r, k3["sigma_err"] / k2["sigma_err"]))
 
     fig, (axA, axB) = plt.subplots(1, 2, figsize=(12.4, 4.9))
-    panel_A(axA, fig, cells, C)
+    panel_A(axA, fig, cells, C, external_ref=a.with_external_reference)
     slope = panel_B(axB, cells, C)
     out("[stitch] K=2 LAN log-log slope (sigma_err vs 1/(sqrt(N)*rho)) = %+.2f (theory +1)" % slope)
     # suptitle 移除(2026-07-08):图名归 caption,面板标题 (a)/(b) 保留

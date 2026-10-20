@@ -100,6 +100,9 @@ def _load_real_core():
     return core
 
 
+SOLVER = "mu2000"   # compstat-fix: "mu2000" (archived v1.2.2 behaviour) or "certified"
+
+
 def measure_cell_numpy(K, rho, N, R, w, *, sigma, bw, noise, seed, n_iter=2000):
     core = _load_real_core()
     mus, _ = peak_ages(K, rho, sigma)
@@ -110,7 +113,21 @@ def measure_cell_numpy(K, rho, N, R, w, *, sigma, bw, noise, seed, n_iter=2000):
     for r in range(R):
         ages = core.generate_sample(w, n_grains_range=(N, N), noise_pct=noise, sources=src, rng=rng)
         X[r] = core.kde_density(ages, t_grid=core.T_GRID, bandwidth=bw)
-    what = core.supervised_unmix(X, H, n_iter=n_iter, tol=1e-13)  # (R,K) REAL KL-MLE, fully converged
+    if SOLVER == "certified":
+        # compstat-fix: KKT-certified minimiser (see compstat_fix/kl_certified.py); the archived
+        # 2000-iteration MU result on the identical rows is also kept for comparison.
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "compstat_fix"))
+        from kl_certified import kl_unmix_certified
+        what, info = kl_unmix_certified(X, H, return_info=True)
+        out = _summarize(what, w)
+        what_old = core.supervised_unmix(X, H, n_iter=n_iter, tol=1e-13)
+        old = _summarize(what_old, w)
+        out.update(solver="certified", kkt_max=float(info["kkt"].max()),
+                   certified_frac=float(info["certified"].mean()),
+                   mu2000_sigma_err=old["sigma_err"], mu2000_top1=old["top1"], mu2000_what_mean=old["what_mean"],
+                   solver_rms_diff=float(np.sqrt(np.mean(np.sum((what - what_old) ** 2, 1)))))
+        return out
+    what = core.supervised_unmix(X, H, n_iter=n_iter, tol=1e-13)  # (R,K) 2000-iteration MU (archived v1.2.2)
     return _summarize(what, w)
 
 
@@ -321,7 +338,9 @@ def run_slope_task(args):
                 print(f"  => K={K} N={N}: LAN-window slope={fr['slope']:+.3f} "
                       f"(theory {-(K-1)})  over rho in {fr.get('window')}  "
                       f"[{fr['n_points']} pts]  ({time.time()-t0:.1f}s)", flush=True)
-    out = os.path.join(args.out_dir, f"sigma_err_slope_{args.backend}.json")
+    results["meta"]["solver"] = SOLVER
+    sfx = "_certified" if SOLVER == "certified" else ""
+    out = os.path.join(args.out_dir, f"sigma_err_slope_{args.backend}{sfx}.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
     print(f"\nwrote {out}  ({len(results['cells'])} cells, {len(results['fits'])} fits)", flush=True)
@@ -343,6 +362,8 @@ def parse_args(argv=None):
     ap.add_argument("--seed", type=int, default=20260611)
     ap.add_argument("--out-dir", default="out_sigma_err")
     ap.add_argument("--smoke", action="store_true", help="tiny grid sanity")
+    ap.add_argument("--solver", choices=["mu2000", "certified"], default="mu2000",
+                    help="compstat-fix: supervised solver for the numpy backend")
     args = ap.parse_args(argv)
     if args.smoke:
         args.Ns = args.Ns or [2000, 20000]
@@ -356,6 +377,7 @@ def parse_args(argv=None):
 
 if __name__ == "__main__":
     a = parse_args()
+    SOLVER = a.solver
     print(f"[sigma_err_scan] backend={a.backend} K={a.K} Ns={a.Ns} rhos={a.rhos} R={a.R} "
           f"w={a.w} noise={a.noise}", flush=True)
     run_slope_task(a)

@@ -1,0 +1,147 @@
+[sigma_err_scan] backend=numpy K=[2, 3] Ns=[20, 30, 45, 70, 105, 160, 240, 350] rhos=[0.05, 0.07, 0.1, 0.14, 0.19, 0.26, 0.35, 0.47] R=600 w=endpoint noise=0.0
+  K=2 N=      20 rho=0.050 [ill]  sigma_err=0.63636  top1=0.555  wstar_fail=0.065
+  K=2 N=      20 rho=0.070 [ill]  sigma_err=0.62138  top1=0.558  wstar_fail=0.093
+  K=2 N=      20 rho=0.100 [ill]  sigma_err=0.57327  top1=0.552  wstar_fail=0.137
+  K=2 N=      20 rho=0.140 [ill]  sigma_err=0.52041  top1=0.593  wstar_fail=0.180
+  K=2 N=      20 rho=0.190 [ill]  sigma_err=0.46593  top1=0.605  wstar_fail=0.238
+  K=2 N=      20 rho=0.260 [ill]  sigma_err=0.39831  top1=0.652  wstar_fail=0.276
+  K=2 N=      20 rho=0.350 [ill]  sigma_err=0.31878  top1=0.668  wstar_fail=0.343
+  K=2 N=      20 rho=0.470 [LAN]  sigma_err=0.24610  top1=0.740  wstar_fail=0.386
+  => K=2 N=20: LAN-window slope=+nan (theory -1)  over rho in []  [1 pts]  (20.1s)
+  K=2 N=      30 rho=0.050 [ill]  sigma_err=0.61710  top1=0.548  wstar_fail=0.096
+  K=2 N=      30 rho=0.070 [ill]  sigma_err=0.58890  top1=0.568  wstar_fail=0.119
+  K=2 N=      30 rho=0.100 [ill]  sigma_err=0.54272  top1=0.567  wstar_fail=0.162
+  K=2 N=      30 rho=0.140 [ill]  sigma_err=0.48141  top1=0.572  wstar_fail=0.235
+  K=2 N=      30 rho=0.190 [ill]  sigma_err=0.39034  top1=0.650  wstar_fail=0.293
+  K=2 N=      30 rho=0.260 [ill]  sigma_err=0.32281  top1=0.685  wstar_fail=0.342
+  K=2 N=      30 rho=0.350 [LAN]  sigma_err=0.27442  top1=0.687  wstar_fail=0.376
+  K=2 N=      30 rho=0.470 [LAN]  sigma_err=0.20124  top1=0.777  wstar_fail=0.413
+  => K=2 N=30: LAN-window slope=-1.052 (theory -1)  over rho in [0.3499999999999999, 0.47]  [2 pts]  (16.9s)
+  K=2 N=      45 rho=0.050 [ill]  sigma_err=0.60879  top1=0.548  wstar_fail=0.098
+  K=2 N=      45 rho=0.070 [ill]  sigma_err=0.55397  top1=0.577  wstar_fail=0.154
+  K=2 N=      45 rho=0.100 [ill]  sigma_err=0.51090  top1=0.583  wstar_fail=0.190
+  K=2 N=      45 rho=0.140 [ill]  sigma_err=0.43048  top1=0.637  wstar_fail=0.268
+  K=2 N=      45 rho=0.190 [ill]  sigma_err=0.34915  top1=0.588  wstar_fail=0.330
+  K=2 N=      45 rho=0.260 [LAN]  sigma_err=0.27142  top1=0.713  wstar_fail=0.378
+  K=2 N=      45 rho=0.350 [LAN]  sigma_err=0.22692  top1=0.730  wstar_fail=0.403
+  K=2 N=      45 rho=0.470 [LAN]  sigma_err=0.16707  top1=0.845  wstar_fail=0.431
+  => K=2 N=45: LAN-window slope=-0.819 (theory -1)  over rho in [0.26, 0.47]  [3 pts]  (16.2s)
+  K=2 N=      70 rho=0.050 [ill]  sigma_err=0.57448  top1=0.575  wstar_fail=0.128
+  K=2 N=      70 rho=0.070 [ill]  sigma_err=0.53871  top1=0.582  wstar_fail=0.166
+  K=2 N=      70 rho=0.100 [ill]  sigma_err=0.44568  top1=0.632  wstar_fail=0.242
+  K=2 N=      70 rho=0.140 [ill]  sigma_err=0.36384  top1=0.605  wstar_fail=0.319
+  K=2 N=      70 rho=0.190 [ill]  sigma_err=0.29244  top1=0.680  wstar_fail=0.363
+  K=2 N=      70 rho=0.260 [LAN]  sigma_err=0.22668  top1=0.760  wstar_fail=0.398
+  K=2 N=      70 rho=0.350 [LAN]  sigma_err=0.17735  top1=0.795  wstar_fail=0.436
+  K=2 N=      70 rho=0.470 [LAN]  sigma_err=0.13736  top1=0.858  wstar_fail=0.452
+  => K=2 N=70: LAN-window slope=-0.846 (theory -1)  over rho in [0.26, 0.47]  [3 pts]  (14.8s)
+  K=2 N=     105 rho=0.050 [ill]  sigma_err=0.54148  top1=0.582  wstar_fail=0.166
+  K=2 N=     105 rho=0.070 [ill]  sigma_err=0.48123  top1=0.615  wstar_fail=0.220
+  K=2 N=     105 rho=0.100 [ill]  sigma_err=0.38973  top1=0.630  wstar_fail=0.300
+  K=2 N=     105 rho=0.140 [ill]  sigma_err=0.31326  top1=0.648  wstar_fail=0.350
+  K=2 N=     105 rho=0.190 [LAN]  sigma_err=0.23879  top1=0.727  wstar_fail=0.388
+  K=2 N=     105 rho=0.260 [LAN]  sigma_err=0.18820  top1=0.800  wstar_fail=0.422
+  K=2 N=     105 rho=0.350 [LAN]  sigma_err=0.14144  top1=0.855  wstar_fail=0.449
+  K=2 N=     105 rho=0.470 [LAN]  sigma_err=0.11179  top1=0.925  wstar_fail=0.461
+  => K=2 N=105: LAN-window slope=-0.850 (theory -1)  over rho in [0.19, 0.47]  [4 pts]  (15.9s)
+  K=2 N=     160 rho=0.050 [ill]  sigma_err=0.51238  top1=0.598  wstar_fail=0.201
+  K=2 N=     160 rho=0.070 [ill]  sigma_err=0.42834  top1=0.580  wstar_fail=0.281
+  K=2 N=     160 rho=0.100 [ill]  sigma_err=0.32159  top1=0.688  wstar_fail=0.355
+  K=2 N=     160 rho=0.140 [LAN]  sigma_err=0.24751  top1=0.722  wstar_fail=0.392
+  K=2 N=     160 rho=0.190 [LAN]  sigma_err=0.20237  top1=0.768  wstar_fail=0.409
+  K=2 N=     160 rho=0.260 [LAN]  sigma_err=0.15273  top1=0.867  wstar_fail=0.442
+  K=2 N=     160 rho=0.350 [LAN]  sigma_err=0.11008  top1=0.902  wstar_fail=0.465
+  K=2 N=     160 rho=0.470 [LAN]  sigma_err=0.08849  top1=0.962  wstar_fail=0.471
+  => K=2 N=160: LAN-window slope=-0.879 (theory -1)  over rho in [0.14, 0.47]  [5 pts]  (16.6s)
+  K=2 N=     240 rho=0.050 [ill]  sigma_err=0.47577  top1=0.570  wstar_fail=0.233
+  K=2 N=     240 rho=0.070 [ill]  sigma_err=0.37165  top1=0.648  wstar_fail=0.309
+  K=2 N=     240 rho=0.100 [ill]  sigma_err=0.27982  top1=0.702  wstar_fail=0.367
+  K=2 N=     240 rho=0.140 [LAN]  sigma_err=0.22110  top1=0.750  wstar_fail=0.395
+  K=2 N=     240 rho=0.190 [LAN]  sigma_err=0.16440  top1=0.820  wstar_fail=0.440
+  K=2 N=     240 rho=0.260 [LAN]  sigma_err=0.12046  top1=0.912  wstar_fail=0.460
+  K=2 N=     240 rho=0.350 [LAN]  sigma_err=0.08886  top1=0.970  wstar_fail=0.470
+  K=2 N=     240 rho=0.470 [LAN]  sigma_err=0.07297  top1=0.980  wstar_fail=0.475
+  => K=2 N=240: LAN-window slope=-0.934 (theory -1)  over rho in [0.14, 0.47]  [5 pts]  (17.4s)
+  K=2 N=     350 rho=0.050 [ill]  sigma_err=0.45219  top1=0.612  wstar_fail=0.240
+  K=2 N=     350 rho=0.070 [ill]  sigma_err=0.32939  top1=0.668  wstar_fail=0.335
+  K=2 N=     350 rho=0.100 [LAN]  sigma_err=0.24659  top1=0.703  wstar_fail=0.395
+  K=2 N=     350 rho=0.140 [LAN]  sigma_err=0.18352  top1=0.765  wstar_fail=0.422
+  K=2 N=     350 rho=0.190 [LAN]  sigma_err=0.13534  top1=0.860  wstar_fail=0.454
+  K=2 N=     350 rho=0.260 [LAN]  sigma_err=0.10325  top1=0.940  wstar_fail=0.459
+  K=2 N=     350 rho=0.350 [LAN]  sigma_err=0.07426  top1=0.987  wstar_fail=0.478
+  K=2 N=     350 rho=0.470 [LAN]  sigma_err=0.06130  top1=0.995  wstar_fail=0.492
+  => K=2 N=350: LAN-window slope=-0.921 (theory -1)  over rho in [0.10000000000000002, 0.47]  [6 pts]  (16.1s)
+  K=3 N=      20 rho=0.050 [ill]  sigma_err=0.57362  top1=0.498  wstar_fail=0.110
+  K=3 N=      20 rho=0.070 [ill]  sigma_err=0.52740  top1=0.470  wstar_fail=0.146
+  K=3 N=      20 rho=0.100 [ill]  sigma_err=0.44499  top1=0.482  wstar_fail=0.202
+  K=3 N=      20 rho=0.140 [ill]  sigma_err=0.37734  top1=0.530  wstar_fail=0.228
+  K=3 N=      20 rho=0.190 [ill]  sigma_err=0.37311  top1=0.537  wstar_fail=0.252
+  K=3 N=      20 rho=0.260 [ill]  sigma_err=0.37158  top1=0.518  wstar_fail=0.265
+  K=3 N=      20 rho=0.350 [ill]  sigma_err=0.34789  top1=0.502  wstar_fail=0.273
+  K=3 N=      20 rho=0.470 [ill]  sigma_err=0.27942  top1=0.557  wstar_fail=0.296
+  => K=3 N=20: LAN-window slope=+nan (theory -2)  over rho in []  [0 pts]  (19.3s)
+  K=3 N=      30 rho=0.050 [ill]  sigma_err=0.55156  top1=0.533  wstar_fail=0.125
+  K=3 N=      30 rho=0.070 [ill]  sigma_err=0.48042  top1=0.492  wstar_fail=0.191
+  K=3 N=      30 rho=0.100 [ill]  sigma_err=0.38928  top1=0.527  wstar_fail=0.248
+  K=3 N=      30 rho=0.140 [ill]  sigma_err=0.35686  top1=0.520  wstar_fail=0.255
+  K=3 N=      30 rho=0.190 [ill]  sigma_err=0.35103  top1=0.520  wstar_fail=0.296
+  K=3 N=      30 rho=0.260 [ill]  sigma_err=0.34269  top1=0.543  wstar_fail=0.296
+  K=3 N=      30 rho=0.350 [ill]  sigma_err=0.31122  top1=0.555  wstar_fail=0.303
+  K=3 N=      30 rho=0.470 [ill]  sigma_err=0.24839  top1=0.585  wstar_fail=0.302
+  => K=3 N=30: LAN-window slope=+nan (theory -2)  over rho in []  [0 pts]  (20.1s)
+  K=3 N=      45 rho=0.050 [ill]  sigma_err=0.50454  top1=0.530  wstar_fail=0.170
+  K=3 N=      45 rho=0.070 [ill]  sigma_err=0.41492  top1=0.525  wstar_fail=0.232
+  K=3 N=      45 rho=0.100 [ill]  sigma_err=0.34169  top1=0.543  wstar_fail=0.285
+  K=3 N=      45 rho=0.140 [ill]  sigma_err=0.31534  top1=0.563  wstar_fail=0.299
+  K=3 N=      45 rho=0.190 [ill]  sigma_err=0.31837  top1=0.593  wstar_fail=0.322
+  K=3 N=      45 rho=0.260 [ill]  sigma_err=0.27906  top1=0.635  wstar_fail=0.331
+  K=3 N=      45 rho=0.350 [ill]  sigma_err=0.26110  top1=0.620  wstar_fail=0.340
+  K=3 N=      45 rho=0.470 [ill]  sigma_err=0.20627  top1=0.663  wstar_fail=0.327
+  => K=3 N=45: LAN-window slope=+nan (theory -2)  over rho in []  [0 pts]  (20.5s)
+  K=3 N=      70 rho=0.050 [ill]  sigma_err=0.43541  top1=0.562  wstar_fail=0.232
+  K=3 N=      70 rho=0.070 [ill]  sigma_err=0.37158  top1=0.570  wstar_fail=0.269
+  K=3 N=      70 rho=0.100 [ill]  sigma_err=0.27305  top1=0.583  wstar_fail=0.317
+  K=3 N=      70 rho=0.140 [ill]  sigma_err=0.24669  top1=0.612  wstar_fail=0.353
+  K=3 N=      70 rho=0.190 [ill]  sigma_err=0.24496  top1=0.668  wstar_fail=0.358
+  K=3 N=      70 rho=0.260 [ill]  sigma_err=0.24157  top1=0.710  wstar_fail=0.362
+  K=3 N=      70 rho=0.350 [ill]  sigma_err=0.22245  top1=0.713  wstar_fail=0.361
+  K=3 N=      70 rho=0.470 [LAN]  sigma_err=0.18326  top1=0.720  wstar_fail=0.330
+  => K=3 N=70: LAN-window slope=+nan (theory -2)  over rho in []  [1 pts]  (21.9s)
+  K=3 N=     105 rho=0.050 [ill]  sigma_err=0.40251  top1=0.580  wstar_fail=0.275
+  K=3 N=     105 rho=0.070 [ill]  sigma_err=0.33081  top1=0.618  wstar_fail=0.312
+  K=3 N=     105 rho=0.100 [ill]  sigma_err=0.22867  top1=0.652  wstar_fail=0.371
+  K=3 N=     105 rho=0.140 [ill]  sigma_err=0.18172  top1=0.718  wstar_fail=0.394
+  K=3 N=     105 rho=0.190 [ill]  sigma_err=0.18506  top1=0.718  wstar_fail=0.399
+  K=3 N=     105 rho=0.260 [ill]  sigma_err=0.19692  top1=0.785  wstar_fail=0.381
+  K=3 N=     105 rho=0.350 [ill]  sigma_err=0.18983  top1=0.810  wstar_fail=0.349
+  K=3 N=     105 rho=0.470 [LAN]  sigma_err=0.15059  top1=0.788  wstar_fail=0.338
+  => K=3 N=105: LAN-window slope=+nan (theory -2)  over rho in []  [1 pts]  (25.1s)
+  K=3 N=     160 rho=0.050 [ill]  sigma_err=0.35336  top1=0.600  wstar_fail=0.309
+  K=3 N=     160 rho=0.070 [ill]  sigma_err=0.25596  top1=0.640  wstar_fail=0.362
+  K=3 N=     160 rho=0.100 [ill]  sigma_err=0.18274  top1=0.688  wstar_fail=0.408
+  K=3 N=     160 rho=0.140 [ill]  sigma_err=0.14542  top1=0.738  wstar_fail=0.417
+  K=3 N=     160 rho=0.190 [ill]  sigma_err=0.13141  top1=0.812  wstar_fail=0.425
+  K=3 N=     160 rho=0.260 [ill]  sigma_err=0.14127  top1=0.837  wstar_fail=0.422
+  K=3 N=     160 rho=0.350 [ill]  sigma_err=0.15658  top1=0.890  wstar_fail=0.380
+  K=3 N=     160 rho=0.470 [LAN]  sigma_err=0.12141  top1=0.878  wstar_fail=0.346
+  => K=3 N=160: LAN-window slope=+nan (theory -2)  over rho in []  [1 pts]  (29.3s)
+  K=3 N=     240 rho=0.050 [ill]  sigma_err=0.29683  top1=0.617  wstar_fail=0.351
+  K=3 N=     240 rho=0.070 [ill]  sigma_err=0.23101  top1=0.682  wstar_fail=0.384
+  K=3 N=     240 rho=0.100 [ill]  sigma_err=0.15883  top1=0.745  wstar_fail=0.420
+  K=3 N=     240 rho=0.140 [ill]  sigma_err=0.11383  top1=0.832  wstar_fail=0.435
+  K=3 N=     240 rho=0.190 [ill]  sigma_err=0.08845  top1=0.865  wstar_fail=0.468
+  K=3 N=     240 rho=0.260 [ill]  sigma_err=0.11969  top1=0.902  wstar_fail=0.428
+  K=3 N=     240 rho=0.350 [LAN]  sigma_err=0.13169  top1=0.935  wstar_fail=0.384
+  K=3 N=     240 rho=0.470 [LAN]  sigma_err=0.09506  top1=0.943  wstar_fail=0.361
+  => K=3 N=240: LAN-window slope=-1.106 (theory -2)  over rho in [0.3499999999999999, 0.47]  [2 pts]  (35.0s)
+  K=3 N=     350 rho=0.050 [ill]  sigma_err=0.25349  top1=0.638  wstar_fail=0.384
+  K=3 N=     350 rho=0.070 [ill]  sigma_err=0.18245  top1=0.702  wstar_fail=0.417
+  K=3 N=     350 rho=0.100 [ill]  sigma_err=0.12867  top1=0.793  wstar_fail=0.449
+  K=3 N=     350 rho=0.140 [ill]  sigma_err=0.09629  top1=0.872  wstar_fail=0.463
+  K=3 N=     350 rho=0.190 [ill]  sigma_err=0.07368  top1=0.935  wstar_fail=0.475
+  K=3 N=     350 rho=0.260 [ill]  sigma_err=0.08741  top1=0.952  wstar_fail=0.440
+  K=3 N=     350 rho=0.350 [LAN]  sigma_err=0.11369  top1=0.980  wstar_fail=0.388
+  K=3 N=     350 rho=0.470 [LAN]  sigma_err=0.07653  top1=0.962  wstar_fail=0.360
+  => K=3 N=350: LAN-window slope=-1.343 (theory -2)  over rho in [0.3499999999999999, 0.47]  [2 pts]  (33.7s)
+
+wrote out_phase/sigma_err_slope_numpy_certified.json  (128 cells, 16 fits)
