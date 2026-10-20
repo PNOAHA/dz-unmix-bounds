@@ -28,7 +28,9 @@ def _grad_hess(W, X, H, hess=True):
     G = H.sum(1)[None, :] - R @ H.T
     if not hess:
         return G, None
-    A = (R / M)                                   # x / m^2
+    # x / m^2 for the Newton direction only; guarded so that x > 0 at a numerically empty grid
+    # point cannot give inf * 0 = nan (the objective, gradient and KKT certificate are unchanged)
+    A = np.where(X > 0, X / np.maximum(M, 1e-150) ** 2, 0.0)
     Hs = np.einsum('kt,nt,jt->nkj', H, A, H, optimize=True)
     return G, Hs
 
@@ -77,7 +79,10 @@ def kl_unmix_certified(X, H, mu_warm=200, max_newton=200, tol=1e-11, return_info
             break
         idx, Wi, Xi, G, Hs = idx[keep], Wi[keep], Xi[keep], G[keep], Hs[keep]
         # Bertsekas (1982) projected Newton: epsilon-active set
-        epsk = np.minimum(1e-3 * Wi.sum(1), np.linalg.norm(Wi - np.maximum(Wi - G, 0), axis=1))[:, None]
+        # infinity norm of the projected-gradient step (the Euclidean norm underflows to 0 when the
+        # only violating coordinate is a denormal-scale weight such as 5e-241, which then never
+        # enters the epsilon-active set; fixed 2026-10-20 after the scan rerun flagged 0.05% to 0.8% of configs)
+        epsk = np.minimum(1e-3 * Wi.sum(1), np.abs(Wi - np.maximum(Wi - G, 0)).max(1))[:, None]
         act = (Wi <= epsk) & (G > 0)
         free = ~act
         Fm = free[:, :, None] & free[:, None, :]

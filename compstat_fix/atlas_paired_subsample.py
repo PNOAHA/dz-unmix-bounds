@@ -22,7 +22,10 @@ def run(job):
     cfg = P.build_phase3d_configs([K], [sep], [eta], [seed])[0]
     out = dict(K=K, sep=sep, eta=eta, seed=seed)
     orig = A.supervised_unmix
-    for tag, fn in (('old', orig), ('new', lambda X, H: kl_unmix_certified(X, H))):
+    kk = []
+    def cert(X, H):
+        W, info = kl_unmix_certified(X, H, return_info=True); kk.append(float(info['kkt'].max())); return W
+    for tag, fn in (('old', orig), ('new', cert)):
         A.supervised_unmix = fn
         t0 = time.time()
         try:
@@ -30,6 +33,7 @@ def run(job):
         finally:
             A.supervised_unmix = orig
         out[tag] = dict(top1_dom=r['sup_top1_dom_mean'], top1=r['sup_top1_mean'], mae=r['sup_mae_mean'], sec=time.time() - t0)
+    out['kkt_max'] = max(kk) if kk else None
     return out
 
 if __name__ == '__main__':

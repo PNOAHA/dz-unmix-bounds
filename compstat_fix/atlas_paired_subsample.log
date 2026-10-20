@@ -1,0 +1,201 @@
+jobs 794
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/workspace/compstat_fix/repo/scan/applicability_scan.py:124: RuntimeWarning: Mean of empty slice
+  o[f"{prefix}_{key}_mean"] = float(np.nanmean(a)) if a.size else float("nan")
+/workspace/compstat_fix/venv/lib/python3.13/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+50 794 39s
+100 794 65s
+150 794 90s
+200 794 112s
+250 794 135s
+300 794 156s
+350 794 176s
+400 794 196s
+450 794 215s
+500 794 233s
+550 794 249s
+600 794 271s
+650 794 296s
+700 794 321s
+750 794 344s
+done 372.5581896305084

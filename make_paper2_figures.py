@@ -25,8 +25,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-RESDIR = os.path.join(BASE, "results")
-OUTDIR = os.path.join(BASE, "figures")
+# compstat-fix: optional overrides (defaults unchanged) so the certified-solver CSVs can be plotted
+# without touching the archived results/ or figures/
+RESDIR = os.environ.get("DZ_RESDIR", os.path.join(BASE, "results"))
+OUTDIR = os.environ.get("DZ_FIGOUT", os.path.join(BASE, "figures"))
 os.makedirs(OUTDIR, exist_ok=True)
 
 # Okabe-Ito 色盲友好色板（与第一篇一致）
