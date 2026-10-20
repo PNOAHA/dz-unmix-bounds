@@ -138,7 +138,7 @@ def panel_B(ax, cells, C):
     x3 = np.array([xof(c) for c in k3]); y3 = np.array([c["sigma_err"] for c in k3])
     lan3 = np.array([c["regime"] == "LAN" for c in k3])
     ax.scatter(x3[lan3], y3[lan3], s=30, color=OI["orange"], marker="^", edgecolor="white",
-               lw=0.4, zorder=4, label="$K=3$ well-separated (above floor)")
+               lw=0.4, zorder=4, label="$K=3$ well-separated (above pairwise reference)")
     ax.scatter(x3[~lan3], y3[~lan3], s=20, facecolor="white", edgecolor=OI["orange"],
                marker="^", lw=0.8, zorder=2, alpha=0.7, label="$K=3$ vertex-collapse")
     # the measured pairwise law
@@ -151,7 +151,7 @@ def panel_B(ax, cells, C):
     ax.set_xscale("log"); ax.set_yscale("log")
     ax.set_xlabel(r"$1/(\sqrt{N}\,\rho)$   (adjacent-pair separation $\rho$)")
     ax.set_ylabel(r"measured $\sigma_{\mathrm{err}}$")
-    ax.set_title(r"(b)  pairwise law directly measured ($K{=}2$); $K{=}3$ finite-$n$ above floor")
+    ax.set_title(r"(b)  pairwise law directly measured ($K{=}2$); $K{=}3$ finite-$n$ above pairwise reference")
     ax.grid(True, which="both", ls=":", lw=0.4, alpha=0.15)
     for sp in ("top", "right"):
         ax.spines[sp].set_visible(False)
