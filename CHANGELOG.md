@@ -4,6 +4,20 @@ All notable changes to this reproducibility package. Version DOIs are minted by
 Zenodo from the GitHub releases (concept DOI: https://doi.org/10.5281/zenodo.20768131,
 which always resolves to the latest version).
 
+## [1.2.2] - 2026-10-20
+
+Metadata and documentation corrections only; no code, data or result changes.
+
+- `.zenodo.json` and README: the unsupervised baseline is described correctly as
+  scikit-learn NMF with Frobenius loss (`beta_loss="frobenius"`, `solver="cd"`, in
+  `dz_unmixing_experiment.fit_nmf`); only the supervised fixed-dictionary unmixer uses
+  KL-divergence multiplicative updates. v1.2.1 wrongly said "supervised and unsupervised KL-NMF".
+- README: single-axis scan count corrected to 4250 configurations = 85 axis settings
+  (40 separation + 40 noise + 5 K) x 50 seeds; v1.2.1 wrongly said "50 seeds each" on top.
+- README / `.zenodo.json`: per-seed atlas raw size given as 560 MB (559,871,808 bytes;
+  187 MB gzipped), rounded correctly.
+- Version metadata: 1.2.2, date-released 2026-10-20.
+
 ## [1.2.1] - 2026-10-19
 
 - Released from branch `release-v1.2.1` (based on `release-v1.2.0`).

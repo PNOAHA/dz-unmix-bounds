@@ -7,20 +7,22 @@ Code and data accompanying:
 > provenance unmixing.* Submitted to *Sedimentary Geology*.
 
 Archive: Zenodo concept DOI [10.5281/zenodo.20768131](https://doi.org/10.5281/zenodo.20768131)
-(always resolves to the latest published version). This checkout is release **v1.2.1**
-(2026-10-19); the earlier release v1.2.0 has version DOI
-[10.5281/zenodo.23470807](https://doi.org/10.5281/zenodo.23470807).
+(always resolves to the latest published version). This checkout is release **v1.2.2**
+(2026-10-20; metadata/documentation corrections to v1.2.1, no result changes). Earlier
+version DOIs: v1.2.1 [10.5281/zenodo.23475936](https://doi.org/10.5281/zenodo.23475936),
+v1.2.0 [10.5281/zenodo.23470807](https://doi.org/10.5281/zenodo.23470807).
 See `CHANGELOG.md`.
 
 This package reproduces every figure in the paper. The study (i) derives an
 identifiability criterion linking the Kolmogorov–Smirnov separability of source
 signatures to the conditioning of the supervised unmixing problem, and characterises
 the sampling spread of the weight estimates (σ_err, bias excluded) together with the
-separately measured bias; and (ii) maps supervised and unsupervised NMF unmixing
+separately measured bias; and (ii) maps supervised (fixed-dictionary KL-divergence) and unsupervised
+(scikit-learn Frobenius-loss) NMF unmixing
 performance across three data-difficulty axes — **number of sources K**,
 **measurement noise**, and **source separability Δ/σ** — on a tunable-difficulty
-synthetic detrital-zircon framework at HPC scale (≈4250 single-axis cross-validated
-configurations, 50 seeds each), plus a joint 3D phase atlas over K × Δ/σ × noise
+synthetic detrital-zircon framework at HPC scale (4250 single-axis cross-validated
+configurations: 85 axis settings × 50 seeds), plus a joint 3D phase atlas over K × Δ/σ × noise
 (~1.5M configurations). Paper Fig. 3 is the directly measured σ_err on the (ρ, n)
 plane; `analysis/` adds its bias / RMSE decomposition. Paper Fig. 8 demonstrates the
 criterion as an a-priori screen on fifteen real Mesozoic samples — eleven from
@@ -92,7 +94,7 @@ script names keep their original (development) numbering. Mapping:
 
 ## Large data (not publicly archived in a verified record)
 
-The full per-seed 3D-atlas results (`phase3d.csv`, 1,541,100 rows, 559 MB; 187 MB
+The full per-seed 3D-atlas results (`phase3d.csv`, 1,541,100 rows, 560 MB; 187 MB
 gzipped) exceed a code-repository's practical limits and are not included here.
 No DOI or record for a separate public raw-data archive was found in the project
 records searched on 2026-10-19; the earlier claim of such an archive is withdrawn.
