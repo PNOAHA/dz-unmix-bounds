@@ -5,3 +5,10 @@ __pycache__/
 # large per-seed raw atlas omitted; no separate public archive verified (see README "Large data")
 phase3d.csv
 phase3d.csv.gz
+
+# Atlas per-unit JSON outputs (~450–800 MB); available on request (see README)
+atlas_rerun/results/units/
+atlas_rerun/results_fixed/units/
+atlas_rerun/results_v2/units/
+atlas_rerun/results_smoke/
+atlas_rerun/_smoke_fig/

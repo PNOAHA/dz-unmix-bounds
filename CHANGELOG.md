@@ -4,6 +4,27 @@ All notable changes to this reproducibility package. Version DOIs are minted by
 Zenodo from the GitHub releases (concept DOI: https://doi.org/10.5281/zenodo.20768131,
 which always resolves to the latest version).
 
+## [1.2.3] - 2026-10-21
+
+Certified solver and recomputed CompStat outputs (atlas + single-axis/calibration).
+
+- Added `compstat_fix/kl_certified.py` (Algorithm 2) and `compstat_fix/kl_certified_v2.py`
+  (exact floor-free column-rescaled KKT certificate and repair stage used for the
+  joint atlas). Convergence diagnosis scripts and JSON under `compstat_fix/`.
+- Added recomputed single-axis and calibration outputs under `compstat_fix/`
+  (`results_certified/`, `figures_certified/`, `out_phase/sigma_err_slope_numpy_certified.json`,
+  `solver_convergence.json`, section-5 number extracts) and certified Fig. 2
+  (`figures/fig_sigma_err_phase_certified.*`; CompStat numbering).
+- Added `atlas_rerun/` bundle: atlas unit runner, Slurm wrapper, postprocess, merge,
+  smoke test, and **summary** outputs from D107 job 269547
+  (`results_v2/phase3d_cellsummary_certified.csv`, `phase3d_cell_compare.csv`,
+  `kkt_uncertified.csv`, `postprocess_report.json`, certified and archived-samescript
+  Fig. 3). Per-unit JSON dumps (~816 MB) are omitted; available on request (size),
+  consistent with the omitted 560 MB per-seed `phase3d.csv`.
+- Fig. 2 panel labels: "floor" → "pairwise reference" (`fig_sigma_err_phase.py`).
+- Version metadata: 1.2.3, date-released 2026-10-21. Accompanies the *Computational
+  Statistics* manuscript rewrite (KS-distance criterion + certified Monte Carlo).
+
 ## [1.2.2] - 2026-10-20
 
 Metadata and documentation corrections only; no code, data or result changes.

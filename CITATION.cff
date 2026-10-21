@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 title: "Applicability boundaries of NMF detrital-zircon unmixing — reproducibility package"
 type: software
-version: "1.2.2"
-date-released: 2026-10-20
+version: "1.2.3"
+date-released: 2026-10-21
 
 doi: "10.5281/zenodo.20768131"
 repository-code: "https://github.com/PNOAHA/dz-unmix-bounds"
@@ -23,10 +23,10 @@ keywords:
   - high-performance computing
 preferred-citation:
   type: article
-  title: "Where does detrital-zircon source unmixing break? An analytic identifiability criterion and its large-scale Monte-Carlo verification for NMF provenance unmixing"
+  title: "Practical identifiability of mixing weights with overlapping known components: a KS-distance criterion and a large-scale Monte Carlo study, with application to detrital-zircon provenance"
   authors:
     - family-names: Pan
       given-names: Lujia
-  journal: "Sedimentary Geology"
+  journal: "Computational Statistics"
   year: 2026
-  notes: "Submitted to Sedimentary Geology"
+  notes: "Manuscript prepared for Computational Statistics; software archive v1.2.3"

@@ -2,15 +2,21 @@
 
 Code and data accompanying:
 
-> Pan, L. *Where does detrital-zircon source unmixing break? An analytic
-> identifiability criterion and its large-scale Monte-Carlo verification for NMF
-> provenance unmixing.* Submitted to *Sedimentary Geology*.
+> Pan, L. *Practical identifiability of mixing weights with overlapping known
+> components: a KS-distance criterion and a large-scale Monte Carlo study, with
+> application to detrital-zircon provenance.* Manuscript prepared for
+> *Computational Statistics* (CompStat figure numbering below).
+
+Earlier Sedimentary Geology drafts used the same repository; see figure-numbering
+map below for both manuscripts.
 
 Archive: Zenodo concept DOI [10.5281/zenodo.20768131](https://doi.org/10.5281/zenodo.20768131)
-(always resolves to the latest published version). This checkout is release **v1.2.2**
-(2026-10-20; metadata/documentation corrections to v1.2.1, no result changes). Earlier
-version DOIs: v1.2.1 [10.5281/zenodo.23475936](https://doi.org/10.5281/zenodo.23475936),
-v1.2.0 [10.5281/zenodo.23470807](https://doi.org/10.5281/zenodo.23470807).
+(always resolves to the latest published version). This checkout is release **v1.2.3**
+(2026-10-21; KKT-certified solver, recomputed single-axis/calibration outputs, and
+recomputed joint atlas summaries). Earlier version DOIs: v1.2.2
+[10.5281/zenodo.23488266](https://doi.org/10.5281/zenodo.23488266), v1.2.1
+[10.5281/zenodo.23475936](https://doi.org/10.5281/zenodo.23475936), v1.2.0
+[10.5281/zenodo.23470807](https://doi.org/10.5281/zenodo.23470807).
 See `CHANGELOG.md`.
 
 This package reproduces every figure in the paper. The study (i) derives an
@@ -73,7 +79,29 @@ references.bib                  bibliography
 requirements.txt                dependencies (tested versions noted)
 CHANGELOG.md                    release history
 LICENSE                         MIT (code and synthetic results; see Licence)
+compstat_fix/                   KKT-certified solver (kl_certified.py, kl_certified_v2.py),
+                                convergence diagnosis, recomputed single-axis/calibration
+                                CSVs/JSONs and certified Figs 4–7 (CompStat numbering)
+atlas_rerun/                    certified joint-atlas runner + summary outputs (see
+                                atlas_rerun/README.md); CompStat Fig. 3
+figures/fig_sigma_err_phase_certified.*   CompStat Fig. 2 (certified calibration)
+figures/Fig3_atlas_certified.*  CompStat Fig. 3 (certified atlas)
 ```
+
+## CompStat figure numbering (v1.2.3)
+
+CompStat renumbers figures by citation order. Repository development names are kept.
+
+| CompStat figure | Repository file | Notes |
+|---|---|---|
+| Figure 1 | figures/Fig1_framework.* | unchanged |
+| Figure 2 | figures/fig_sigma_err_phase_certified.* | certified σ_err calibration |
+| Figure 3 | atlas_rerun/results_v2/figures/Fig3_atlas_certified.* (also figures/Fig3_atlas_certified.*) | certified joint atlas |
+| Figures 4–7 | compstat_fix/figures_certified/Fig2…Fig5_* | certified single-axis scans |
+| Figure 8 | figures/Fig8_real_diagnostic.* | real-sample screen |
+
+The Sedimentary Geology map in the next section remains valid for earlier drafts.
+
 
 ## Figure numbering (paper vs repository files)
 
@@ -98,8 +126,17 @@ The full per-seed 3D-atlas results (`phase3d.csv`, 1,541,100 rows, 560 MB; 187 M
 gzipped) exceed a code-repository's practical limits and are not included here.
 No DOI or record for a separate public raw-data archive was found in the project
 records searched on 2026-10-19; the earlier claim of such an archive is withdrawn.
-The raw data may be requested from the author. Paper Fig. 2 can be redrawn from
-`scan/phase3d_cellsummary.csv`; independent re-aggregation requires the omitted raw.
+The raw data may be requested from the author. The archived (Algorithm-1) Fig. 2 /
+CompStat Fig. 3 cell summary redraws from `scan/phase3d_cellsummary.csv`; the
+certified CompStat Fig. 3 redraws from
+`atlas_rerun/results_v2/phase3d_cellsummary_certified.csv`. Independent
+re-aggregation of either requires the omitted raw.
+
+The certified atlas **per-unit** JSON dumps (`atlas_rerun/results_v2/units/`, about
+816 MB for 1000 units; earlier unit dumps about 450–500 MB) are likewise omitted
+and may be requested from the author for the same size reason. Summary CSVs, the
+KKT uncertified list, the postprocess report and the Fig. 3 PDFs/PNGs/SVGs are
+included under `atlas_rerun/results_v2/`.
 The generator and dispatcher are now in `scan/phase3d_scan.py` and
 `scan/phase3d_scan_hpc.py`, with `scan/merge_phase3d.py` and `scan/phase3d.slurm`.
 Their default *planned* grid has 3,300,000 configurations; the saved partial atlas
@@ -227,6 +264,19 @@ itself resolve the 82-cell endpoint-only wording discrepancy or upgrade numerica
    to 2–6 sources, but collapses below a **critical separability Δ/σ ≈ 1.10** in the
    tested design (source age modes closer than ~1 peak width cannot be reliably
    unmixed).
+
+## Certified solver and atlas regeneration (v1.2.3)
+
+- Solver: `compstat_fix/kl_certified.py` (Algorithm 2) and
+  `compstat_fix/kl_certified_v2.py` (exact column-rescaled certificate + repair).
+- Diagnosis and recomputed single-axis/calibration: `compstat_fix/` (see scripts and
+  `solver_convergence.json`).
+- Joint atlas bundle: `atlas_rerun/` (runner, Slurm script, smoke test, summary outputs).
+  Quick check: `PYTHON=python3 bash atlas_rerun/smoke_test.sh` (writes gitignored
+  `atlas_rerun/results_smoke/`).
+- D107 job 269547 postprocess (`atlas_rerun/results_v2/postprocess_report.json`):
+  COMPLETE true; 1,541,100 configs; 1 uncertified row in 1 config; measured core-hours
+  ≈ 924.3. See `atlas_rerun/README.md`.
 
 ## Licence
 
